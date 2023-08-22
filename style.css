@@ -1,0 +1,71 @@
+body {
+    background-color: rgb(26, 26, 26);
+}
+
+ul {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    text-align: center;
+}
+  
+li {
+    display: inline-block;
+    font-size: 25px;
+    font-family: monospace;
+    padding: 22px 4%;
+}
+
+li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+  
+#home:hover, #constellation:hover, #circuit:hover {
+    color:rgb(255, 75, 75)
+}
+
+#games:hover, #pathfinder:hover, #tic-tac-toe:hover {
+    color:rgb(92, 255, 92)
+}
+
+#projects:hover, #words:hover {
+    color:rgb(252, 255, 78)
+}
+
+#about:hover, #void-color:hover {
+    color:rgb(85, 116, 255)
+}
+
+#dots:hover {
+    color:#ffb14b
+}
+
+#halfway:hover {
+    color:#c73aff
+}
+
+main {
+    text-align: center;
+    margin-inline: 400px;
+}
+
+h1 {
+    font-family: monospace;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+}
+
+h2 {
+    font-family: monospace;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+}
+
+p {
+    font-family: monospace;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+}

@@ -1,5 +1,8 @@
 body {
-    background-color: rgb(26, 26, 26);
+    background-color: rgb(15, 15, 15);      
+    background-image: url(art/ripple.png);
+    background-size: 60px;
+    transition: all .4s ease;
 }
 
 ul {
@@ -21,41 +24,45 @@ li {
 li a {
     color: rgb(255, 255, 255);
     text-decoration: none;
-}
-  
-#home:hover, #constellation:hover, #circuit:hover {
-    color:rgb(255, 75, 75)
+    transition: all .4s ease;
 }
 
-#games:hover, #pathfinder:hover, #tic-tac-toe:hover {
-    color:rgb(92, 255, 92)
-}
-
-#projects:hover, #words:hover {
-    color:rgb(252, 255, 78)
-}
-
-#about:hover, #void-color:hover {
-    color:rgb(85, 116, 255)
-}
-
-#dots:hover {
-    color:#ffb14b
-}
-
-#halfway:hover {
-    color:#c73aff
+li a:hover {
+    border-bottom: 4px solid #ffffff;
 }
 
 main {
     text-align: center;
-    margin-inline: 400px;
+    padding: 20px;
+    padding-inline: 20%;
+    position: relative;
+}
+
+iframe, video {
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    transition: all .4s ease;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+#cube {
+    max-width: 100%;
+    height: auto;
+    float: left;
 }
 
 h1 {
     font-family: monospace;
     color: rgb(255, 255, 255);
     font-size: 50px;
+    text-align: center;
 }
 
 h2 {
@@ -64,8 +71,15 @@ h2 {
     font-size: 40px;
 }
 
+h2 a {
+    font-family: monospace;
+    color: rgb(70, 166, 255);
+    font-size: 40px;
+}
+
 p {
     font-family: monospace;
     color: rgb(255, 255, 255);
     font-size: 25px;
 }
+  

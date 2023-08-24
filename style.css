@@ -1,8 +1,10 @@
 body {
-    background-color: rgb(15, 15, 15);      
-    background-image: url(art/ripple.png);
-    background-size: 60px;
-    transition: all .4s ease;
+    position: relative;
+    background-color: rgb(15, 15, 15);
+}
+
+#homebody {
+    overflow: hidden;
 }
 
 ul {
@@ -12,6 +14,7 @@ ul {
     list-style: none;
     width: 100%;
     text-align: center;
+    z-index: 2;
 }
   
 li {
@@ -19,37 +22,110 @@ li {
     font-size: 25px;
     font-family: monospace;
     padding: 22px 4%;
+    z-index: 2;
 }
 
 li a {
     color: rgb(255, 255, 255);
     text-decoration: none;
     transition: all .4s ease;
+    z-index: 2;
 }
 
 li a:hover {
     border-bottom: 4px solid #ffffff;
 }
 
+#ripple1, #ripple2, #ripple3, #ripple4, #ripple5,
+#ripple6, #ripple7, #ripple8, #ripple9, #ripple10 {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 150px solid;
+    border-radius: 50%;
+    padding: 1%;
+    animation: ripple 3s linear infinite;
+    transition: all 2s linear;
+    z-index: -1;
+}
+
+@keyframes ripple {
+    0% {
+        border-color: #5a0000
+    }
+
+    25% {
+        border-color: #474700
+    }
+
+    50% {
+        border-color: #095000
+    }
+
+    75% {
+        border-color: #000097
+    }
+
+    100% {
+        border-color: #5a0000
+    }
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-image: url(art/ripple.png);
+    background-size: 120px;
+}
+
 main {
-    text-align: center;
-    padding: 20px;
-    padding-inline: 20%;
     position: relative;
+    text-align: center;
+    padding-inline: 15%;
+    z-index: 2;    
 }
 
 iframe, video {
-    max-width: 100%;
+    width: 100%;
+    height: 740px;
+    border: 1px solid rgb(15, 15, 15);
 }
 
-img {
+input {
+    padding-top: 75px;
+    padding-bottom: 75px;
     max-width: 100%;
     height: auto;
     transition: all .4s ease;
+    position: relative;
+    z-index: 3;
 }
 
-img:hover {
-    transform: scale(1.1);
+input:hover {
+    transform: scale(1.05);
+}
+
+input:active {
+    transform: scale(1);
+}
+
+#middle {
+    margin-top: 100px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    padding-inline: 40px;
+    background-color: black;
+    border: 3px solid rgb(15, 15, 15);
+}
+
+img {
+    border: 1px solid rgb(15, 15, 15);;
+    margin: 20px;
 }
 
 #cube {
@@ -59,10 +135,12 @@ img:hover {
 }
 
 h1 {
+    position: relative;
     font-family: monospace;
     color: rgb(255, 255, 255);
     font-size: 50px;
     text-align: center;
+    z-index: 2;
 }
 
 h2 {
@@ -74,12 +152,13 @@ h2 {
 h2 a {
     font-family: monospace;
     color: rgb(70, 166, 255);
-    font-size: 40px;
+    font-size: 30px;
 }
 
 p {
+    position: relative;
     font-family: monospace;
     color: rgb(255, 255, 255);
     font-size: 25px;
+    z-index: 2;
 }
-  

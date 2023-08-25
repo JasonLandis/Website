@@ -4,10 +4,6 @@ body {
     overflow-x: hidden;
 }
 
-#homebody {
-    overflow: hidden;
-}
-
 ul {
     position: relative;
     margin: auto;
@@ -53,12 +49,11 @@ li a:hover {
 
 #line {
     position: absolute;
-    top: 0;
+    top: 1%;
     left: 50%;
     transform: translate(-50%, -70%);
     width: 100%;
-    border: 200px solid;
-    padding: 2vmax;
+    border-bottom: 200px solid;
     animation: lines 10s linear infinite;
     animation-direction: alternate;
     transition: all 2s linear;
@@ -67,12 +62,11 @@ li a:hover {
 
 #line2 {
     position: absolute;
-    top: 0;
+    top: 99%;
     left: 50%;
     transform: translate(-50%, -70%);
     width: 100%;
-    border: 200px solid;
-    padding: 1%;
+    border-bottom: 200px solid;
     animation: lines2 10s linear infinite;
     animation-direction: alternate;
     transition: all 2s linear;
@@ -82,7 +76,7 @@ li a:hover {
 @keyframes lines2 {
     0% {
         border-color: #5a0000;
-        padding: 1%;
+        top: 1%;
     }
 
     25% {
@@ -99,14 +93,14 @@ li a:hover {
 
     100% {
         border-color: #5a0000;
-        padding: 480%;
+        top: 99%;
     }
 }
 
 @keyframes lines {
     0% {
         border-color: #5a0000;
-        padding: 480%;
+        top: 99%;
     }
 
     25% {
@@ -123,7 +117,7 @@ li a:hover {
 
     100% {
         border-color: #5a0000;
-        padding: 1%;
+        top: 1%;
     }
 }
 
@@ -174,9 +168,21 @@ footer {
     z-index: 2;
 }
 
-iframe, video {
+#framecontainer {
+    position: relative;
+    overflow: hidden;
     width: 100%;
-    height: 740px;
+    padding-top: 56.25%;
+  }
+
+iframe, video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
     border: 1px solid rgb(15, 15, 15);
 }
 
@@ -211,6 +217,8 @@ img {
     border: 1px solid rgb(15, 15, 15);
     margin: 20px;
     transition: all 1s ease;
+    max-width: 80%;
+    height: auto;
 }
 
 img:hover {
@@ -221,6 +229,7 @@ img:hover {
     max-width: 100%;
     height: auto;
     float: left;
+    border: none;
 }
 
 h1 {
@@ -255,5 +264,21 @@ p {
 @media (max-width: 700px) {
     * {
         font-size: 75%;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    h2 a {
+        font-size: 25px;
     }
 }

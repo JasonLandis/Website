@@ -1,6 +1,7 @@
 body {
     position: relative;
     background-color: rgb(15, 15, 15);
+    overflow-x: hidden;
 }
 
 #homebody {
@@ -14,7 +15,7 @@ ul {
     list-style: none;
     width: 100%;
     text-align: center;
-    z-index: 2;
+    z-index: 2;    
 }
   
 li {
@@ -28,7 +29,7 @@ li {
 li a {
     color: rgb(255, 255, 255);
     text-decoration: none;
-    transition: all .4s ease;
+    transition: border .4s ease;
     z-index: 2;
 }
 
@@ -39,15 +40,91 @@ li a:hover {
 #ripple1, #ripple2, #ripple3, #ripple4, #ripple5,
 #ripple6, #ripple7, #ripple8, #ripple9, #ripple10 {
     position: absolute;
-    top: 46%;
+    top: 44%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 150px solid;
+    border: 120px solid;
     border-radius: 50%;
     padding: 1%;
     animation: ripple 3s linear infinite;
+    transition: all 4s linear;
+    z-index: -1;
+}
+
+#line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    width: 100%;
+    border: 200px solid;
+    padding: 2vmax;
+    animation: lines 10s linear infinite;
+    animation-direction: alternate;
     transition: all 2s linear;
     z-index: -1;
+}
+
+#line2 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    width: 100%;
+    border: 200px solid;
+    padding: 1%;
+    animation: lines2 10s linear infinite;
+    animation-direction: alternate;
+    transition: all 2s linear;
+    z-index: -1;
+}
+
+@keyframes lines2 {
+    0% {
+        border-color: #5a0000;
+        padding: 1%;
+    }
+
+    25% {
+        border-color: #474700
+    }
+
+    50% {
+        border-color: #095000
+    }
+
+    75% {
+        border-color: #000097
+    }
+
+    100% {
+        border-color: #5a0000;
+        padding: 480%;
+    }
+}
+
+@keyframes lines {
+    0% {
+        border-color: #5a0000;
+        padding: 480%;
+    }
+
+    25% {
+        border-color: #474700
+    }
+
+    50% {
+        border-color: #095000
+    }
+
+    75% {
+        border-color: #000097
+    }
+
+    100% {
+        border-color: #5a0000;
+        padding: 1%;
+    }
 }
 
 @keyframes ripple {
@@ -90,6 +167,13 @@ main {
     z-index: 2;    
 }
 
+footer {
+    position: relative;
+    text-align: center;
+    padding: 50px;
+    z-index: 2;
+}
+
 iframe, video {
     width: 100%;
     height: 740px;
@@ -97,8 +181,8 @@ iframe, video {
 }
 
 input {
-    padding-top: 75px;
-    padding-bottom: 75px;
+    padding-top: 5%;
+    padding-bottom: 5%;
     max-width: 100%;
     height: auto;
     transition: all .4s ease;
@@ -118,14 +202,19 @@ input:active {
     margin-top: 100px;
     padding-top: 15px;
     padding-bottom: 20px;
-    padding-inline: 40px;
+    padding-inline: 20px;
     background-color: black;
     border: 3px solid rgb(15, 15, 15);
 }
 
 img {
-    border: 1px solid rgb(15, 15, 15);;
+    border: 1px solid rgb(15, 15, 15);
     margin: 20px;
+    transition: all 1s ease;
+}
+
+img:hover {
+    transform: scale(110%);
 }
 
 #cube {
@@ -161,4 +250,10 @@ p {
     color: rgb(255, 255, 255);
     font-size: 25px;
     z-index: 2;
+}
+
+@media (max-width: 700px) {
+    * {
+        font-size: 75%;
+    }
 }

@@ -1,7 +1,17 @@
 body {
     position: relative;
     background-color: rgb(15, 15, 15);
-    overflow-x: hidden;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-image: url(art/ripple.png);
+    background-size: 120px;
 }
 
 ul {
@@ -11,7 +21,7 @@ ul {
     list-style: none;
     width: 100%;
     text-align: center;
-    z-index: 2;    
+    z-index: 2;
 }
   
 li {
@@ -27,11 +37,18 @@ li a {
     text-decoration: none;
     transition: border .4s ease;
     z-index: 2;
+    cursor: pointer;
 }
 
 li a:hover {
     border-bottom: 4px solid #ffffff;
 }
+
+#line-container {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
 
 #ripple1, #ripple2, #ripple3, #ripple4, #ripple5,
 #ripple6, #ripple7, #ripple8, #ripple9, #ripple10 {
@@ -39,17 +56,37 @@ li a:hover {
     top: 44%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 120px solid;
+    border: 100px solid;
     border-radius: 50%;
     padding: 1%;
     animation: ripple 3s linear infinite;
-    transition: all 4s linear;
     z-index: -1;
+}
+
+@keyframes ripple {
+    0% {
+        border-color: #5a0000;
+    }
+
+    25% {
+        border-color: #474700;
+    }
+
+    50% {
+        border-color: #095000;
+    }
+
+    75% {
+        border-color: #000097;
+    }
+
+    100% {
+        border-color: #5a0000;
+    }
 }
 
 #line {
     position: absolute;
-    top: 1%;
     left: 50%;
     transform: translate(-50%, -70%);
     width: 100%;
@@ -62,7 +99,6 @@ li a:hover {
 
 #line2 {
     position: absolute;
-    top: 99%;
     left: 50%;
     transform: translate(-50%, -70%);
     width: 100%;
@@ -73,28 +109,28 @@ li a:hover {
     z-index: -1;
 }
 
-@keyframes lines2 {
-    0% {
-        border-color: #5a0000;
-        top: 1%;
-    }
+#line3 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    width: 100%;
+    border-bottom: 200px solid;
+    animation: lines 20s linear infinite;
+    animation-direction: alternate;
+    transition: all 2s linear;
+    z-index: -1;
+}
 
-    25% {
-        border-color: #474700
-    }
-
-    50% {
-        border-color: #095000
-    }
-
-    75% {
-        border-color: #000097
-    }
-
-    100% {
-        border-color: #5a0000;
-        top: 99%;
-    }
+#line4 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    width: 100%;
+    border-bottom: 200px solid;
+    animation: lines2 20s linear infinite;
+    animation-direction: alternate;
+    transition: all 2s linear;
+    z-index: -1;
 }
 
 @keyframes lines {
@@ -121,9 +157,10 @@ li a:hover {
     }
 }
 
-@keyframes ripple {
+@keyframes lines2 {
     0% {
-        border-color: #5a0000
+        border-color: #5a0000;
+        top: 1%;
     }
 
     25% {
@@ -139,19 +176,57 @@ li a:hover {
     }
 
     100% {
-        border-color: #5a0000
+        border-color: #5a0000;
+        top: 99%;
     }
 }
 
-#background {
+#rubiks-ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 200px solid;
+    border-radius: 50%;
+    padding: 1%;
+    animation: rubiks-ripple 8s linear infinite;
+    transition: all 4s linear;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#rubiks-ripple-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-image: url(art/ripple.png);
-    background-size: 120px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+@keyframes rubiks-ripple {
+    0% {
+        border-color: #5a0000;
+        padding: 1%;
+    }
+
+    25% {
+        border-color: #474700;
+    }
+
+    50% {
+        border-color: #095000;
+    }
+
+    75% {
+        border-color: #000097;
+    }
+
+    100% {
+        border-color: #5a0000;   
+        padding: 120%;
+    }
 }
 
 main {
@@ -186,26 +261,38 @@ iframe, video {
     border: 1px solid rgb(15, 15, 15);
 }
 
-input {
+button {
     padding-top: 5%;
     padding-bottom: 5%;
     max-width: 100%;
     height: auto;
+    background: none;
+    border: none;
     transition: all .4s ease;
     position: relative;
     z-index: 3;
+    cursor: pointer;
 }
 
-input:hover {
+button:hover {
     transform: scale(1.05);
 }
 
-input:active {
+button:active {
     transform: scale(1);
 }
 
 #middle {
     margin-top: 100px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    padding-inline: 20px;
+    background-color: black;
+    border: 3px solid rgb(15, 15, 15);
+}
+
+#rubiks {
+    margin-top: 20px;
     padding-top: 15px;
     padding-bottom: 20px;
     padding-inline: 20px;
@@ -226,9 +313,6 @@ img:hover {
 }
 
 #cube {
-    max-width: 100%;
-    height: auto;
-    float: left;
     border: none;
 }
 

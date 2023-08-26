@@ -1,4 +1,6 @@
-function ripple() {    
+const rippleButton = document.getElementById("ripple-button");
+
+rippleButton.addEventListener("click", function() {
     if (document.getElementById("ripple1").style.padding != "200%") {
         document.getElementById("ripple1").style.transition = "all 3s linear";
         document.getElementById("ripple1").style.padding = "200%";
@@ -78,4 +80,4 @@ function ripple() {
         document.getElementById("ripple1").style.padding = "1%";
         return;
     }
-}
+});

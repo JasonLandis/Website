@@ -35,6 +35,7 @@ li {
 li a {
     color: rgb(255, 255, 255);
     text-decoration: none;
+    font-size: 25px;
     transition: border .4s ease;
     z-index: 2;
     cursor: pointer;
@@ -211,16 +212,20 @@ li a:hover {
         padding: 1%;
     }
 
-    25% {
+    13% {
         border-color: #474700;
     }
 
-    50% {
+    26% {
         border-color: #095000;
     }
 
-    75% {
+    39% {
         border-color: #000097;
+    }
+
+    50% {
+        border-color: #5a0000;
     }
 
     100% {
@@ -274,14 +279,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    transform: scale(1.05);
-}
-
-button:active {
-    transform: scale(1);
-}
-
 #middle {
     margin-top: 100px;
     padding-top: 15px;
@@ -298,6 +295,17 @@ button:active {
     padding-inline: 20px;
     background-color: black;
     border: 3px solid rgb(15, 15, 15);
+}
+
+#ripple-cube {
+    border: none;
+    width: 500px;
+    height: auto;
+    transition: all .4s;
+}
+
+#ripple-cube:active {
+    transform: scale(1);
 }
 
 img {
@@ -346,8 +354,8 @@ p {
 }
 
 @media (max-width: 700px) {
-    * {
-        font-size: 75%;
+    li a {
+        font-size: 17px;
     }
 
     p {

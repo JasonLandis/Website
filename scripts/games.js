@@ -11,21 +11,23 @@ constellation.addEventListener("click", function() {
     <div id="framecontainer">
         <iframe src="https://www.youtube.com/embed/Fj_7lkHpOY0"></iframe>
     </div>
-    <div id="middle">
+    <div id="middle">                
         <h2>Overview</h2>
         <p>
             Constellation is a shoot-em-up roguelike arcade game for mobile. This was my first published game
             and it is currently only available on android. I plan to make it available for iphones and PCs in the future.
-            It was developed using the Unity engine and took me approximately 3 months to complete.                    
+            It was developed using the Unity engine and took me approximately 3 months to complete. 
+            <br><br>
+            Check it out on Google Play.                   
         </p>
-        <h2>
-            <a href="https://play.google.com/store/apps/details?id=com.JasonLandis.Constellation">Download on Google Play</a>
-        </h2>
+        <a href="https://play.google.com/store/apps/details?id=com.JasonLandis.Constellation">
+            <img style="border: 1px solid rgb(15, 15, 15);" width="100px" height="100px" src="art/constellationlogo.png" alt="Google Play">
+        </a>
     </div>
     <div id="middle">
         <h2>How to play</h2>
         <p>
-            In Constellation, you play as a star within a universe surrounded by other stars. 
+            You play as a star within a universe surrounded by other stars. 
             You have a mini-map that allows you to see where you are in the universe and any stars that are close by. 
             You select a direction and a distance to begin traveling and grow your constellation.
         </p>

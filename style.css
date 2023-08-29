@@ -32,6 +32,10 @@ li {
     z-index: 2;
 }
 
+.main-navbar {
+    font-size: 30px;
+}
+
 li a {
     color: rgb(255, 255, 255);
     text-decoration: none;
@@ -54,7 +58,7 @@ li a:hover {
 #ripple1, #ripple2, #ripple3, #ripple4, #ripple5,
 #ripple6, #ripple7, #ripple8, #ripple9, #ripple10 {
     position: absolute;
-    top: 44%;
+    top: 38%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 100px solid;
@@ -242,6 +246,7 @@ main {
 }
 
 footer {
+    bottom: 0px;
     position: relative;
     text-align: center;
     padding: 50px;
@@ -253,7 +258,7 @@ footer {
     overflow: hidden;
     width: 100%;
     padding-top: 56.25%;
-  }
+}
 
 iframe, video {
     position: absolute;
@@ -267,8 +272,6 @@ iframe, video {
 }
 
 button {
-    padding-top: 5%;
-    padding-bottom: 5%;
     max-width: 100%;
     height: auto;
     background: none;
@@ -304,20 +307,32 @@ button {
     transition: all .4s;
 }
 
-#ripple-cube:active {
+button:hover {
+    transform: scale(1.1);
+}
+
+button:active {
     transform: scale(1);
+}
+
+a img {
+    border: none;
 }
 
 img {
     border: 1px solid rgb(15, 15, 15);
     margin: 20px;
     transition: all 1s ease;
-    max-width: 80%;
+    max-width: 85%;
     height: auto;
 }
 
 img:hover {
-    transform: scale(110%);
+    transform: scale(1.1);
+}
+
+#ripple-cube:hover {
+    transform: none;
 }
 
 #cube {
@@ -353,9 +368,17 @@ p {
     z-index: 2;
 }
 
+a {
+    text-decoration: none;
+}
+
 @media (max-width: 700px) {
     li a {
         font-size: 17px;
+    }
+
+    .main-navbar {
+        font-size: 20px;
     }
 
     p {
@@ -373,4 +396,10 @@ p {
     h2 a {
         font-size: 25px;
     }
+
+    #ripple1, #ripple2, #ripple3, #ripple4, #ripple5,
+    #ripple6, #ripple7, #ripple8, #ripple9, #ripple10 {
+        top: 31%;
+}
+
 }

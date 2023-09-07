@@ -24,42 +24,74 @@ const about = document.getElementById("about");
 let x = 0;
 function colorSwap() {
     if (x == 0) {
-        start.style = "background: linear-gradient(#130068, #000000, #0b3a00);";
-        games.style = "background: linear-gradient(#0b3a00, #000000, #525000);";
-        puzzles.style = "background: linear-gradient(#525000, #000000, #2b0042);";
-        about.style = "background: linear-gradient(#2b0042, #000000, #530000);";
+        start.style = "background: radial-gradient(#552900, #000000);";
+        games.style = "background: radial-gradient(#552900, #000000);";
+        puzzles.style = "background: radial-gradient(#552900, #000000);";
+        about.style = "background: radial-gradient(#552900, #000000);";
         x = 1;
     }
 
     else if (x == 1) {
-        start.style = "background: linear-gradient(#0b3a00, #000000, #525000);";
-        games.style = "background: linear-gradient(#525000, #000000, #2b0042);";
-        puzzles.style = "background: linear-gradient(#2b0042, #000000, #530000);";
-        about.style = "background: linear-gradient(#530000, #000000, #130068);";
+        start.style = "background: radial-gradient(#4b4600, #000000);";
+        games.style = "background: radial-gradient(#4b4600, #000000);";
+        puzzles.style = "background: radial-gradient(#4b4600, #000000);";
+        about.style = "background: radial-gradient(#4b4600, #000000);";
         x = 2;
     }
 
     else if (x == 2) {
-        about.style = "background: linear-gradient(#130068, #000000, #0b3a00);";
-        start.style = "background: linear-gradient(#525000, #000000, #2b0042);";
-        games.style = "background: linear-gradient(#2b0042, #000000, #530000);";
-        puzzles.style = "background: linear-gradient(#530000, #000000, #130068);";
+        start.style = "background: radial-gradient(#023100, #000000);";
+        games.style = "background: radial-gradient(#023100, #000000);";
+        puzzles.style = "background: radial-gradient(#023100, #000000);";
+        about.style = "background: radial-gradient(#023100, #000000);";
         x = 3;
     }
 
     else if (x == 3) {
-        puzzles.style = "background: linear-gradient(#130068, #000000, #0b3a00);";
-        about.style = "background: linear-gradient(#0b3a00, #000000, #525000);";
-        start.style = "background: linear-gradient(#2b0042, #000000, #530000);";
-        games.style = "background: linear-gradient(#530000, #000000, #130068);";
+        start.style = "background: radial-gradient(#004b3e, #000000);";
+        games.style = "background: radial-gradient(#004b3e, #000000);";
+        puzzles.style = "background: radial-gradient(#004b3e, #000000);";
+        about.style = "background: radial-gradient(#004b3e, #000000);";
         x = 4;
     }
 
     else if (x == 4) {
-        games.style = "background: linear-gradient(#130068, #000000, #0b3a00);";
-        puzzles.style = "background: linear-gradient(#0b3a00, #000000, #525000);";
-        about.style = "background: linear-gradient(#525000, #000000, #2b0042);";
-        start.style = "background: linear-gradient(#530000, #000000, #130068);";
+        start.style = "background: radial-gradient(#00334b, #000000);";
+        games.style = "background: radial-gradient(#00334b, #000000);";
+        puzzles.style = "background: radial-gradient(#00334b, #000000);";
+        about.style = "background: radial-gradient(#00334b, #000000);";
+        x = 5;
+    }
+
+    else if (x == 5) {
+        start.style = "background: radial-gradient(#00054b, #000000);";
+        games.style = "background: radial-gradient(#00054b, #000000);";
+        puzzles.style = "background: radial-gradient(#00054b, #000000);";
+        about.style = "background: radial-gradient(#00054b, #000000);";
+        x = 6;
+    }
+
+    else if (x == 6) {
+        start.style = "background: radial-gradient(#27004b, #000000);";
+        games.style = "background: radial-gradient(#27004b, #000000);";
+        puzzles.style = "background: radial-gradient(#27004b, #000000);";
+        about.style = "background: radial-gradient(#27004b, #000000);";
+        x = 7;
+    }
+
+    else if (x == 7) {
+        start.style = "background: radial-gradient(#4b0047, #000000);";
+        games.style = "background: radial-gradient(#4b0047, #000000);";
+        puzzles.style = "background: radial-gradient(#4b0047, #000000);";
+        about.style = "background: radial-gradient(#4b0047, #000000);";
+        x = 8;
+    }
+
+    else if (x == 8) {
+        start.style = "background: radial-gradient(#530000, #000000);";
+        games.style = "background: radial-gradient(#530000, #000000);";
+        puzzles.style = "background: radial-gradient(#530000, #000000);";
+        about.style = "background: radial-gradient(#530000, #000000);";
         x = 0;
     }
 }

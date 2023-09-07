@@ -4,43 +4,51 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Jason Landis's Portfolio</title>
+        <title>JL Games</title>
         <link rel="stylesheet" href="style.css">
         <link rel="icon" href="art/logo.ico" type="image/x-icon">
-        <ul>
-            <li><a class="main-navbar" style="border-bottom: 4px solid #ffffff;">Home</a></li>
-            <li><a class="main-navbar" href="rubiks.html">Rubik's Cubes</a></li>
-            <li><a class="main-navbar" href="games.html">Games</a></li>
-        </ul>
     </head>
-    <body style="overflow: hidden;">
-        <div id="ripple1"></div>
-        <div id="ripple2"></div>
-        <div id="ripple3"></div>
-        <div id="ripple4"></div>
-        <div id="ripple5"></div>
-        <div id="ripple6"></div>
-        <div id="ripple7"></div>
-        <div id="ripple8"></div>
-        <div id="ripple9"></div>
-        <div id="ripple10"></div>
-        <div id="background"></div>
-        <main>
-            <button id="ripple-button">
-                <img id="ripple-cube" src="art/logo.ico" alt="logo">
-            </button>
-            <br>
-            <p>
-                Hi, I'm Jason Landis 
-                <br><br>
-                I'd like to call myself a game developer and designer.
-                Here you can check out some of my personal projects including video games
-                and custom Rubik's Cube designs
-            </p>
-            <a href="https://github.com/JasonLandis">
-                <img width="80px" height="80px" src="art/github.png" alt="GitHub" id="logo">
-            </a>
-        </main>
+    <body>
+        <nav id="navbar">
+            <ul>
+                <li><a style="float: left" href="#start"><h1>JL Games</h1></a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#puzzles">Puzzles</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#start">Start</a></li>
+            </ul>
+        </nav>
+        <div id="start">
+            <img onclick="colorSwap()" id="logo" src="art/logo.ico" alt="My logo should be here"/>
+            <h1><br>Hi, I'm Jason Landis<br>Welcome to my portfolio</h1>
+        </div>
+        <div id="games">
+            <div id="center">
+                <h1 id="title">Game Projects</h1>
+                <div>
+                    <div class="gamecards">
+                        <h1>Constellation</h1>
+                        <iframe width="720px" height="405px" src="https://www.youtube.com/embed/Fj_7lkHpOY0"></iframe>
+                    </div>
+                    <div class="gamecards">
+                        <h1>Pathfinder</h1>
+                        <video width="720px" height="405px" controls autoplay>
+                            <source src="videos/Pathfinder.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="puzzles">
+            <div id="center">
+                <h1 id="title">Rubik's Cubes I've made</h1>
+            </div>
+        </div>
+        <div id="about">
+            <div id="center">
+                <h1 id="title">About me</h1>
+            </div>
+        </div>
     </body>
-    <script src="scripts/ripple.js"></script>
+    <script src="script.js"></script>
 </html>

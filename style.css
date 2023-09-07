@@ -1,405 +1,113 @@
 body {
-    position: relative;
-    background-color: rgb(15, 15, 15);
-}
-
-#background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-image: url(art/ripple.png);
-    background-size: 120px;
+    overflow-x: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
 }
 
 ul {
-    position: relative;
-    margin: auto;
-    padding: 0;
-    list-style: none;
-    width: 100%;
-    text-align: center;
-    z-index: 2;
-}
-  
-li {
-    display: inline-block;
-    font-size: 25px;
-    font-family: monospace;
-    padding: 22px 4%;
-    z-index: 2;
+    list-style-type: none;
+    padding-right: 20px;
+    padding-left: 0;
+    margin: 10px;
 }
 
-.main-navbar {
-    font-size: 30px;
+li {
+    display: inline;    
 }
 
 li a {
-    color: rgb(255, 255, 255);
+    float: right;
+    margin-inline: 20px;
     text-decoration: none;
+    color: white;
     font-size: 25px;
-    transition: border .4s ease;
-    z-index: 2;
-    cursor: pointer;
+    transition: all 0.3s;
 }
 
 li a:hover {
-    border-bottom: 4px solid #ffffff;
+    color: gray;
+    transform: scale(1.05);
 }
 
-#line-container {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+li a h1 {
+    margin: 0;
 }
 
-
-#ripple1, #ripple2, #ripple3, #ripple4, #ripple5,
-#ripple6, #ripple7, #ripple8, #ripple9, #ripple10 {
-    position: absolute;
-    top: 38%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 100px solid;
-    border-radius: 50%;
-    padding: 1%;
-    animation: ripple 3s linear infinite;
-    z-index: -1;
-}
-
-@keyframes ripple {
-    0% {
-        border-color: #5a0000;
-    }
-
-    25% {
-        border-color: #474700;
-    }
-
-    50% {
-        border-color: #095000;
-    }
-
-    75% {
-        border-color: #000097;
-    }
-
-    100% {
-        border-color: #5a0000;
-    }
-}
-
-#line {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -70%);
-    width: 100%;
-    border-bottom: 200px solid;
-    animation: lines 10s linear infinite;
-    animation-direction: alternate;
-    transition: all 2s linear;
-    z-index: -1;
-}
-
-#line2 {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -70%);
-    width: 100%;
-    border-bottom: 200px solid;
-    animation: lines2 10s linear infinite;
-    animation-direction: alternate;
-    transition: all 2s linear;
-    z-index: -1;
-}
-
-#line3 {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -70%);
-    width: 100%;
-    border-bottom: 200px solid;
-    animation: lines 20s linear infinite;
-    animation-direction: alternate;
-    transition: all 2s linear;
-    z-index: -1;
-}
-
-#line4 {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -70%);
-    width: 100%;
-    border-bottom: 200px solid;
-    animation: lines2 20s linear infinite;
-    animation-direction: alternate;
-    transition: all 2s linear;
-    z-index: -1;
-}
-
-@keyframes lines {
-    0% {
-        border-color: #5a0000;
-        top: 99%;
-    }
-
-    25% {
-        border-color: #474700
-    }
-
-    50% {
-        border-color: #095000
-    }
-
-    75% {
-        border-color: #000097
-    }
-
-    100% {
-        border-color: #5a0000;
-        top: 1%;
-    }
-}
-
-@keyframes lines2 {
-    0% {
-        border-color: #5a0000;
-        top: 1%;
-    }
-
-    25% {
-        border-color: #474700
-    }
-
-    50% {
-        border-color: #095000
-    }
-
-    75% {
-        border-color: #000097
-    }
-
-    100% {
-        border-color: #5a0000;
-        top: 99%;
-    }
-}
-
-#rubiks-ripple {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 200px solid;
-    border-radius: 50%;
-    padding: 1%;
-    animation: rubiks-ripple 8s linear infinite;
-    transition: all 4s linear;
-    overflow: hidden;
-    z-index: -1;
-}
-
-#rubiks-ripple-overlay {
+nav {
     position: fixed;
+    width: 100vw;
+    top: 0;
+    transition: top 1s ease;
+    z-index: 1;
+}
+
+#logo {
+    width: 450px;
+    height: 450px;
+    padding-top: 17vh;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#logo:hover {
+    transform: scale(1.05);
+}
+
+#logo:active {
+    transform: scale(1);
+}
+
+#center {
+    text-align: center;
+}
+
+#title {
+    font-size: 50px;
+    padding-top: 30px;
+}
+
+.gamecards {
+    display: inline-block;
+    margin-inline: 20px;
+}
+
+iframe, video {
+    border: 2px solid white;
+}
+
+#start {
+    position: absolute;
+    background: linear-gradient(#530000, #000000, #130068);
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-@keyframes rubiks-ripple {
-    0% {
-        border-color: #5a0000;
-        padding: 1%;
-    }
-
-    13% {
-        border-color: #474700;
-    }
-
-    26% {
-        border-color: #095000;
-    }
-
-    39% {
-        border-color: #000097;
-    }
-
-    50% {
-        border-color: #5a0000;
-    }
-
-    100% {
-        border-color: #5a0000;   
-        padding: 120%;
-    }
-}
-
-main {
-    position: relative;
     text-align: center;
-    padding-inline: 15%;
-    z-index: 2;    
 }
 
-footer {
-    bottom: 0px;
-    position: relative;
-    text-align: center;
-    padding: 50px;
-    z-index: 2;
-}
-
-#framecontainer {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    padding-top: 56.25%;
-}
-
-iframe, video {
+#games {
     position: absolute;
-    top: 0;
+    background: linear-gradient(#130068, #000000, #0b3a00);
+    top: 100vh;
     left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    border: 1px solid rgb(15, 15, 15);
+    width: 100vw;
+    height: 100vh;
 }
 
-button {
-    max-width: 100%;
-    height: auto;
-    background: none;
-    border: none;
-    transition: all .4s ease;
-    position: relative;
-    z-index: 3;
-    cursor: pointer;
+#puzzles {
+    position: absolute;
+    background: linear-gradient(#0b3a00, #000000, #525000);
+    top: 200vh;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
-#middle {
-    margin-top: 100px;
-    padding-top: 15px;
-    padding-bottom: 20px;
-    padding-inline: 20px;
-    background-color: black;
-    border: 3px solid rgb(15, 15, 15);
-}
-
-#rubiks {
-    margin-top: 20px;
-    padding-top: 15px;
-    padding-bottom: 20px;
-    padding-inline: 20px;
-    background-color: black;
-    border: 3px solid rgb(15, 15, 15);
-}
-
-#ripple-cube {
-    border: none;
-    width: 500px;
-    height: auto;
-    transition: all .4s;
-}
-
-button:hover {
-    transform: scale(1.1);
-}
-
-button:active {
-    transform: scale(1);
-}
-
-a img {
-    border: none;
-}
-
-img {
-    border: 1px solid rgb(15, 15, 15);
-    margin: 20px;
-    transition: all 1s ease;
-    max-width: 85%;
-    height: auto;
-}
-
-img:hover {
-    transform: scale(1.1);
-}
-
-#ripple-cube:hover {
-    transform: none;
-}
-
-#cube {
-    border: none;
-}
-
-h1 {
-    position: relative;
-    font-family: monospace;
-    color: rgb(255, 255, 255);
-    font-size: 50px;
-    text-align: center;
-    z-index: 2;
-}
-
-h2 {
-    font-family: monospace;
-    color: rgb(255, 255, 255);
-    font-size: 40px;
-}
-
-h2 a {
-    font-family: monospace;
-    color: rgb(70, 166, 255);
-    font-size: 30px;
-}
-
-p {
-    position: relative;
-    font-family: monospace;
-    color: rgb(255, 255, 255);
-    font-size: 25px;
-    z-index: 2;
-}
-
-a {
-    text-decoration: none;
-}
-
-@media (max-width: 700px) {
-    li a {
-        font-size: 17px;
-    }
-
-    .main-navbar {
-        font-size: 20px;
-    }
-
-    p {
-        font-size: 20px;
-    }
-
-    h1 {
-        font-size: 45px;
-    }
-
-    h2 {
-        font-size: 35px;
-    }
-
-    h2 a {
-        font-size: 25px;
-    }
-
-    #ripple1, #ripple2, #ripple3, #ripple4, #ripple5,
-    #ripple6, #ripple7, #ripple8, #ripple9, #ripple10 {
-        top: 31%;
-}
-
+#about {
+    position: absolute;
+    background: linear-gradient(#525000, #000000, #2b0042);
+    top: 300vh;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 }

@@ -2,7 +2,8 @@ body {
     overflow-x: hidden;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
-    background-color: #000000;
+    background-color: #530000;
+    animation: background-color 10s linear infinite;
 }
 
 ul {
@@ -64,21 +65,56 @@ nav {
 
 #title {
     font-size: 50px;
-    padding-top: 30px;
+    padding-top: 50px;
 }
 
 .gamecards {
+    position: relative;
     display: inline-block;
+    margin-top: 40px;
     margin-inline: 20px;
+    margin-bottom: 120px;
+    width: 80%;
+    height: 30vw;
+}
+
+#gamesinfo {
+    text-align: center;
+    padding-inline: 30px;
+    height: 30vw;
+    margin-left: 67.3%;
+    font-size: 1vw;
+}
+
+#rubiksinfo {
+    text-align: center;
+    padding-inline: 200px;
+    height: 30vw;
+    font-size: 1.8vw;
 }
 
 iframe, video {
-    border: 2px solid white;
+    position: relative;
+    float: left;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 67%;
+    height: 100%;
+    border: none;
+}
+
+#rubiks {
+    position: relative;
+    width: 20%;
+    height: 55%;
+    border: none;
 }
 
 #start {
     position: absolute;
-    background: radial-gradient(#530000, #000000);
+    background: radial-gradient(rgb(0, 0, 0, 0), rgba(0, 0, 0, 1));
     top: 0;
     left: 0;
     width: 100vw;
@@ -88,27 +124,99 @@ iframe, video {
 
 #games {
     position: absolute;
-    background: radial-gradient(#530000, #000000);
     top: 100vh;
     left: 0;
     width: 100vw;
+    height: 200vh;
+}
+
+#constellation {
+    background: radial-gradient(rgb(58, 58, 58), rgb(0, 0, 0));
+    padding-top: 1px;
+    height: 100vh;
+}
+
+#pathfinder {
+    background: radial-gradient(rgb(58, 58, 58), rgb(0, 0, 0));
+    padding-top: 1px;
+    height: 100vh;
+}
+
+#circuit {
+    background: radial-gradient(rgb(0, 2, 46), rgb(0, 0, 0));
+    padding-top: 1px;
+    height: 100vh;
+}
+
+#tic {
+    background: radial-gradient(rgb(0, 2, 46), rgb(0, 0, 0));
+    padding-top: 1px;
+    height: 100vh;
+}
+
+#words {
+    background: radial-gradient(rgb(0, 2, 46), rgb(0, 0, 0));
+    padding-top: 1px;
+    height: 100vh;
+}
+
+#void {
+    background: radial-gradient(rgb(0, 2, 46), rgb(0, 0, 0));
+    padding-top: 1px;
+    height: 100vh;
+}
+
+#dots {
+    background: radial-gradient(rgb(0, 2, 46), rgb(0, 0, 0));
+    padding-top: 1px;
+    height: 100vh;
+}
+
+#halfway {
+    background: radial-gradient(rgb(0, 2, 46), rgb(0, 0, 0));
+    padding-top: 1px;
     height: 100vh;
 }
 
 #puzzles {
     position: absolute;
-    background: radial-gradient(#530000, #000000);
-    top: 200vh;
+    top: 300vh;
+    left: 0;
+    width: 100vw;
+    height: 600vh;
+}
+
+#about {
+    position: absolute;
+    background: radial-gradient(rgb(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    top: 900vh;
     left: 0;
     width: 100vw;
     height: 100vh;
 }
 
-#about {
-    position: absolute;
-    background: radial-gradient(#530000, #000000);
-    top: 300vh;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+@keyframes background-color {
+    0% {
+        background-color: #530000;
+    }
+
+    20% {
+        background-color: #533d00;
+    }
+
+    40% {
+        background-color: #1a5300;
+    }
+
+    60% {
+        background-color: #003953;
+    }
+
+    80% {
+        background-color: #240053;
+    }
+
+    100% {
+        background-color: #530000;
+    }
 }

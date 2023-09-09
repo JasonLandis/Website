@@ -13,110 +13,154 @@
             <ul>
                 <li><a style="float: left" href="#start"><h1>JL Games</h1></a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#puzzles">Puzzles</a></li>
-                <li><a href="#games">Games</a></li>
+                <li><a href="#circuit">Puzzles</a></li>
+                <li><a href="#constellation">Games</a></li>
                 <li><a href="#start">Start</a></li>
             </ul>
         </nav>
         <div id="start">
-            <img onclick="scrolls('games')" id="logo" src="art/logo.ico" alt="My logo should be here"/>
+            <div id="down-arrow">
+                <img onclick="scrolls('constellation')" id="arrow" src="art/down.png" alt="Next">
+            </div>
+            <img onclick="scrolls('constellation')" id="logo" src="art/logo.ico" alt="My logo should be here"/>
             <h1><br>Hi, I'm Jason Landis<br>Welcome to my portfolio</h1>
         </div>
-        <div id="games">
+        <div id="constellation">
             <div id="center">
-                <div id="constellation">
-                    <h1 id="title">Constellation</h1>                    
-                    <div class="gamecards">
-                        <iframe src="https://www.youtube.com/embed/Fj_7lkHpOY0"></iframe>
-                        <div id="gamesinfo">
-                            <h2>Overview</h2>
-                            <p>
-                                Constellation is a shoot-em-up roguelike arcade game for mobile. This was my first published game
-                                and it is currently only available on android. I plan to make it available for iphones and PCs in the future.
-                                It was developed using the Unity engine and took me approximately 3 months to complete. 
-                            </p>
-                            <h2>How to play</h2>
-                            <p>
-                                You play as a star within a universe surrounded by other stars. Select a direction and a distance
-                                to begin travelling throughout the universe and grow your constellation. While travelling, you must avoid asteroids.
-                                As you traverse further from the center, the game will get more difficult, but when you land on another star, you can 
-                                select an upgrade, making the game easier.
-                            </p>
-                            <h2>Download on Google Play</h2>
-                        </div>
+                <div id="up-arrow">
+                    <img onclick="scrolls('start')" id="arrow" src="art/up.png" alt="prev">
+                </div>
+                <div id="down-arrow">
+                    <img onclick="scrolls('pathfinder')" id="arrow" src="art/down.png" alt="Next">
+                </div>
+                <h1 id="title">Constellation</h1>                    
+                <div class="gamecards">
+                    <iframe src="https://www.youtube.com/embed/Fj_7lkHpOY0"></iframe>
+                    <div id="gamesinfo">
+                        <h2>Overview</h2>
+                        <p>
+                            Constellation is a shoot-em-up roguelike arcade game for mobile. This was my first published game
+                            and it is currently only available on android. I plan to make it available for iphones and PCs in the future.
+                            It was developed using the Unity engine and took me approximately 3 months to complete. 
+                        </p>
+                        <h2>How to play</h2>
+                        <p>
+                            You play as a star within a universe surrounded by other stars. Select a direction and a distance
+                            to begin travelling throughout the universe and grow your constellation. While travelling, you must avoid asteroids.
+                            As you traverse further from the center, the game will get more difficult, but when you land on another star, you can 
+                            select an upgrade, making the game easier.
+                        </p>
+                        <h2>Download on Google Play</h2>
                     </div>
                 </div>
-                <div id="pathfinder">
-                    <h1 id="title">Pathfinder</h1>
-                    <div class="gamecards">
-                        <video controls autoplay>
-                            <source src="videos/Pathfinder.mp4" type="video/mp4">
-                        </video>
-                        <div id="gamesinfo">
-                            <h2>Overview</h2>
-                            <p>
-                                Pathfinder was one of my first projects. It is currently a prototype but I plan to work
-                                on it more in the future.
-                            </p>
-                            <h2>How to play</h2>
-                            <p>
-                                You are given a map with a number of tiles including a start tile and an end tile. On the start tile, there is a character that
-                                searches for the most optimal path to the end tile. Once you hit the play button on the top left of the screen, the character begins
-                                to move towards the end tile. The goal of the game is to prevent the character from reaching the end tile within
-                                a certain amount of time. You can stall the character by placing blockades causing it to reroute its path.
-                            </p>
-                        </div>
-                    </div>
-                </div>                
             </div>
         </div>
-        <div id="puzzles">
+        <div id="pathfinder">
             <div id="center">
-                <div id="circuit">
-                    <h1 id="title">Circuit Cube</h1>
-                    <div class="gamecards">
-                        <img id="rubiks" src="art/circuit 1.png" alt="Circuit cube"/>
-                        <div id="rubiksinfo">
-                            <p>
-                                This puzzle has 3 solutions. It has a yellow, blue, and red circuit. 
-                                Each circuit starts and stops at opposite sides of the cube. Only one circuit can be solved at a time.
-                            </p>
-                            <br>
-                        </div>
+                <div id="up-arrow">
+                    <img onclick="scrolls('constellation')" id="arrow" src="art/up.png" alt="prev">
+                </div>
+                <div id="down-arrow">
+                    <img onclick="scrolls('circuit')" id="arrow" src="art/down.png" alt="Next">
+                </div>
+                <h1 id="title">Pathfinder</h1>
+                <div class="gamecards">
+                    <video controls autoplay>
+                        <source src="videos/Pathfinder.mp4" type="video/mp4">
+                    </video>
+                    <div id="gamesinfo">
+                        <h2>Overview</h2>
+                        <p>
+                            Pathfinder was one of my first projects. It is currently a prototype but I plan to work
+                            on it more in the future.
+                        </p>
+                        <h2>How to play</h2>
+                        <p>
+                            You are given a map with a number of tiles including a start tile and an end tile. On the start tile, there is a character that
+                            searches for the most optimal path to the end tile. Once you hit the play button on the top left of the screen, the character begins
+                            to move towards the end tile. The goal of the game is to prevent the character from reaching the end tile within
+                            a certain amount of time. You can stall the character by placing blockades causing it to reroute its path.
+                        </p>
                     </div>
-                </div> 
-                <div id="tic">
-                    <h1 id="title">Tic-Tac-Toe Cube</h1>
-                    <div class="gamecards">
-                        <img id="rubiks" src="art/tic-tac-toe 1.png" alt="Circuit cube"/>
-                        <img id="rubiks" src="art/tic-tac-toe 3.png" alt="Circuit cube"/>
-                        <img id="rubiks" src="art/tic-tac-toe 4.png" alt="Circuit cube"/>
-                        <div id="rubiksinfo">
-                            <p>
-                                This puzzle has 2 or more solutions. The 1st solution consists of having either X or O winning on each side. 
-                                The 2nd solution consists of setting all the X's on one corner of the cube and all the O's on the opposite corner of the cube. 
-                                There may be more solutions such as having only X or only O winning on every side as well as having neither X nor O winning on every side.
-                            </p>
-                        </div>
+                </div>        
+            </div>
+        </div>
+        <div id="circuit">
+            <div id="center">
+                <div id="up-arrow">
+                    <img onclick="scrolls('pathfinder')" id="arrow" src="art/up.png" alt="prev">
+                </div>
+                <div id="down-arrow">
+                    <img onclick="scrolls('tic')" id="arrow" src="art/down.png" alt="Next">
+                </div>
+                <h1 id="title">Circuit Cube</h1>
+                <div class="gamecards">
+                    <img id="rubiks" src="art/circuit 1.png" alt="Circuit cube"/>
+                    <div id="rubiksinfo">
+                        <p>
+                            This puzzle has 3 solutions. It has a yellow, blue, and red circuit. 
+                            Each circuit starts and stops at opposite sides of the cube. Only one circuit can be solved at a time.
+                        </p>
+                        <br>
                     </div>
                 </div>
-                <div id="words">
-                    <h1 id="title">Words Cube</h1>
-                    <div class="gamecards">
-                        <img id="rubiks" src="art/words 1.png" alt="Circuit cube"/>
-                        <img id="rubiks" src="art/words 2.png" alt="Circuit cube"/>
-                        <img id="rubiks" src="art/words 3.png" alt="Circuit cube"/>
-                        <div id="rubiksinfo">
-                            <p>
-                                This puzzle has 3 solutions. The 1st solution is solving it based on the background color. 
-                                The 2nd solution is solving it based on the word. 
-                                The 3rd solution is solving it based on the color of the word.
-                            </p>
-                        </div>
+            </div>
+        </div>
+        <div id="tic">
+            <div id="center">
+                <div id="up-arrow">
+                    <img onclick="scrolls('circuit')" id="arrow" src="art/up.png" alt="prev">
+                </div>
+                <div id="down-arrow">
+                    <img onclick="scrolls('words')" id="arrow" src="art/down.png" alt="Next">
+                </div>
+                <h1 id="title">Tic-Tac-Toe Cube</h1>
+                <div class="gamecards">
+                    <img id="rubiks" src="art/tic-tac-toe 1.png" alt="Circuit cube"/>
+                    <img id="rubiks" src="art/tic-tac-toe 3.png" alt="Circuit cube"/>
+                    <img id="rubiks" src="art/tic-tac-toe 4.png" alt="Circuit cube"/>
+                    <div id="rubiksinfo">
+                        <p>
+                            This puzzle has 2 or more solutions. The 1st solution consists of having either X or O winning on each side. 
+                            The 2nd solution consists of setting all the X's on one corner of the cube and all the O's on the opposite corner of the cube. 
+                            There may be more solutions such as having only X or only O winning on every side as well as having neither X nor O winning on every side.
+                        </p>
                     </div>
-                </div> 
-                <div id="void">
-                    <h1 id="title">Void-Color Cube</h1>
+                </div>
+            </div>
+        </div>
+        <div id="words">
+            <div id="center">
+                <div id="up-arrow">
+                    <img onclick="scrolls('tic')" id="arrow" src="art/up.png" alt="prev">
+                </div>
+                <div id="down-arrow">
+                    <img onclick="scrolls('void')" id="arrow" src="art/down.png" alt="Next">
+                </div>
+                <h1 id="title">Words Cube</h1>
+                <div class="gamecards">
+                    <img id="rubiks" src="art/words 1.png" alt="Circuit cube"/>
+                    <img id="rubiks" src="art/words 2.png" alt="Circuit cube"/>
+                    <img id="rubiks" src="art/words 3.png" alt="Circuit cube"/>
+                    <div id="rubiksinfo">
+                        <p>
+                            This puzzle has 3 solutions. The 1st solution is solving it based on the background color. 
+                            The 2nd solution is solving it based on the word. 
+                            The 3rd solution is solving it based on the color of the word.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div id="void">
+            <div id="center">
+                <div id="up-arrow">
+                    <img onclick="scrolls('words')" id="arrow" src="art/up.png" alt="prev">
+                </div>
+                <div id="down-arrow">
+                    <img onclick="scrolls('dots')" id="arrow" src="art/down.png" alt="Next">
+                </div>
+                <h1 id="title">Void-Color Cube</h1>
                     <div class="gamecards">
                         <img id="rubiks" src="art/void-color 1.png" alt="Circuit cube"/>
                         <img id="rubiks" src="art/void-color 2.png" alt="Circuit cube"/>
@@ -127,39 +171,58 @@
                             </p>
                         </div>
                     </div>
+                </div>                    
+            </div>
+        </div>
+        <div id="dots">
+            <div id="center">
+                <div id="up-arrow">
+                    <img onclick="scrolls('void')" id="arrow" src="art/up.png" alt="prev">
                 </div>
-                <div id="dots">
-                    <h1 id="title">Dots Cube</h1>
-                    <div class="gamecards">
-                        <img id="rubiks" src="art/dots 1.png" alt="Circuit cube"/>
-                        <img id="rubiks" src="art/dots 2.png" alt="Circuit cube"/>
-                        <div id="rubiksinfo">
-                            <p>
-                                This puzzle has 1 solution, but there are many ways to achieve it. On each of the center squares, 
-                                there are 2 numbers representing how many black and white circles should be showing on that face. 
-                                It is solved when all sides satisfy this.
-                            </p>
-                        </div>
+                <div id="down-arrow">
+                    <img onclick="scrolls('halfway')" id="arrow" src="art/down.png" alt="Next">
+                </div>
+                <h1 id="title">Dots Cube</h1>
+                <div class="gamecards">
+                    <img id="rubiks" src="art/dots 1.png" alt="Circuit cube"/>
+                    <img id="rubiks" src="art/dots 2.png" alt="Circuit cube"/>
+                    <div id="rubiksinfo">
+                        <p>
+                            This puzzle has 1 solution, but there are many ways to achieve it. On each of the center squares, 
+                            there are 2 numbers representing how many black and white circles should be showing on that face. 
+                            It is solved when all sides satisfy this.
+                        </p>
                     </div>
                 </div>
-                <div id="halfway">
-                    <h1 id="title">Halfway Cube</h1>
-                    <div class="gamecards">
-                        <img id="rubiks" src="art/halfway 1.png" alt="Circuit cube"/>
-                        <img id="rubiks" src="art/halfway 2.png" alt="Circuit cube"/>
-                        <img id="rubiks" src="art/halfway 3.png" alt="Circuit cube"/>
-                        <div id="rubiksinfo">
-                            <p>
-                                This puzzle has 2 solutions. The 1st solution is solving it like a normal Rubik's cube with some missing colors. 
-                                The 2nd solution is placing all of the colored sqaures in one corner and all of the blank squares in the opposite corner.
-                            </p>
-                        </div>
+            </div>            
+        </div>
+        <div id="halfway">
+            <div id="center">
+                <div id="up-arrow">
+                    <img onclick="scrolls('dots')" id="arrow" src="art/up.png" alt="prev">
+                </div>
+                <div id="down-arrow">
+                    <img onclick="scrolls('about')" id="arrow" src="art/down.png" alt="Next">
+                </div>
+                <h1 id="title">Halfway Cube</h1>
+                <div class="gamecards">
+                    <img id="rubiks" src="art/halfway 1.png" alt="Circuit cube"/>
+                    <img id="rubiks" src="art/halfway 2.png" alt="Circuit cube"/>
+                    <img id="rubiks" src="art/halfway 3.png" alt="Circuit cube"/>
+                    <div id="rubiksinfo">
+                        <p>
+                            This puzzle has 2 solutions. The 1st solution is solving it like a normal Rubik's cube with some missing colors. 
+                            The 2nd solution is placing all of the colored sqaures in one corner and all of the blank squares in the opposite corner.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
         <div id="about">
             <div id="center">
+                <div id="up-arrow">
+                    <img onclick="scrolls('halfway')" id="arrow" src="art/up.png" alt="prev">
+                </div>
                 <h1 id="title">About me</h1>
             </div>
         </div>

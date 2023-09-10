@@ -4,18 +4,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>JL Games</title>
+        <title>Jason Landis - Portfolio</title>
         <link rel="stylesheet" href="style.css">
         <link rel="icon" href="art/logo.ico" type="image/x-icon">
     </head>
     <body>
         <nav id="navbar">
             <ul>
-                <li><a style="float: left" href="#start"><h1>JL Games</h1></a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#circuit">Puzzles</a></li>
-                <li><a href="#constellation">Games</a></li>
-                <li><a href="#start">Start</a></li>
+                <li><a onclick="scrolls('start')" style="float: left;"><h1>Jason Landis's Portfolio</h1></a></li>
+                <li><a onclick="scrolls('about')" id="about-nav">About</a></li>
+                <li><a onclick="scrolls('circuit')" id="circuit-nav">Puzzles</a></li>
+                <li><a onclick="scrolls('constellation')" id="constellation-nav">Games</a></li>
+                <li><a onclick="scrolls('start')" style="transform: scale(1.2); color: rgb(255, 135, 135)" id="start-nav">Start</a></li>
             </ul>
         </nav>
         <div id="start">
@@ -34,7 +34,7 @@
                     <img onclick="scrolls('pathfinder')" id="arrow" src="art/down.png" alt="Next">
                 </div>
                 <h1 id="title">Constellation</h1>                    
-                <div class="gamecards">
+                <div id="gamecards">
                     <iframe src="https://www.youtube.com/embed/Fj_7lkHpOY0"></iframe>
                     <div id="gamesinfo">
                         <h2>Overview</h2>
@@ -50,7 +50,7 @@
                             As you traverse further from the center, the game will get more difficult, but when you land on another star, you can 
                             select an upgrade, making the game easier.
                         </p>
-                        <h2>Download on Google Play</h2>
+                        <a href="https://play.google.com/store/apps/details?id=com.JasonLandis.Constellation"><h2>Download on Google Play</h2></a>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                     <img onclick="scrolls('circuit')" id="arrow" src="art/down.png" alt="Next">
                 </div>
                 <h1 id="title">Pathfinder</h1>
-                <div class="gamecards">
+                <div id="gamecards">
                     <video controls autoplay>
                         <source src="videos/Pathfinder.mp4" type="video/mp4">
                     </video>
@@ -94,7 +94,7 @@
                     <img onclick="scrolls('tic')" id="arrow" src="art/down.png" alt="Next">
                 </div>
                 <h1 id="title">Circuit Cube</h1>
-                <div class="gamecards">
+                <div id="gamecards">
                     <img id="rubiks" src="art/circuit 1.png" alt="Circuit cube"/>
                     <div id="rubiksinfo">
                         <p>
@@ -115,7 +115,7 @@
                     <img onclick="scrolls('words')" id="arrow" src="art/down.png" alt="Next">
                 </div>
                 <h1 id="title">Tic-Tac-Toe Cube</h1>
-                <div class="gamecards">
+                <div id="gamecards">
                     <img id="rubiks" src="art/tic-tac-toe 1.png" alt="Circuit cube"/>
                     <img id="rubiks" src="art/tic-tac-toe 3.png" alt="Circuit cube"/>
                     <img id="rubiks" src="art/tic-tac-toe 4.png" alt="Circuit cube"/>
@@ -138,7 +138,7 @@
                     <img onclick="scrolls('void')" id="arrow" src="art/down.png" alt="Next">
                 </div>
                 <h1 id="title">Words Cube</h1>
-                <div class="gamecards">
+                <div id="gamecards">
                     <img id="rubiks" src="art/words 1.png" alt="Circuit cube"/>
                     <img id="rubiks" src="art/words 2.png" alt="Circuit cube"/>
                     <img id="rubiks" src="art/words 3.png" alt="Circuit cube"/>
@@ -161,7 +161,7 @@
                     <img onclick="scrolls('dots')" id="arrow" src="art/down.png" alt="Next">
                 </div>
                 <h1 id="title">Void-Color Cube</h1>
-                    <div class="gamecards">
+                    <div id="gamecards">
                         <img id="rubiks" src="art/void-color 1.png" alt="Circuit cube"/>
                         <img id="rubiks" src="art/void-color 2.png" alt="Circuit cube"/>
                         <div id="rubiksinfo">
@@ -183,7 +183,7 @@
                     <img onclick="scrolls('halfway')" id="arrow" src="art/down.png" alt="Next">
                 </div>
                 <h1 id="title">Dots Cube</h1>
-                <div class="gamecards">
+                <div id="gamecards">
                     <img id="rubiks" src="art/dots 1.png" alt="Circuit cube"/>
                     <img id="rubiks" src="art/dots 2.png" alt="Circuit cube"/>
                     <div id="rubiksinfo">
@@ -205,7 +205,7 @@
                     <img onclick="scrolls('about')" id="arrow" src="art/down.png" alt="Next">
                 </div>
                 <h1 id="title">Halfway Cube</h1>
-                <div class="gamecards">
+                <div id="gamecards">
                     <img id="rubiks" src="art/halfway 1.png" alt="Circuit cube"/>
                     <img id="rubiks" src="art/halfway 2.png" alt="Circuit cube"/>
                     <img id="rubiks" src="art/halfway 3.png" alt="Circuit cube"/>
@@ -219,13 +219,41 @@
             </div>
         </div>
         <div id="about">
-            <div id="center">
-                <div id="up-arrow">
-                    <img onclick="scrolls('halfway')" id="arrow" src="art/up.png" alt="prev">
-                </div>
-                <h1 id="title">About me</h1>
+            <div id="up-arrow">
+                <img onclick="scrolls('halfway')" id="arrow" src="art/up.png" alt="prev">
             </div>
-        </div>
+            <h1 style="text-align: center;" id="title">About me</h1>
+            <div id="gamecards">
+                <img id="about-logo" src="art/logo.ico" alt="Logo">
+                <div id="aboutinfo">
+                    <h2>Hi, I'm Jason Landis.</h2>
+                    <h3>
+                        Here you can check out some of my personal projects from video games to Rubik's cube designs.
+                        I am always working on programming projects nowadays, mostly video games. Currently, I'm
+                        learning Unreal Engine as my next game will focus significantly on lighting.
+                    </h3>
+                    <h2>Education</h2>
+                    <h3>
+                        2020 - 2023: Western Michigan University - Bachelor of Science - Computer Science
+                        <br>
+                        2019 - 2020: Oakland Community College - General Studies
+                    </h3>
+                    <h2>Skills</h2>
+                    <h3>
+                        C#, Python, HTML, CSS, javaScript, PHP
+                        <br>
+                        Unity, Unreal Engine, ASP.NET, Microsoft SQL
+                    </h3>
+                </div>
+            </div>
+        </div>        
     </body>
+    <footer>
+        <ul>
+            <li><h3>Made with HTML, CSS, and JS by Jason Landis - 2023</h3>
+            <li><a href = "mailto: jasonelandis@gmail.com">Email</a></li>
+            <li><a href="https://github.com/JasonLandis">Github</a></li>
+        </ul>
+    </footer>
     <script src="script.js"></script>
 </html>

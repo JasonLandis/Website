@@ -26,6 +26,46 @@
           background-color: #530000;
         }
       }
+
+      @keyframes border-color {
+        0% {
+          border-color: #530000;
+        }
+        20% {
+          border-color: #533d00;
+        }
+        40% {
+          border-color: #174900;
+        }
+        60% {
+          border-color: #003953;
+        }
+        80% {
+          border-color: #240053;
+        }
+        100% {
+          border-color: #530000;
+        }
+      }
+
+      #button {
+        background-color: #530000; 
+        animation: background-color 10s linear infinite;
+        transition: all 0.3s ease;
+        color: white;
+        border: none;
+      }
+
+      #button:hover {
+        opacity: 0.8;
+        border: none;
+      }
+
+      #button:active {
+        opacity: 0.6;
+        border: none;
+      }
+
     </style>
   </head>
   <body class="text-white" style="background-color: rgb(15, 15, 15);">
@@ -43,60 +83,61 @@
               <a class="nav-link" href="#">Start</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Games</a>
+              <a class="nav-link" href="#games">Games</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Puzzles</a>
+              <a class="nav-link" href="#puzzles">Puzzles</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#about">About</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- LOGO SCREEN -->
+    <!-- START -->
     <div class="container-fluid p-0 text-white text-center" style="background-color: #530000; animation: background-color 10s linear infinite;">
       <div class="p-5" style="background: radial-gradient(rgb(0, 0, 0, 0), rgba(0, 0, 0, 1));">
         <img class="img-fluid" src="art/MyLogo.png" style="width: 400px" alt="My Logo">
         <h1>I'm Jason Landis</h1>
-        <h4>Welcome to my portfolio</h4> 
+        <h4>Welcome to my portfolio</h4>
       </div>
     </div>
     
     <!-- GAMES -->
-    <div class="container mt-5 text-center">
+    <div id="games"></div>
+    <div class="container-fluid py-5 px-5 text-center" style="background-color: #131313;">
       <h1 class="display-1 pb-5"><strong>Games</strong></h1>
       <div class="row">
 
         <!-- CONSTELLATION -->
-        <div class="col-md-6 mb-3">
-          <div class="card bg-dark text-white">
+        <div class="col-lg-6 mb-3">
+          <div class="card bg-dark border-5 text-white" style="border-color: #530000; animation: border-color 10s linear infinite;">
             <div class="card-header">
-              <h1 class="display-5"><strong>Constellation</strong></h1>
+              <h1 class="display-3"><strong>Constellation</strong></h1>
             </div>
             <div class="card-body">
               <div class="ratio ratio-16x9 mb-3">
-                <iframe src="https://www.youtube.com/embed/Fj_7lkHpOY0" allowfullscreen></iframe>
+                <iframe class="rounded" src="https://www.youtube.com/embed/Fj_7lkHpOY0" allowfullscreen></iframe>
               </div>
-              <a href="#" class="btn btn-success">Download</a>
-              <a href="#" class="btn btn-success">Learn more</a>
+              <a href="#" class="btn me-2" id="button"><strong>Download</strong></a>
+              <a href="#" class="btn" id="button"><strong>Learn more</strong></a>
             </div>
           </div>
         </div>
 
          <!-- PATHFINDER -->
-        <div class="col-md-6 mb-3">
-          <div class="card bg-dark text-white">
+        <div class="col-lg-6 mb-3">
+          <div class="card bg-dark border-5 text-white" style="border-color: #530000; animation: border-color 10s linear infinite;">
             <div class="card-header">
-              <h1 class="display-5"><strong>Pathfinder</strong></h1>
+              <h1 class="display-3"><strong>Pathfinder</strong></h1>
             </div>
             <div class="card-body">
               <div class="ratio ratio-16x9 mb-3">
-                  <iframe src="art/Pathfinder.mp4" allowfullscreen></iframe>
+                  <iframe class="rounded" src="art/Pathfinder.mp4" allowfullscreen></iframe>
               </div>           
-              <a href="#" class="btn btn-success">Learn more</a>
+              <a href="#" class="btn" id="button"><strong>Learn more</strong></a>
             </div>
           </div>
         </div>
@@ -105,7 +146,8 @@
     </div>
 
     <!-- PUZZLES -->
-    <div class="container mt-5 text-center">
+    <div id="puzzles"></div>
+    <div class="container mt-5 mb-5 text-center">
       <h1 class="display-1 pb-5"><strong>Puzzles</strong></h1>
       <div class="row">
 
@@ -116,8 +158,9 @@
               <h1 class="display-5"><strong>Circuit Cube</strong></h1>
             </div>
             <div class="card-body">
-              <img class="img-fluid" src="art/MyLogo.png" alt="Circuit Cube">
-              <p>garb</p>
+              <img class="img-fluid" style="width: 250px" src="art/circuit 1.png" alt="Circuit Cube">
+              <br>
+              <a href="#" class="btn btn-success mt-4">Learn more</a>
             </div>
           </div>
         </div>
@@ -129,8 +172,9 @@
               <h1 class="display-5"><strong>Tic-Tac-Toe Cube</strong></h1>
             </div>
             <div class="card-body">
-              <img class="img-fluid" src="art/MyLogo.png" alt="Circuit Cube">
-              <p>garb</p>
+              <img class="img-fluid" style="width: 250px" src="art/tic-tac-toe 1.png" alt="Circuit Cube">
+              <br>
+              <a href="#" class="btn btn-success mt-4">Learn more</a>
             </div>
           </div>
         </div>
@@ -142,8 +186,9 @@
               <h1 class="display-5"><strong>Words Cube</strong></h1>
             </div>
             <div class="card-body">
-              <img class="img-fluid" src="art/MyLogo.png" alt="Circuit Cube">
-              <p>garb</p>
+              <img class="img-fluid" style="width: 250px" src="art/words 1.png" alt="Circuit Cube">
+              <br>
+              <a href="#" class="btn btn-success mt-4">Learn more</a>
             </div>
           </div>
         </div>
@@ -155,8 +200,9 @@
               <h1 class="display-5"><strong>Void-Color Cube</strong></h1>
             </div>
             <div class="card-body">
-              <img class="img-fluid" src="art/MyLogo.png" alt="Circuit Cube">
-              <p>garb</p>
+              <img class="img-fluid" style="width: 250px" src="art/void-color 1.png" alt="Circuit Cube">
+              <br>
+              <a href="#" class="btn btn-success mt-4">Learn more</a>
             </div>
           </div>
         </div>
@@ -168,8 +214,9 @@
               <h1 class="display-5"><strong>Dots Cube</strong></h1>
             </div>
             <div class="card-body">
-              <img class="img-fluid" src="art/MyLogo.png" alt="Circuit Cube">
-              <p>garb</p>
+              <img class="img-fluid" style="width: 250px" src="art/dots 1.png" alt="Circuit Cube">
+              <br>
+              <a href="#" class="btn btn-success mt-4">Learn more</a>
             </div>
           </div>
         </div>
@@ -181,12 +228,22 @@
               <h1 class="display-5"><strong>Halfway Cube</strong></h1>
             </div>
             <div class="card-body">
-              <img class="img-fluid" src="art/MyLogo.png" alt="Circuit Cube">
-              <p>garb</p>
+              <img class="img-fluid" style="width: 250px" src="art/halfway 1.png" alt="Circuit Cube">
+              <br>
+              <a href="#" class="btn btn-success mt-4">Learn more</a>
             </div>
           </div>
         </div>        
 
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div id="about"></div>
+    <div class="container-fluid p-0 text-white text-center" style="background-color: #530000; animation: background-color 10s linear infinite;">
+      <div class="p-5" style="background: radial-gradient(rgb(0, 0, 0, 0), rgba(0, 0, 0, 1));">
+        <h1 class="display-1 pb-5"><strong>About me</strong></h1>
+        <h1>I'm Jason Landis</h1>
       </div>
     </div>
 

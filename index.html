@@ -68,10 +68,10 @@
 
     </style>
   </head>
-  <body class="text-white" style="background-color: rgb(15, 15, 15);">
+  <body class="text-white" style="background-color: rgb(12, 12, 12); font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color: rgb(12, 12, 12)">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Jason Landis - Portfolio</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -80,16 +80,16 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Start</a>
+              <a class="nav-link" href="#start"><strong>Start</strong></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#games">Games</a>
+              <a class="nav-link" href="#games"><strong>Games</strong></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#puzzles">Puzzles</a>
+              <a class="nav-link" href="#puzzles"><strong>Puzzles</strong></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
+              <a class="nav-link" href="#about"><strong>About</strong></a>
             </li>
           </ul>
         </div>
@@ -97,9 +97,10 @@
     </nav>
 
     <!-- START -->
+    <div id="start"></div>
     <div class="container-fluid p-0 text-white text-center" style="background-color: #530000; animation: background-color 10s linear infinite;">
       <div class="p-5" style="background: radial-gradient(rgb(0, 0, 0, 0), rgba(0, 0, 0, 1));">
-        <img class="img-fluid" src="art/MyLogo.png" style="width: 400px" alt="My Logo">
+        <img class="img-fluid mt-3" src="art/MyLogo.png" style="width: 400px" alt="My Logo">
         <h1>I'm Jason Landis</h1>
         <h4>Welcome to my portfolio</h4>
       </div>
@@ -107,37 +108,37 @@
     
     <!-- GAMES -->
     <div id="games"></div>
-    <div class="container-fluid py-5 px-5 text-center" style="background-color: #131313;">
-      <h1 class="display-1 pb-5"><strong>Games</strong></h1>
+    <div class="container-fluid py-5 px-5 text-center">
+      <h1 class="rounded display-1 py-2 mb-5" style="background-color: rgb(24, 24, 24);"><strong>Games</strong></h1>
       <div class="row">
 
         <!-- CONSTELLATION -->
-        <div class="col-lg-6 mb-3">
-          <div class="card bg-dark border-5 text-white" style="border-color: #530000; animation: border-color 10s linear infinite;">
-            <div class="card-header">
-              <h1 class="display-3"><strong>Constellation</strong></h1>
+        <div class="col-lg-6 mb-4">
+          <div class="card border-5 text-white" style="border-color: #530000; animation: border-color 10s linear infinite; background-color: #000000;">
+            <div class="card-header border-0">
+              <h1 class="rounded display-3 py-2 mb-0 mt-3" style="background-color: rgb(24, 24, 24);"><strong>Constellation</strong></h1>
             </div>
             <div class="card-body">
               <div class="ratio ratio-16x9 mb-3">
                 <iframe class="rounded" src="https://www.youtube.com/embed/Fj_7lkHpOY0" allowfullscreen></iframe>
               </div>
-              <a href="#" class="btn me-2" id="button"><strong>Download</strong></a>
-              <a href="#" class="btn" id="button"><strong>Learn more</strong></a>
+              <a href="#" class="btn btn-lg me-2 my-2" id="button"><strong>Download</strong></a>
+              <a href="#" class="btn btn-lg my-2" id="button"><strong>Learn more</strong></a>
             </div>
           </div>
         </div>
 
          <!-- PATHFINDER -->
-        <div class="col-lg-6 mb-3">
-          <div class="card bg-dark border-5 text-white" style="border-color: #530000; animation: border-color 10s linear infinite;">
-            <div class="card-header">
-              <h1 class="display-3"><strong>Pathfinder</strong></h1>
+        <div class="col-lg-6 mb-4">
+          <div class="card border-5 text-white" style="border-color: #530000; animation: border-color 10s linear infinite; background-color: #000000;">
+            <div class="card-header border-0">
+              <h1 class="rounded display-3 py-2 mb-0 mt-3" style="background-color: rgb(24, 24, 24);"><strong>Pathfinder</strong></h1>
             </div>
             <div class="card-body">
               <div class="ratio ratio-16x9 mb-3">
                   <iframe class="rounded" src="art/Pathfinder.mp4" allowfullscreen></iframe>
               </div>           
-              <a href="#" class="btn" id="button"><strong>Learn more</strong></a>
+              <a href="#" class="btn btn-lg my-2" id="button"><strong>Learn more</strong></a>
             </div>
           </div>
         </div>
@@ -147,90 +148,90 @@
 
     <!-- PUZZLES -->
     <div id="puzzles"></div>
-    <div class="container mt-5 mb-5 text-center">
-      <h1 class="display-1 pb-5"><strong>Puzzles</strong></h1>
+    <div class="container-fluid py-5 px-5 text-center">
+      <h1 class="rounded display-1 py-2 mb-5" style="background-color: rgb(24, 24, 24);"><strong>Puzzles</strong></h1>
       <div class="row">
 
         <!-- CIRCUIT -->
-        <div class="col-md-4 mb-3">
-          <div class="card bg-dark text-white">
-            <div class="card-header">
-              <h1 class="display-5"><strong>Circuit Cube</strong></h1>
+        <div class="col-lg-4 mb-4">
+          <div class="card border-5 text-white" style="border-color: #530000; animation: border-color 10s linear infinite; background-color: #000000;">
+            <div class="card-header border-0">
+              <h1 class="rounded display-5 py-2 mb-0 mt-2" style="background-color: rgb(24, 24, 24);"><strong>Circuit</strong></h1>
             </div>
             <div class="card-body">
               <img class="img-fluid" style="width: 250px" src="art/circuit 1.png" alt="Circuit Cube">
               <br>
-              <a href="#" class="btn btn-success mt-4">Learn more</a>
+              <a href="#" class="btn mt-4" id="button"><strong>Learn more</strong></a>
             </div>
           </div>
         </div>
 
         <!-- TIC-TAC-TOE -->
-        <div class="col-md-4 mb-3">
-          <div class="card bg-dark text-white">
-            <div class="card-header">
-              <h1 class="display-5"><strong>Tic-Tac-Toe Cube</strong></h1>
+        <div class="col-lg-4 mb-4">
+          <div class="card border-5 text-white" style="border-color: #530000; animation: border-color 10s linear infinite; background-color: #000000;">
+            <div class="card-header border-0">
+              <h1 class="rounded display-5 py-2 mb-0 mt-2" style="background-color: rgb(24, 24, 24);"><strong>Tic-Tac-Toe</strong></h1>
             </div>
             <div class="card-body">
               <img class="img-fluid" style="width: 250px" src="art/tic-tac-toe 1.png" alt="Circuit Cube">
               <br>
-              <a href="#" class="btn btn-success mt-4">Learn more</a>
+              <a href="#" class="btn mt-4" id="button"><strong>Learn more</strong></a>
             </div>
           </div>
         </div>
         
         <!-- WORDS -->
-        <div class="col-md-4 mb-3">
-          <div class="card bg-dark text-white">
-            <div class="card-header">
-              <h1 class="display-5"><strong>Words Cube</strong></h1>
+        <div class="col-lg-4 mb-4">
+          <div class="card border-5 text-white" style="border-color: #530000; animation: border-color 10s linear infinite; background-color: #000000;">
+            <div class="card-header border-0">
+              <h1 class="rounded display-5 py-2 mb-0 mt-2" style="background-color: rgb(24, 24, 24);"><strong>Words</strong></h1>
             </div>
             <div class="card-body">
               <img class="img-fluid" style="width: 250px" src="art/words 1.png" alt="Circuit Cube">
               <br>
-              <a href="#" class="btn btn-success mt-4">Learn more</a>
+              <a href="#" class="btn mt-4" id="button"><strong>Learn more</strong></a>
             </div>
           </div>
         </div>
         
         <!-- VOID-COLOR -->
-        <div class="col-md-4 mb-3">
-          <div class="card bg-dark text-white">
-            <div class="card-header">
-              <h1 class="display-5"><strong>Void-Color Cube</strong></h1>
+        <div class="col-lg-4 mb-4">
+          <div class="card border-5 text-white" style="border-color: #530000; animation: border-color 10s linear infinite; background-color: #000000;">
+            <div class="card-header border-0">
+              <h1 class="rounded display-5 py-2 mb-0 mt-2" style="background-color: rgb(24, 24, 24);"><strong>Void-Color</strong></h1>
             </div>
             <div class="card-body">
               <img class="img-fluid" style="width: 250px" src="art/void-color 1.png" alt="Circuit Cube">
               <br>
-              <a href="#" class="btn btn-success mt-4">Learn more</a>
+              <a href="#" class="btn mt-4" id="button"><strong>Learn more</strong></a>
             </div>
           </div>
         </div>
         
         <!-- DOTS -->
-        <div class="col-md-4 mb-3">
-          <div class="card bg-dark text-white">
-            <div class="card-header">
-              <h1 class="display-5"><strong>Dots Cube</strong></h1>
+        <div class="col-lg-4 mb-4">
+          <div class="card border-5 text-white" style="border-color: #530000; animation: border-color 10s linear infinite; background-color: #000000;">
+            <div class="card-header border-0">
+              <h1 class="rounded display-5 py-2 mb-0 mt-2" style="background-color: rgb(24, 24, 24);"><strong>Dots</strong></h1>
             </div>
             <div class="card-body">
               <img class="img-fluid" style="width: 250px" src="art/dots 1.png" alt="Circuit Cube">
               <br>
-              <a href="#" class="btn btn-success mt-4">Learn more</a>
+              <a href="#" class="btn mt-4" id="button"><strong>Learn more</strong></a>
             </div>
           </div>
         </div>
         
         <!-- HALFWAY -->
-        <div class="col-md-4 mb-3">
-          <div class="card bg-dark text-white">
-            <div class="card-header">
-              <h1 class="display-5"><strong>Halfway Cube</strong></h1>
+        <div class="col-lg-4 mb-4">
+          <div class="card border-5 text-white" style="border-color: #530000; animation: border-color 10s linear infinite; background-color: #000000;">
+            <div class="card-header border-0">
+              <h1 class="rounded display-5 py-2 mb-0 mt-2" style="background-color: rgb(24, 24, 24);"><strong>Halfway</strong></h1>
             </div>
             <div class="card-body">
               <img class="img-fluid" style="width: 250px" src="art/halfway 1.png" alt="Circuit Cube">
               <br>
-              <a href="#" class="btn btn-success mt-4">Learn more</a>
+              <a href="#" class="btn mt-4" id="button"><strong>Learn more</strong></a>
             </div>
           </div>
         </div>        
@@ -240,10 +241,38 @@
 
     <!-- ABOUT -->
     <div id="about"></div>
-    <div class="container-fluid p-0 text-white text-center" style="background-color: #530000; animation: background-color 10s linear infinite;">
+    <div class="container-fluid p-0 text-white" style="background-color: #530000; animation: background-color 10s linear infinite;">
       <div class="p-5" style="background: radial-gradient(rgb(0, 0, 0, 0), rgba(0, 0, 0, 1));">
-        <h1 class="display-1 pb-5"><strong>About me</strong></h1>
-        <h1>I'm Jason Landis</h1>
+        <h1 class="display-1 pb-5 text-center"><strong>About me</strong></h1>
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <div class="card border-5 text-white" style="border-color: #530000; animation: border-color 10s linear infinite; background-color: #000000;">
+              <div class="card-header border-0">
+                <h1 class="rounded display-5 py-2 mb-0 mt-2 text-center" style="background-color: rgb(24, 24, 24);"><strong>Education</strong></h1>
+              </div>
+              <div class="card-body">
+                <h3>
+                  2020 - 2023: Western Michigan University - Bachelor of Science - Computer Science
+                  2019 - 2020: Oakland Community College - General Studies
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <div class="card border-5 text-white" style="border-color: #530000; animation: border-color 10s linear infinite; background-color: #000000;">
+              <div class="card-header border-0">
+                <h1 class="rounded display-5 py-2 mb-0 mt-2 text-center" style="background-color: rgb(24, 24, 24);"><strong>Skills</strong></h1>
+              </div>
+              <div class="card-body">
+                <h3>
+                  C#, Python, HTML, CSS, javaScript, PHP
+                  Unity, Unreal Engine, ASP.NET, Microsoft SQL
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 

@@ -1,3 +1,1 @@
-# This is my online portfolio
-
-jasonlandis.dev
+# https://jasonlandis.dev

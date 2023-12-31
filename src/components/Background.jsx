@@ -9,21 +9,18 @@ const Background = () => {
 
     const { count } = useContext(CountContext)
 
-    const [background, backgroundApi] = useSpring(() => ({ from: { backgroundColor: '#191919' } }))
+    const [background, backgroundApi] = useSpring(() => ({ from: { backgroundColor: '#111111' } }))
 
     useEffect(() => {
         if (count === 7) {
-            backgroundApi.start({ backgroundColor: '#102130', config: { duration: 1000 } })
+            backgroundApi.start({ backgroundColor: '#171717' })
         }
     }, [count])
 
     return (
         <animated.div className="background" style={{...background}}>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </animated.div>    
+            <div className="logo-shadow"></div>
+        </animated.div>
     )
 }
 

@@ -5,7 +5,6 @@ import { CountProvider } from './context/CountContext'
 import Links from './components/Links'
 import Background from './components/Background'
 import Count from './components/Count'
-import Puzzle from './components/Puzzle'
 
 function App() {
     return (

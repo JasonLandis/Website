@@ -9,11 +9,11 @@ import './styles/Count.css'
 const Count = () => {
 
     const { count, setCount } = useContext(CountContext)
-    const [countDisplay, countApi] = useSpring(() => ({ from: { opacity: 0 } }))
+    const [countDisplay, countApi] = useSpring(() => ({ from: { left: '-100px' } }))
     const [logoButton, logoApi] = useSpring(() => ({ from: { transform: 'scale(1)' } }))
 
     const handleMouseEnter = () => {
-        logoApi.start({ transform: 'scale(1.1)' })
+        logoApi.start({ transform: 'scale(1.05)' })
     }
 
     const handleMouseLeave = () => {
@@ -21,22 +21,22 @@ const Count = () => {
     }
 
     const handleMouseDown = () => {
-        logoApi.start({ transform: 'scale(1.05)' })
+        logoApi.start({ transform: 'scale(1.03)', config: { duration: 100 } })
     }
 
     const handleMouseUp = () => {
-        logoApi.start({ transform: 'scale(1.1)' })
+        logoApi.start({ transform: 'scale(1.05)', config: { duration: 100 } })
     }
 
     const handleMouseClick = () => {
         setCount(count + 1)
-        countApi.start({ opacity: 1 })
+        countApi.start({ left: '10px' })
     }
 
     return (
         <>
-            <animated.div className="container top-left" style={{...countDisplay}}>{count}</animated.div>
-            <div className="logo-container">
+            <animated.div className="container" style={{...countDisplay}}>{count}</animated.div>
+            <div className="logo-container">             
                 <animated.div
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}

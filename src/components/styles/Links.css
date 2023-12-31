@@ -10,6 +10,10 @@
     transform: translate(-50%, 0);
 }
 
+.links div {
+    position: relative;
+}
+
 .links a {
     display: block;
     text-align: center;

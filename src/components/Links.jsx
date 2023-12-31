@@ -8,27 +8,27 @@ import './styles/Links.css'
 const Links = () => {
     const { count, array } = useContext(CountContext)
 
-    const [about, aboutApi] = useSpring(() => ({ from: { opacity: 0 } }))
-    const [contact, contactApi] = useSpring(() => ({ from: { opacity: 0 } }))
-    const [projects, projectsApi] = useSpring(() => ({ from: { opacity: 0 } }))
-    const [games, gamesApi] = useSpring(() => ({ from: { opacity: 0 } }))
-    const [skills, skillsApi] = useSpring(() => ({ from: { opacity: 0 } }))
+    const [about, aboutApi] = useSpring(() => ({ from: { top: '-100px' } }))
+    const [contact, contactApi] = useSpring(() => ({ from: { top: '-100px' } }))
+    const [projects, projectsApi] = useSpring(() => ({ from: { top: '-100px' } }))
+    const [games, gamesApi] = useSpring(() => ({ from: { top: '-100px' } }))
+    const [skills, skillsApi] = useSpring(() => ({ from: { top: '-100px' } }))
 
     useEffect(() => {
         if (count === array[0]) {            
-            aboutApi.start({ opacity: 1, config: { duration: 1000 }})
+            aboutApi.start({ top: '0px' })
         }
         else if (count === array[1]) {
-            contactApi.start({ opacity: 1, config: { duration: 1000 } })
+            contactApi.start({ top: '0px' })
         }
         else if (count === array[2]) {
-            projectsApi.start({ opacity: 1, config: { duration: 1000 } })
+            projectsApi.start({ top: '0px' })
         }
         else if (count === array[3]) {
-            gamesApi.start({ opacity: 1, config: { duration: 1000 } })
+            gamesApi.start({ top: '0px' })
         }
         else if (count === array[4]) {
-            skillsApi.start({ opacity: 1, config: { duration: 1000 } })
+            skillsApi.start({ top: '0px' })
         }
     }, [count])
 

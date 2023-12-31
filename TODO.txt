@@ -1,0 +1,2 @@
+Input widget at bottom of screen
+Puzzle widget appearing at top right

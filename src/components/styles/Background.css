@@ -8,53 +8,21 @@
     overflow: hidden;
 }
 
-.background div {
+.logo-shadow {
     position: absolute;
+    height: 300px;
+    width: 300px;
+    background-color: rgba(143, 143, 143, 0.301);
+    left: 50%;
+    top: 50%;
     border-radius: 50%;
-    animation: animate 4s linear infinite;
+    transform: translate(-50%, -50%);
 }
 
-.background div:nth-child(1){
-    height: 90%;
-    width: 80%;
-    background-color: rgba(37, 0, 0, 0.322);
-    left: -20%;
-    top: -10%;
-}
-
-.background div:nth-child(2){
-    height: 80%;
-    width: 70%;
-    background-color: rgba(0, 3, 34, 0.5);
-    right: -12%;
-    top: -12%; 
-}
-
-.background div:nth-child(3){
-    height: 70%;
-    width: 80%;
-    background-color: rgba(4, 37, 0, 0.308);
-    left: -10%;
-    bottom: -10%;
-}
-
-.background div:nth-child(4){
-    height: 60%;
-    width: 50%;
-    background-color: rgba(33, 36, 0, 0.247);
-    right: -10%;
-    bottom: -10%;
-}
 .background::after {
     position: absolute;
     content: "";
     height: 100%;
     width: 100%;
-    backdrop-filter: blur(80px);
-}
-
-@keyframes animate {    
-    70% {
-        transform: scale(1.2) translate(50px);
-    }
+    backdrop-filter: blur(30px);
 }

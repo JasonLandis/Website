@@ -3,14 +3,5 @@
     color: #ffffff;
     box-sizing: border-box;
     overflow: hidden;
-}
-
-.container {
-    position: absolute;
-    margin: 10px;
     font-family: 'Roboto', sans-serif;
-    padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 5px;
-    font-size: 30px;
 }

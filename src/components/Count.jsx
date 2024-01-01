@@ -9,6 +9,7 @@ import './styles/Count.css'
 const Count = () => {
 
     const { count, setCount } = useContext(CountContext)
+
     const [countDisplay, countApi] = useSpring(() => ({ from: { left: '-100px' } }))
     const [logoButton, logoApi] = useSpring(() => ({ from: { transform: 'scale(1)' } }))
 
@@ -21,11 +22,11 @@ const Count = () => {
     }
 
     const handleMouseDown = () => {
-        logoApi.start({ transform: 'scale(1.03)', config: { duration: 100 } })
+        logoApi.start({ transform: 'scale(1.02)' })
     }
 
     const handleMouseUp = () => {
-        logoApi.start({ transform: 'scale(1.05)', config: { duration: 100 } })
+        logoApi.start({ transform: 'scale(1.05)' })
     }
 
     const handleMouseClick = () => {
@@ -35,8 +36,8 @@ const Count = () => {
 
     return (
         <>
-            <animated.div className="container" style={{...countDisplay}}>{count}</animated.div>
-            <div className="logo-container">             
+            <animated.div className="count-container" style={{...countDisplay}}>{count}</animated.div>
+            <div className="logo-container">
                 <animated.div
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}

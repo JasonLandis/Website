@@ -7,15 +7,17 @@ import './styles/Background.css'
 // Handles changes to the background.
 const Background = () => {
 
-    const { count } = useContext(CountContext)
+    const { fail, setFail } = useContext(CountContext)
 
     const [background, backgroundApi] = useSpring(() => ({ from: { backgroundColor: '#111111' } }))
 
     useEffect(() => {
-        if (count === 7) {
-            backgroundApi.start({ backgroundColor: '#171717' })
+        if (fail) {
+            backgroundApi.start({ backgroundColor: '#220000', config: { duration: 250 } })
+            backgroundApi.start({ backgroundColor: '#111111', config: { duration: 1000 }, delay: 250 })
+            setFail(false)
         }
-    }, [count])
+    }, [fail])
 
     return (
         <animated.div className="background" style={{...background}}>

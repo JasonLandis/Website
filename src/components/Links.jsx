@@ -6,7 +6,7 @@ import './styles/Links.css'
 
 // Handles link elements.
 const Links = () => {
-    const { count, array } = useContext(CountContext)
+    const { count, linksArray } = useContext(CountContext)
 
     const [about, aboutApi] = useSpring(() => ({ from: { top: '-100px' } }))
     const [contact, contactApi] = useSpring(() => ({ from: { top: '-100px' } }))
@@ -15,20 +15,20 @@ const Links = () => {
     const [skills, skillsApi] = useSpring(() => ({ from: { top: '-100px' } }))
 
     useEffect(() => {
-        if (count === array[0]) {            
-            aboutApi.start({ top: '0px' })
-        }
-        else if (count === array[1]) {
-            contactApi.start({ top: '0px' })
-        }
-        else if (count === array[2]) {
+        if (count === linksArray[0]) {            
             projectsApi.start({ top: '0px' })
         }
-        else if (count === array[3]) {
+        else if (count === linksArray[1]) {
             gamesApi.start({ top: '0px' })
         }
-        else if (count === array[4]) {
+        else if (count === linksArray[2]) {
             skillsApi.start({ top: '0px' })
+        }
+        else if (count === linksArray[3]) {
+            aboutApi.start({ top: '0px' })
+        }
+        else if (count === linksArray[4]) {
+            contactApi.start({ top: '0px' })
         }
     }, [count])
 

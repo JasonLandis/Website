@@ -1,0 +1,10 @@
+.games {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgb(125, 170, 255);
+    background-color: #5a8eff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

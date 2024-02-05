@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { animated, useSpring } from '@react-spring/web'
 import { CountContext } from '../context/CountContext'
-import './styles/Puzzles.css'
+import { PageContext } from '../context/PageContext'
+import './Puzzles.css'
 
 
 // Appear: 10
@@ -9,26 +10,33 @@ import './styles/Puzzles.css'
 // Code: Random 8 character string
 const Zero = () => {
     const { count, codes } = useContext(CountContext);
+    const { page } = useContext(PageContext);
 
-    const [puzzleDisplay, puzzleDisplayApi] = useSpring(() => ({ from: { top: '-100px' } }));
-    const [puzzle, setPuzzle] = useState({ appearNum: -2, inputNum: -2, code: '' });
+    const [puzzleDisplay, puzzleDisplayApi] = useSpring(() => ({ from: { right: '-200px' } }));
+    const [puzzle, setPuzzle] = useState({ inputNum: -2, code: '' });
+    
+    const appearNum = 10;
 
     useEffect(() => {
         setPuzzle(codes[0]);
     }, [codes]);
 
     useEffect(() => {
-        if (count === puzzle.appearNum) {
-            puzzleDisplayApi.start({ top: '10px' });
-        } else if (count === puzzle.appearNum + 1) {
-            puzzleDisplayApi.start({ top: '-100px' });
+        if (count === appearNum) {
+            puzzleDisplayApi.start({ right: '-10px' });
+        } else if (count === appearNum + 1) {
+            puzzleDisplayApi.start({ right: '-200px' });
         }
-    }, [count]);
+
+        if (page !== 'home') {
+            puzzleDisplayApi.start({ right: '-200px' });
+        }
+    }, [count, page]);
 
     return (
         <>
-            {puzzle && (count === puzzle.appearNum || count === puzzle.appearNum + 1) && (
-                <animated.div className="puzzle-container top-right" style={{ ...puzzleDisplay }}>
+            {puzzle && (count === appearNum || count === appearNum + 1) && (
+                <animated.div className="puzzle-container" style={{ ...puzzleDisplay }}>
                     {puzzle.inputNum} - {puzzle.code}
                 </animated.div>
             )}

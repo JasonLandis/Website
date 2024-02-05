@@ -1,45 +1,101 @@
 import React, { useEffect, useContext } from 'react'
 import { animated, useSpring } from '@react-spring/web'
 import { CountContext } from '../context/CountContext'
-import './styles/Links.css'
+import { PageContext } from '../context/PageContext'
+
+import Home from '../pages/Home'
+import Projects from '../pages/Projects'
+import Games from '../pages/Games'
+import About from '../pages/About'
 
 
 // Handles link elements.
 const Links = () => {
-    const { count, linksArray } = useContext(CountContext)
+    const { page, setPage } = useContext(PageContext)
+    const { count } = useContext(CountContext)
 
-    const [about, aboutApi] = useSpring(() => ({ from: { top: '-100px' } }))
-    const [contact, contactApi] = useSpring(() => ({ from: { top: '-100px' } }))
+    const [homePage, homePageApi] = useSpring(() => ({ from: { opacity: 1 } }))
+    const [projectsPage, projectsPageApi] = useSpring(() => ({ from: { opacity: 0 } }))
+    const [gamesPage, gamesPageApi] = useSpring(() => ({ from: { opacity: 0 } }))
+    const [aboutPage, aboutPageApi] = useSpring(() => ({ from: { opacity: 0 } }))
+    
+    const [home, homeApi] = useSpring(() => ({ from: { top: '-100px' } }))
     const [projects, projectsApi] = useSpring(() => ({ from: { top: '-100px' } }))
     const [games, gamesApi] = useSpring(() => ({ from: { top: '-100px' } }))
-    const [skills, skillsApi] = useSpring(() => ({ from: { top: '-100px' } }))
+    const [about, aboutApi] = useSpring(() => ({ from: { top: '-100px' } }))
 
     useEffect(() => {
-        if (count === linksArray[0]) {            
-            projectsApi.start({ top: '0px' })
-        }
-        else if (count === linksArray[1]) {
-            gamesApi.start({ top: '0px' })
-        }
-        else if (count === linksArray[2]) {
-            skillsApi.start({ top: '0px' })
-        }
-        else if (count === linksArray[3]) {
-            aboutApi.start({ top: '0px' })
-        }
-        else if (count === linksArray[4]) {
-            contactApi.start({ top: '0px' })
+        if (count === 1) {
+            homeApi.start({ top: '0px' })
+            projectsApi.start({ top: '-10px' })
+            gamesApi.start({ top: '-10px' })
+            aboutApi.start({ top: '-10px' })
         }
     }, [count])
+    
+    const transition = (currentPage, nextPage) => {
+        if (currentPage === nextPage) return
+        
+        if (currentPage === 'home') {
+            homeApi.start({ top: '-10px', config: { duration: 150 }})
+            homePageApi.start({ opacity: 0, config: { duration: 150 }})
+        }
+        else if (currentPage === 'projects') {
+            projectsApi.start({ top: '-10px', config: { duration: 150 }})
+            projectsPageApi.start({ opacity: 0, config: { duration: 150 }})
+        }
+        else if (currentPage === 'games') {
+            gamesApi.start({ top: '-10px', config: { duration: 150 }})
+            gamesPageApi.start({ opacity: 0, config: { duration: 150 }})
+        }
+        else if (currentPage === 'about') {
+            aboutApi.start({ top: '-10px', config: { duration: 150 }})
+            aboutPageApi.start({ opacity: 0, config: { duration: 150 }})
+        }
+
+        if (nextPage === 'home') {
+            homeApi.start({ top: '0px', config: { duration: 150 }})
+        }
+        else if (nextPage === 'projects') {
+            projectsApi.start({ top: '0px', config: { duration: 150 }})
+        }
+        else if (nextPage === 'games') {
+            gamesApi.start({ top: '0px', config: { duration: 150 }})
+        }
+        else if (nextPage === 'about') {
+            aboutApi.start({ top: '0px', config: { duration: 150 }})
+        }
+
+        setTimeout(() => {
+            if (nextPage === 'home') {
+                homePageApi.start({ opacity: 1, config: { duration: 150 }})
+            }
+            else if (nextPage === 'projects') {
+                projectsPageApi.start({ opacity: 1, config: { duration: 150 }})
+            }
+            else if (nextPage === 'games') {
+                gamesPageApi.start({ opacity: 1, config: { duration: 150 }})
+            }
+            else if (nextPage === 'about') {
+                aboutPageApi.start({ opacity: 1, config: { duration: 150 }})
+            }
+            setPage(nextPage)
+        }, 150)
+    }
 
     return (
-        <div className="links">
-            <animated.div style={{...projects}}><a href='#'>Projects</a></animated.div>
-            <animated.div style={{...games}}><a href='#'>Games</a></animated.div>
-            <animated.div style={{...skills}}><a href='#'>Skills</a></animated.div>
-            <animated.div style={{...about}}><a href='#'>About</a></animated.div>
-            <animated.div style={{...contact}}><a href='#'>Contact</a></animated.div>
-        </div>
+        <>
+            <div className="links">
+                <animated.div style={{...home}} onClick={() => transition(page, 'home')}>Home</animated.div>
+                <animated.div style={{...projects}} onClick={() => transition(page, 'projects')}>Projects</animated.div>
+                <animated.div style={{...games}} onClick={() => transition(page, 'games')}>Games</animated.div>
+                <animated.div style={{...about}} onClick={() => transition(page, 'about')}>About</animated.div>
+            </div>
+            {page === 'home' && <animated.div style={{...homePage}}><Home/></animated.div>}
+            {page === 'projects' && <animated.div style={{...projectsPage}}><Projects/></animated.div>}
+            {page === 'games' && <animated.div style={{...gamesPage}}><Games/></animated.div>}
+            {page === 'about' && <animated.div style={{...aboutPage}}><About/></animated.div>}
+        </>
     )
 }
 

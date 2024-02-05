@@ -1,11 +1,10 @@
 import React, { useEffect, useContext } from 'react'
 import { animated, useSpring } from '@react-spring/web'
 import { CountContext } from '../context/CountContext'
-import './styles/Background.css'
 
 
 // Handles changes to the background.
-const Background = () => {
+const HomeBackground = () => {
 
     const { fail, setFail } = useContext(CountContext)
 
@@ -20,10 +19,8 @@ const Background = () => {
     }, [fail])
 
     return (
-        <animated.div className="background" style={{...background}}>
-            <div className="logo-shadow"></div>
-        </animated.div>
+        <animated.div className="background" style={{...background}}></animated.div>
     )
 }
 
-export default Background
+export default HomeBackground

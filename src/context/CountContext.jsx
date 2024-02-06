@@ -6,7 +6,7 @@ export const CountContext = createContext()
 // Data for the puzzles shared between components
 export const CountProvider = ({ children }) => {
     const [count, setCount] = useState(0)
-    const [fail, setFail] = useState(false)
+    const [correct, setCorrect] = useState('')
     const [codes, setCodes] = useState({})
     const [answers, setAnswers] = useState({})
     const [inputValue, setInputValue] = useState('')
@@ -43,7 +43,7 @@ export const CountProvider = ({ children }) => {
     }, []);
 
     return (
-        <CountContext.Provider value={{ count, setCount, fail, setFail, codes, generateCodes, answers, inputValue, setInputValue }}>
+        <CountContext.Provider value={{ count, setCount, correct, setCorrect, codes, generateCodes, answers, inputValue, setInputValue }}>
             {children}
         </CountContext.Provider>
     );

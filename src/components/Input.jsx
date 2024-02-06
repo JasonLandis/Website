@@ -5,7 +5,7 @@ import { PageContext } from '../context/PageContext'
 
 // Handles input for puzzles
 const Input = () => {
-    const { count, setCount, setFail, answers, generateCodes, inputValue, setInputValue } = useContext(CountContext)
+    const { count, setCount, setCorrect, answers, generateCodes, inputValue, setInputValue } = useContext(CountContext)
     const { page } = useContext(PageContext)
 
     const [inputDisplay, inputDisplayApi] = useSpring(() => ({ from: { bottom: '-100px' } }))
@@ -20,21 +20,27 @@ const Input = () => {
             if (inputValue === answers[puzzleNumber]) {
                 setInputValue('')
                 inputDisplayApi.start({ bottom: '-100px' })
+                setCorrect('correct')
             }
             else {
                 setInputValue('')
                 inputDisplayApi.start({ bottom: '-100px' })
-                setFail(true)
+                setCorrect('incorrect')
                 setCount(10)
                 setPuzzleNumber(-2)
                 generateCodes()
             }
         }
+    }, [count])
 
-        if (page !== 'home') {
+    useEffect(() => {
+        if (page === 'home' && count in answers) {
+            inputDisplayApi.start({ bottom: '10px' })
+        }
+        else if (page != 'home') {
             inputDisplayApi.start({ bottom: '-100px' })
         }
-    }, [count, page])
+    }, [page])
 
     return (
         <animated.div className="input-container" style={{ ...inputDisplay }}>

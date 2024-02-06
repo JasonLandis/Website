@@ -1,24 +1,24 @@
 .count-container {
     position: absolute;
     top: 15px;
-    left: 20px;
     padding: 10px 20px 10px 30px;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 5px;
     font-size: 30px;
+    box-shadow: 0 0 10px 0px rgba(158, 158, 158, 0.05);
 }
 
 .input-container {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px 0px rgba(158, 158, 158, 0.05);
 }
 
 .input-container input {
     box-sizing: border-box;
     width: calc(100% - 2.5px);
     padding: 5px;
-    padding-bottom: 8px;
     font-size: 1.2rem;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.08);
@@ -26,7 +26,7 @@
     border-radius: 5px;
     color: #ffffff;
     outline: none;
-    font-family: 'Maven Pro', sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
 .links {
@@ -36,7 +36,7 @@
     justify-content: center;
     left: 50%;    
     top: 0px;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 0);    
 }
 
 .links div {
@@ -47,11 +47,12 @@
     color: #fff;
     margin: 0 10px;
     background-color: rgba(255, 255, 255, 0.05);
-    padding: 23px 20px 12px 20px;
+    padding: 25px 20px 12px 20px;
     border-radius: 5px;
     width: 100px;
     cursor: pointer;
-    font-family: 'Exo 2', sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
+    box-shadow: 0 0 10px 0px rgba(158, 158, 158, 0.05);
 }
 
 .background {

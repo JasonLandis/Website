@@ -26,10 +26,10 @@ const Links = () => {
 
     useEffect(() => {
         if (count === 1) {
-            homeApi.start({ top: '0px' })
-            projectsApi.start({ top: '-10px' })
-            gamesApi.start({ top: '-10px' })
-            aboutApi.start({ top: '-10px' })
+            homeApi.start({ top: '-5px' })
+            projectsApi.start({ top: '-15px', delay: 60 })
+            gamesApi.start({ top: '-15px', delay: 120 })
+            aboutApi.start({ top: '-15px', delay: 180 })
         }
     }, [count])
     
@@ -37,33 +37,33 @@ const Links = () => {
         if (currentPage === nextPage) return
         
         if (currentPage === 'home') {
-            homeApi.start({ top: '-10px', config: { duration: 150 }})
+            homeApi.start({ top: '-15px', config: { duration: 150 }})
             homePageApi.start({ opacity: 0, config: { duration: 150 }})
         }
         else if (currentPage === 'projects') {
-            projectsApi.start({ top: '-10px', config: { duration: 150 }})
+            projectsApi.start({ top: '-15px', config: { duration: 150 }})
             projectsPageApi.start({ opacity: 0, config: { duration: 150 }})
         }
         else if (currentPage === 'games') {
-            gamesApi.start({ top: '-10px', config: { duration: 150 }})
+            gamesApi.start({ top: '-15px', config: { duration: 150 }})
             gamesPageApi.start({ opacity: 0, config: { duration: 150 }})
         }
         else if (currentPage === 'about') {
-            aboutApi.start({ top: '-10px', config: { duration: 150 }})
+            aboutApi.start({ top: '-15px', config: { duration: 150 }})
             aboutPageApi.start({ opacity: 0, config: { duration: 150 }})
         }
 
         if (nextPage === 'home') {
-            homeApi.start({ top: '0px', config: { duration: 150 }})
+            homeApi.start({ top: '-5px', config: { duration: 150 }})
         }
         else if (nextPage === 'projects') {
-            projectsApi.start({ top: '0px', config: { duration: 150 }})
+            projectsApi.start({ top: '-5px', config: { duration: 150 }})
         }
         else if (nextPage === 'games') {
-            gamesApi.start({ top: '0px', config: { duration: 150 }})
+            gamesApi.start({ top: '-5px', config: { duration: 150 }})
         }
         else if (nextPage === 'about') {
-            aboutApi.start({ top: '0px', config: { duration: 150 }})
+            aboutApi.start({ top: '-5px', config: { duration: 150 }})
         }
 
         setTimeout(() => {

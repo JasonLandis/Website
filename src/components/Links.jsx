@@ -5,7 +5,6 @@ import { PageContext } from '../context/PageContext'
 
 import Home from '../pages/Home'
 import Projects from '../pages/Projects'
-import Games from '../pages/Games'
 import About from '../pages/About'
 
 
@@ -16,20 +15,17 @@ const Links = () => {
 
     const [homePage, homePageApi] = useSpring(() => ({ from: { opacity: 1 } }))
     const [projectsPage, projectsPageApi] = useSpring(() => ({ from: { opacity: 0 } }))
-    const [gamesPage, gamesPageApi] = useSpring(() => ({ from: { opacity: 0 } }))
     const [aboutPage, aboutPageApi] = useSpring(() => ({ from: { opacity: 0 } }))
     
     const [home, homeApi] = useSpring(() => ({ from: { top: '-100px' } }))
     const [projects, projectsApi] = useSpring(() => ({ from: { top: '-100px' } }))
-    const [games, gamesApi] = useSpring(() => ({ from: { top: '-100px' } }))
     const [about, aboutApi] = useSpring(() => ({ from: { top: '-100px' } }))
 
     useEffect(() => {
         if (count === 1) {
             homeApi.start({ top: '-5px' })
             projectsApi.start({ top: '-15px', delay: 60 })
-            gamesApi.start({ top: '-15px', delay: 120 })
-            aboutApi.start({ top: '-15px', delay: 180 })
+            aboutApi.start({ top: '-15px', delay: 120 })
         }
     }, [count])
     
@@ -44,10 +40,6 @@ const Links = () => {
             projectsApi.start({ top: '-15px', config: { duration: 150 }})
             projectsPageApi.start({ opacity: 0, config: { duration: 150 }})
         }
-        else if (currentPage === 'games') {
-            gamesApi.start({ top: '-15px', config: { duration: 150 }})
-            gamesPageApi.start({ opacity: 0, config: { duration: 150 }})
-        }
         else if (currentPage === 'about') {
             aboutApi.start({ top: '-15px', config: { duration: 150 }})
             aboutPageApi.start({ opacity: 0, config: { duration: 150 }})
@@ -59,9 +51,6 @@ const Links = () => {
         else if (nextPage === 'projects') {
             projectsApi.start({ top: '-5px', config: { duration: 150 }})
         }
-        else if (nextPage === 'games') {
-            gamesApi.start({ top: '-5px', config: { duration: 150 }})
-        }
         else if (nextPage === 'about') {
             aboutApi.start({ top: '-5px', config: { duration: 150 }})
         }
@@ -72,9 +61,6 @@ const Links = () => {
             }
             else if (nextPage === 'projects') {
                 projectsPageApi.start({ opacity: 1, config: { duration: 150 }})
-            }
-            else if (nextPage === 'games') {
-                gamesPageApi.start({ opacity: 1, config: { duration: 150 }})
             }
             else if (nextPage === 'about') {
                 aboutPageApi.start({ opacity: 1, config: { duration: 150 }})
@@ -88,12 +74,10 @@ const Links = () => {
             <div className="links">
                 <animated.div style={{...home}} onClick={() => transition(page, 'home')}>Home</animated.div>
                 <animated.div style={{...projects}} onClick={() => transition(page, 'projects')}>Projects</animated.div>
-                <animated.div style={{...games}} onClick={() => transition(page, 'games')}>Games</animated.div>
                 <animated.div style={{...about}} onClick={() => transition(page, 'about')}>About</animated.div>
             </div>
             {page === 'home' && <animated.div style={{...homePage}}><Home/></animated.div>}
             {page === 'projects' && <animated.div style={{...projectsPage}}><Projects/></animated.div>}
-            {page === 'games' && <animated.div style={{...gamesPage}}><Games/></animated.div>}
             {page === 'about' && <animated.div style={{...aboutPage}}><About/></animated.div>}
         </>
     )

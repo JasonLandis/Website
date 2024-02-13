@@ -58,14 +58,18 @@
     z-index: -1;
 }
 
-.mapPage {
+.tile-container {
+    opacity: 1;
+}
+
+.back-button {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #111111;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+    top: 30px;
+    left: 30px;
+    transition: transform 0.2s;
+}
+
+.back-button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }

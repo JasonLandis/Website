@@ -1,0 +1,12 @@
+.project-page {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.project-page .title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}

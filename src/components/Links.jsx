@@ -10,7 +10,7 @@ import About from '../pages/About'
 
 // Handles link elements.
 const Links = () => {
-    const { page, setPage } = useContext(PageContext)
+    const { page, setPage, setProjectPage } = useContext(PageContext)
     const { count } = useContext(CountContext)
 
     const [homePage, homePageApi] = useSpring(() => ({ from: { opacity: 1 } }))
@@ -66,6 +66,7 @@ const Links = () => {
                 aboutPageApi.start({ opacity: 1, config: { duration: 150 }})
             }
             setPage(nextPage)
+            setProjectPage('')
         }, 150)
     }
 

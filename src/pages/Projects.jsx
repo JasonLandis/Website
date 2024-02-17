@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useSpring, animated } from '@react-spring/web';
+import { useSpring, animated, config } from '@react-spring/web';
 import { useDrag } from '@use-gesture/react';
 import { PageContext } from '../context/PageContext';
 
@@ -73,14 +73,14 @@ const Projects = () => {
     };
 
     const goBack = () => {
-        mapPageApi.start({ opacity: 0 });
-        blogPageApi.start({ opacity: 0 });
-        constellationPageApi.start({ opacity: 0 });
-        pathfinderPageApi.start({ opacity: 0 });
-        backButtonApi.start({ opacity: 0 });
+        mapPageApi.start({ opacity: 0, config: { duration: 250 } });
+        blogPageApi.start({ opacity: 0, config: { duration: 250 } });
+        constellationPageApi.start({ opacity: 0, config: { duration: 250 } });
+        pathfinderPageApi.start({ opacity: 0, config: { duration: 250 } });
+        backButtonApi.start({ opacity: 0, config: { duration: 250 } });
         setTimeout(() => {
             setProjectPage('');
-        }, 500);
+        }, 250);
     }
 
     const mapBind = useDrag(({ down, movement: [mx, my] }) => {
@@ -97,13 +97,13 @@ const Projects = () => {
             if (snap) {
                 setMapPosition({ x: center.x, y: center.y });
                 setTimeout(() => {
-                    tileContainerApi.start({ opacity: 0 });
+                    tileContainerApi.start({ opacity: 0, config: { duration: 250 } });
                     setTimeout(() => {
                         resetCards();
                         setProjectPage('map');
-                        mapPageApi.start({ opacity: 1 });
-                        backButtonApi.start({ opacity: 1 });
-                    }, 500);
+                        mapPageApi.start({ opacity: 1, config: { duration: 250 } });
+                        backButtonApi.start({ opacity: 1, config: { duration: 250 } });
+                    }, 250);
                 }, 500);
             } else {
                 setMapPosition({ x: mapPosition.x + mx, y: mapPosition.y + my });
@@ -127,13 +127,13 @@ const Projects = () => {
             if (snap) {
                 setBlogPosition({ x: center.x, y: center.y });
                 setTimeout(() => {
-                    tileContainerApi.start({ opacity: 0 });
+                    tileContainerApi.start({ opacity: 0, config: { duration: 250 } });
                     setTimeout(() => {
                         resetCards();
                         setProjectPage('blog');
-                        blogPageApi.start({ opacity: 1 });
-                        backButtonApi.start({ opacity: 1 });
-                    }, 500);
+                        blogPageApi.start({ opacity: 1, config: { duration: 250 } });
+                        backButtonApi.start({ opacity: 1, config: { duration: 250 } });
+                    }, 250);
                 }, 500);
             } else {
                 setBlogPosition({ x: blogPosition.x + mx, y: blogPosition.y + my });
@@ -157,13 +157,13 @@ const Projects = () => {
             if (snap) {
                 setConstellationPosition({ x: center.x, y: center.y });
                 setTimeout(() => {
-                    tileContainerApi.start({ opacity: 0 });
+                    tileContainerApi.start({ opacity: 0, config: { duration: 250 } });
                     setTimeout(() => {
                         resetCards();
                         setProjectPage('constellation');
-                        constellationPageApi.start({ opacity: 1 });
-                        backButtonApi.start({ opacity: 1 });
-                    }, 500);
+                        constellationPageApi.start({ opacity: 1, config: { duration: 250 } });
+                        backButtonApi.start({ opacity: 1, config: { duration: 250 } });
+                    }, 250);
                 }, 500);
             } else {
                 setConstellationPosition({ x: constellationPosition.x + mx, y: constellationPosition.y + my });
@@ -187,13 +187,13 @@ const Projects = () => {
             if (snap) {
                 setPathfinderPosition({ x: center.x, y: center.y });
                 setTimeout(() => {
-                    tileContainerApi.start({ opacity: 0 });
+                    tileContainerApi.start({ opacity: 0, config: { duration: 250 } });
                     setTimeout(() => {
                         resetCards();
                         setProjectPage('pathfinder');
-                        pathfinderPageApi.start({ opacity: 1 });
-                        backButtonApi.start({ opacity: 1 });
-                    }, 500);
+                        pathfinderPageApi.start({ opacity: 1, config: { duration: 250 } });
+                        backButtonApi.start({ opacity: 1, config: { duration: 250 } });
+                    }, 250);
                 }, 500);
             } else {
                 setPathfinderPosition({ x: pathfinderPosition.x + mx, y: pathfinderPosition.y + my });

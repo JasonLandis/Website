@@ -1,12 +1,43 @@
-.project-page {
-    position: absolute;
-    top: 120px;
-    left: 50%;
-    transform: translateX(-50%);
+.container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    margin-top: 450px;
 }
 
-.project-page .title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.back, .front {
+    position: absolute;
+    max-width: 1000px;
+    max-height: 1000px;
+    width: 800px;
+    height: 640px;
+    cursor: pointer;
+    will-change: transform, opacity;
+    border-radius: 5px;
+}
+
+.front,
+.back {
+  background-size: cover;
+  color: rgb(97, 210, 255);
+}
+
+.back {
+  background-image: url('../../assets/map_one.png');
+  box-shadow: 0 0 30px rgb(0, 28, 65);
+}
+
+.front {
+  background-color: rgb(27, 27, 27);
+  box-shadow: 0 0 30px rgb(0, 0, 0);
+}
+
+.front h1 {
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: rgb(68, 180, 255);
+  margin-top: 30px;
 }

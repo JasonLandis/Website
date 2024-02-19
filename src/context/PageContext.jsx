@@ -3,7 +3,7 @@ import React, { useState, createContext} from 'react'
 export const PageContext = createContext()
 
 
-// Data for the puzzles shared between components
+// Context of the page that is active.
 export const PageProvider = ({ children }) => {
     const [page, setPage] = useState('home')
     const [projectPage, setProjectPage] = useState('')

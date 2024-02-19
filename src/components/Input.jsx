@@ -3,7 +3,8 @@ import { animated, useSpring } from '@react-spring/web'
 import { CountContext } from '../context/CountContext'
 import { PageContext } from '../context/PageContext'
 
-// Handles input for puzzles
+
+// Handles input for puzzles.
 const Input = () => {
     const { count, setCount, setCorrect, answers, generateCodes, inputValue, setInputValue } = useContext(CountContext)
     const { page } = useContext(PageContext)

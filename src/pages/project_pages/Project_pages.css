@@ -3,41 +3,83 @@
     align-items: center;
     height: 100%;
     justify-content: center;
-    margin-top: 450px;
+    margin-top: 480px;
 }
 
-.back, .front {
+.text, 
+.map_image, 
+.blog_image, 
+.constellation_image, 
+.pathfinder_image {
     position: absolute;
-    max-width: 1000px;
-    max-height: 1000px;
-    width: 800px;
-    height: 640px;
+    width: 1280px;
+    height: 720px;
     cursor: pointer;
     will-change: transform, opacity;
+    background-size: cover;
+    color: rgb(97, 210, 255);
     border-radius: 5px;
 }
 
-.front,
-.back {
-  background-size: cover;
-  color: rgb(97, 210, 255);
-}
-
-.back {
-  background-image: url('../../assets/map_one.png');
+.map_image {
+  background-image: url('../../assets/map.png');
   box-shadow: 0 0 30px rgb(0, 28, 65);
 }
 
-.front {
-  background-color: rgb(27, 27, 27);
+.blog_image {
+  background-image: url('../../assets/blog.png');
+  box-shadow: 0 0 30px rgb(95, 0, 0);
+}
+
+.constellation_image {
+  background-image: url('../../assets/constellation.png');
   box-shadow: 0 0 30px rgb(0, 0, 0);
 }
 
-.front h1 {
+.pathfinder_image {
+  background-image: url('../../assets/pathfinder.png');
+  box-shadow: 0 0 30px rgb(8, 65, 0);
+}
+
+.text {
+  background-color: rgb(27, 27, 27);
+  box-shadow: 0 0 30px rgb(0, 0, 0);
+  color: #ffffff;
+}
+
+.text h1 {
   font-size: 2em;
   margin: 0;
   padding: 0;
   text-align: center;
-  color: rgb(68, 180, 255);
   margin-top: 30px;
+}
+
+.text h2 {
+  font-size: 1.8em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.text p {
+  font-size: 1.2em;
+  margin: 30px;
+  padding: 0;
+  text-align: left;
+  margin-top: 40px;
+}
+
+.text ul {
+  font-size: 1.2em;
+  margin: 30px;
+  padding: 0;
+  text-align: center;
+  margin-top: 40px;
+  list-style: none;
+}
+
+.text li {
+  text-align: center;
 }

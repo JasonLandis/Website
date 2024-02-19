@@ -52,7 +52,7 @@ const Projects = () => {
 
     useEffect(() => {
         if (projectPage === '') {
-            tileContainerApi.start({ opacity: 1 });            
+            tileContainerApi.start({ opacity: 1 });
         }
     }, [projectPage]);
 
@@ -83,126 +83,42 @@ const Projects = () => {
         }, 250);
     }
 
-    const mapBind = useDrag(({ down, movement: [mx, my] }) => {
-        const snapDistance = 100;
-        const snap = Math.abs(mapPosition.x + mx - center.x) < snapDistance && Math.abs(mapPosition.y + my - center.y) < snapDistance;
-
-        if (snap) {
-            snapBackgroundApi.start({ backgroundColor: '#202020' });
-        } else {
-            snapBackgroundApi.start({ backgroundColor: '#111111' });
-        }
-
-        if (!down) {
+    const createProjectBind = (position, setPosition, pageApi, projectName, projectApi) => {
+        return useDrag(({ down, movement: [mx, my] }) => {
+            const snapDistance = 100;
+            const snap = Math.abs(position.x + mx - center.x) < snapDistance && Math.abs(position.y + my - center.y) < snapDistance;
+    
             if (snap) {
-                setMapPosition({ x: center.x, y: center.y });
-                setTimeout(() => {
-                    tileContainerApi.start({ opacity: 0, config: { duration: 250 } });
-                    setTimeout(() => {
-                        resetCards();
-                        setProjectPage('map');
-                        mapPageApi.start({ opacity: 1, config: { duration: 250 } });
-                        backButtonApi.start({ opacity: 1, config: { duration: 250 } });
-                    }, 250);
-                }, 500);
+                snapBackgroundApi.start({ backgroundColor: '#202020' });
             } else {
-                setMapPosition({ x: mapPosition.x + mx, y: mapPosition.y + my });
+                snapBackgroundApi.start({ backgroundColor: '#111111' });
             }
-        }
-
-        mapApi.start({ mapX: snap && !down ? center.x : mapPosition.x + mx, mapY: snap && !down ? center.y : mapPosition.y + my, immediate: down });
-    });
-
-    const blogBind = useDrag(({ down, movement: [mx, my] }) => {
-        const snapDistance = 100;
-        const snap = Math.abs(blogPosition.x + mx - center.x) < snapDistance && Math.abs(blogPosition.y + my - center.y) < snapDistance;
-
-        if (snap) {
-            snapBackgroundApi.start({ backgroundColor: '#202020' });
-        } else {
-            snapBackgroundApi.start({ backgroundColor: '#111111' });
-        }
-
-        if (!down) {
-            if (snap) {
-                setBlogPosition({ x: center.x, y: center.y });
-                setTimeout(() => {
-                    tileContainerApi.start({ opacity: 0, config: { duration: 250 } });
+    
+            if (!down) {
+                if (snap) {
+                    setPosition({ x: center.x, y: center.y });
                     setTimeout(() => {
-                        resetCards();
-                        setProjectPage('blog');
-                        blogPageApi.start({ opacity: 1, config: { duration: 250 } });
-                        backButtonApi.start({ opacity: 1, config: { duration: 250 } });
-                    }, 250);
-                }, 500);
-            } else {
-                setBlogPosition({ x: blogPosition.x + mx, y: blogPosition.y + my });
+                        tileContainerApi.start({ opacity: 0, config: { duration: 250 } });
+                        setTimeout(() => {
+                            resetCards();
+                            setProjectPage(projectName);
+                            pageApi.start({ opacity: 1, config: { duration: 250 } });
+                            backButtonApi.start({ opacity: 1, config: { duration: 250 } });
+                        }, 250);
+                    }, 500);
+                } else {
+                    setPosition({ x: position.x + mx, y: position.y + my });
+                }
             }
-        }
+    
+            projectApi.start({ [`${projectName}X`]: snap && !down ? center.x : position.x + mx, [`${projectName}Y`]: snap && !down ? center.y : position.y + my, immediate: down });
+        });
+    };    
 
-        blogApi.start({ blogX: snap && !down ? center.x : blogPosition.x + mx, blogY: snap && !down ? center.y : blogPosition.y + my, immediate: down });
-    });
-
-    const constellationBind = useDrag(({ down, movement: [mx, my] }) => {
-        const snapDistance = 100;
-        const snap = Math.abs(constellationPosition.x + mx - center.x) < snapDistance && Math.abs(constellationPosition.y + my - center.y) < snapDistance;
-
-        if (snap) {
-            snapBackgroundApi.start({ backgroundColor: '#202020' });
-        } else {
-            snapBackgroundApi.start({ backgroundColor: '#111111' });
-        }
-
-        if (!down) {
-            if (snap) {
-                setConstellationPosition({ x: center.x, y: center.y });
-                setTimeout(() => {
-                    tileContainerApi.start({ opacity: 0, config: { duration: 250 } });
-                    setTimeout(() => {
-                        resetCards();
-                        setProjectPage('constellation');
-                        constellationPageApi.start({ opacity: 1, config: { duration: 250 } });
-                        backButtonApi.start({ opacity: 1, config: { duration: 250 } });
-                    }, 250);
-                }, 500);
-            } else {
-                setConstellationPosition({ x: constellationPosition.x + mx, y: constellationPosition.y + my });
-            }
-        }
-
-        constellationApi.start({ constellationX: snap && !down ? center.x : constellationPosition.x + mx, constellationY: snap && !down ? center.y : constellationPosition.y + my, immediate: down });
-    });
-
-    const pathfinderBind = useDrag(({ down, movement: [mx, my] }) => {
-        const snapDistance = 100;
-        const snap = Math.abs(pathfinderPosition.x + mx - center.x) < snapDistance && Math.abs(pathfinderPosition.y + my - center.y) < snapDistance;
-
-        if (snap) {
-            snapBackgroundApi.start({ backgroundColor: '#202020' });
-        } else {
-            snapBackgroundApi.start({ backgroundColor: '#111111' });
-        }
-
-        if (!down) {
-            if (snap) {
-                setPathfinderPosition({ x: center.x, y: center.y });
-                setTimeout(() => {
-                    tileContainerApi.start({ opacity: 0, config: { duration: 250 } });
-                    setTimeout(() => {
-                        resetCards();
-                        setProjectPage('pathfinder');
-                        pathfinderPageApi.start({ opacity: 1, config: { duration: 250 } });
-                        backButtonApi.start({ opacity: 1, config: { duration: 250 } });
-                    }, 250);
-                }, 500);
-            } else {
-                setPathfinderPosition({ x: pathfinderPosition.x + mx, y: pathfinderPosition.y + my });
-            }
-        }
-
-        pathfinderApi.start({ pathfinderX: snap && !down ? center.x : pathfinderPosition.x + mx, pathfinderY: snap && !down ? center.y : pathfinderPosition.y + my, immediate: down });
-    });
-
+    const mapBind = createProjectBind(mapPosition, setMapPosition, mapPageApi, 'map', mapApi);
+    const blogBind = createProjectBind(blogPosition, setBlogPosition, blogPageApi, 'blog', blogApi);
+    const constellationBind = createProjectBind(constellationPosition, setConstellationPosition, constellationPageApi, 'constellation', constellationApi);
+    const pathfinderBind = createProjectBind(pathfinderPosition, setPathfinderPosition, pathfinderPageApi, 'pathfinder', pathfinderApi);
     // Add more project card binds here
 
     return (

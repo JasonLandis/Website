@@ -8,7 +8,7 @@ import Projects from '../pages/Projects'
 import About from '../pages/About'
 
 
-// Handles link elements.
+// Handles link elements and page transitions.
 const Links = () => {
     const { page, setPage, setProjectPage } = useContext(PageContext)
     const { count } = useContext(CountContext)

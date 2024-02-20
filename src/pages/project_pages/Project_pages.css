@@ -3,7 +3,7 @@
     align-items: center;
     height: 100%;
     justify-content: center;
-    margin-top: 480px;
+    margin-top: 470px;
 }
 
 .text, 
@@ -17,28 +17,27 @@
     cursor: pointer;
     will-change: transform, opacity;
     background-size: cover;
-    color: rgb(97, 210, 255);
     border-radius: 5px;
 }
 
 .map_image {
-  background-image: url('../../assets/map.png');
-  box-shadow: 0 0 30px rgb(0, 28, 65);
+  background-image: url('../../assets/graphics/map.png');
+  box-shadow: 0 0 30px rgb(0, 32, 90);
 }
 
 .blog_image {
-  background-image: url('../../assets/blog.png');
-  box-shadow: 0 0 30px rgb(95, 0, 0);
+  background-image: url('../../assets/graphics/blog.png');
+  box-shadow: 0 0 30px rgb(0, 0, 0);
 }
 
 .constellation_image {
-  background-image: url('../../assets/constellation.png');
+  background-image: url('../../assets/graphics/constellation.png');
   box-shadow: 0 0 30px rgb(0, 0, 0);
 }
 
 .pathfinder_image {
-  background-image: url('../../assets/pathfinder.png');
-  box-shadow: 0 0 30px rgb(8, 65, 0);
+  background-image: url('../../assets/graphics/pathfinder.png');
+  box-shadow: 0 0 30px rgb(53, 53, 53);
 }
 
 .text {
@@ -53,6 +52,7 @@
   padding: 0;
   text-align: center;
   margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .text h2 {
@@ -60,7 +60,14 @@
   margin: 0;
   padding: 0;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 80px;
+}
+
+.text h3 {
+  font-size: 1.1em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 .text p {
@@ -71,15 +78,28 @@
   margin-top: 40px;
 }
 
-.text ul {
-  font-size: 1.2em;
-  margin: 30px;
-  padding: 0;
-  text-align: center;
-  margin-top: 40px;
-  list-style: none;
+.skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.text li {
-  text-align: center;
+.skills-container img {
+  margin: 40px;
+}
+
+.visit-container {
+  position: absolute;
+  top: 870px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.visit-container img {
+  margin-inline: 20px;
+  cursor: pointer;
 }

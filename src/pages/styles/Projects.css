@@ -2,9 +2,14 @@
     position: absolute;
     width: 120px;
     height: 120px;
-    background: rgb(0, 171, 184);
     border-radius: 5px;
+    background-image: url('../../assets/icons/map_icon.png');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: hsl(208, 93%, 17%);
     border: 5px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 8px 0px rgb(255, 255, 255);
     cursor: grab;
     touch-action: none;
 }
@@ -13,9 +18,14 @@
     position: absolute;
     width: 120px;
     height: 120px;
-    background: rgb(255, 74, 74);
     border-radius: 5px;
+    background-image: url('../../assets/icons/blog_icon.png');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #181818;
     border: 5px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 8px 0px rgb(255, 255, 255);
     cursor: grab;
     touch-action: none;
 }
@@ -24,21 +34,24 @@
     position: absolute;
     width: 120px;
     height: 120px;
-    background: rgb(96, 255, 109);
     border-radius: 5px;
+    background-image: url('../../assets/icons/constellation_icon.png');
+    background-size: 100%;
     border: 5px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 8px 0px rgb(255, 255, 255);
     cursor: grab;
     touch-action: none;
-
 }
 
 .pathfinder {
     position: absolute;
     width: 120px;
     height: 120px;
-    background: rgb(255, 255, 0);
     border-radius: 5px;
+    background-image: url('../../assets/icons/pathfinder_icon.png');
+    background-size: 100%;
     border: 5px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 8px 0px rgb(255, 255, 255);
     cursor: grab;
     touch-action: none;
 }

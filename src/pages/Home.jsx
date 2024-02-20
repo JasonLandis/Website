@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { animated, useSpring } from '@react-spring/web'
 import { CountContext } from '../context/CountContext'
-import logo from '../assets/logo.png'
+import logo from '../assets//logos/logo.png'
 
 import './styles/Home.css'
 

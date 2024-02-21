@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { useGesture } from '@use-gesture/react'
 
 import './styles/About.css'
-import map from '../assets/icons/map_icon.png'
 import logo from '../assets/logos/logo.png'
 import wmu from '../assets/logos/wmu.png'
 import occ from '../assets/logos/occ.png'
@@ -11,14 +10,13 @@ import github from '../assets/logos/github.png'
 import linkedin from '../assets/logos/linkedin.png'
 import mail from '../assets/logos/mail.png'
 
+import map from '../assets/icons/map_icon.png'
+import blog from '../assets/icons/blog_icon.png'
+import constellation from '../assets/icons/constellation_icon.png'
 
-// About me
-// Education timeline
-// Experience timeline
-// Skills
 
 const cards = [
-    <div className="card">
+    <div className="card skills">
         <h1>Skills</h1>
         <h2>Languages</h2>
         <p>HTML, CSS, JavaScript, PHP, C, C#, Python, JAVA, SQL</p>
@@ -28,39 +26,59 @@ const cards = [
         <p>Git, Docker, Unity, Firebase, GCP, MySQL, SQL Server</p>
     </div>,
     <div className="card">
-        <h1>Work</h1>
+        <h1>Timeline (post-graduation)</h1>
         <div className="work">
-            <img src={map} width="80px" height="90px" />
-            <div className="work-info">
-                <p>PK Deficiency Foundation</p>
-                <p>Full-stack Developer - Freelance</p>
+            <img src={logo} />
+            <div>
+                <h3>Portfolio - Personal Project</h3>
+                <p>February 2024 - March 2024</p>
+            </div>
+        </div>
+        <div className="work">
+            <img src={map} />
+            <div>
+                <h3>Freelance Full-stack Developer - PK Deficiency Foundation</h3>
                 <p>November 2023 - January 2024</p>
             </div>
         </div>
+        <div className="work">
+            <img src={blog} />
+            <div>
+                <h3>Gamedev Blog Application - Personal Project</h3>
+                <p>September 2023 - Present (on/off)</p>
+            </div>
+        </div>
+        <div className="work">
+            <img src={constellation} />
+            <div>
+                <h3>Constellation - Personal Project</h3>
+                <p>April 2023 - August 2023</p>
+            </div>
+        </div>        
     </div>,
     <div className="card">
         <h1>Education</h1>
         <div className="education">
-            <img src={wmu} width="100px" height="110px" />
-            <div className="education-info">
-                <p>Western Michigan University</p>
+            <img src={wmu} />
+            <div>
+                <h2>Western Michigan University</h2>
                 <p>Bachelor of Science in Computer Science</p>
                 <p>August 2020 - April 2023</p>
             </div>
         </div>
         <div className="education">
-            <img src={occ} width="100px" height="110px" style={{ borderRadius: "5px"}} />
-            <div className="education-info">
-                <p>Oakland Community College</p>
+            <img src={occ} style={{ borderRadius: "5px"}} />
+            <div>
+                <h2>Oakland Community College</h2>
                 <p>General Studies</p>
                 <p>August 2019 - April 2020</p>
             </div>
         </div>    
     </div>,
-    <div className="card">
+    <div className="card about">
         <h1>About me</h1>
         <p>
-            Hey, I'm Jason, a computer science graduate. I specialize in full-stack software 
+            I'm Jason, a computer science graduate. I specialize in full-stack software 
             development with a hobby in game development.
         </p>
         <p>
@@ -76,7 +94,7 @@ const cards = [
 ]
 
 // Inital deck state
-const from = (_i) => ({ rot: 0, scale: 1, x: (200 + window.innerWidth) * -1 })
+const from = (_i) => ({ rot: 0, scale: 1, x: (window.innerWidth) * -1 })
 
 // Animation from initial deck state
 const to = (i) => ({
@@ -88,7 +106,7 @@ const to = (i) => ({
 })
 
 // Transform function
-const trans = (r, s) => `rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`; 
+const trans = (r, s) => `rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`;
 
 // Deck component
 const Deck = () => {
@@ -123,7 +141,7 @@ const Deck = () => {
     return (
         <>
             {props.map(({ x, y, rot, scale }, i) => (
-                <animated.div className="deck" key={i} style={{ x, y }}>
+                <animated.div className="card-container" key={i} style={{ x, y }}>
                     <animated.div
                         {...bind(i)}
                         style={{
@@ -141,7 +159,7 @@ const Deck = () => {
 export default function About() {
     return (
         <>
-            <div className="deck-container">
+            <div className="deck">
                 <Deck />
             </div>
             <div className="handles">

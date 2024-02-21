@@ -6,6 +6,7 @@ import Links from './components/Links'
 import Background from './components/Background'
 
 import Zero from './puzzles/Zero'
+import One from './puzzles/One'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Background />
 
             <Zero />
+            <One />
         </>
     )
 }

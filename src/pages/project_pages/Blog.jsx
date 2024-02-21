@@ -19,7 +19,7 @@ const Blog = () => {
         <div className="container" onClick={() => setFlipped(state => !state)}>            
             <animated.div className="text" style={{ opacity: opacity.to(o => 1 - o), transform }}>
                 <h1>Gamedev Blog</h1>
-                <h3>September 2023 - Present</h3>
+                <h3>September 2023 - Present (on/off)</h3>
                 <p>
                     I am building a web-based community platform exclusively for game developers. 
                     This application will allow game developers to showcase their 

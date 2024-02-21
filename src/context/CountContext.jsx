@@ -12,7 +12,17 @@ export const CountProvider = ({ children }) => {
     const [inputValue, setInputValue] = useState('')
 
     function puzzleZero() {
-        let inputNum = Math.floor(Math.random() * 5) + 11
+        let inputNum = Math.floor(Math.random() * (16 - 11) + 11)
+        let code = ''
+        let characters = 'abcdefghijklmnopqrstuvwxyz123456789'
+        for (let i = 0; i < 8; i++) {
+            code += characters.charAt(Math.floor(Math.random() * characters.length))
+        }
+        return [inputNum, code]
+    }
+
+    function puzzleOne() {
+        let inputNum = Math.floor(Math.random() * (81 - 40)) + 40
         let code = ''
         let characters = 'abcdefghijklmnopqrstuvwxyz123456789'
         for (let i = 0; i < 8; i++) {
@@ -31,6 +41,13 @@ export const CountProvider = ({ children }) => {
             code: puzzleZeroData[1]
         }
         tempAnswers[puzzleZeroData[0]] = puzzleZeroData[1]
+
+        let puzzleOneData = puzzleOne()
+        tempCodes[1] = {
+            inputNum: puzzleOneData[0],
+            code: puzzleOneData[1]
+        }
+        tempAnswers[puzzleOneData[0]] = puzzleOneData[1]
         
         // More puzzles here
         

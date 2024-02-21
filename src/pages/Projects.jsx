@@ -18,27 +18,60 @@ const Projects = () => {
 
     // Map project
     const [mapPage, mapPageApi] = useSpring(() => ({ from: { opacity: 0 } }))
-    const [mapPosition, setMapPosition] = useState({ x: 100, y: 100 });
+    const [mapPosition, setMapPosition] = useState({ x: -200, y: 100 });
     const [{ mapX, mapY }, mapApi] = useSpring(() => ({ mapX: mapPosition.x, mapY: mapPosition.y }));
 
     // Blog project
     const [blogPage, blogPageApi] = useSpring(() => ({ from: { opacity: 0 } }))
-    const [blogPosition, setBlogPosition] = useState({ x: 300, y: 100 });
+    const [blogPosition, setBlogPosition] = useState({ x: -400, y: 300 });
     const [{ blogX, blogY }, blogApi] = useSpring(() => ({ blogX: blogPosition.x, blogY: blogPosition.y }));
 
     // Constellation project
     const [constellationPage, constellationPageApi] = useSpring(() => ({ from: { opacity: 0 } }))
-    const [constellationPosition, setConstellationPosition] = useState({ x: 500, y: 100 });
+    const [constellationPosition, setConstellationPosition] = useState({ x: -600, y: 500 });
     const [{ constellationX, constellationY }, constellationApi] = useSpring(() => ({ constellationX: constellationPosition.x, constellationY: constellationPosition.y }));
 
     // Pathfinder project
     const [pathfinderPage, pathfinderPageApi] = useSpring(() => ({ from: { opacity: 0 } }))
-    const [pathfinderPosition, setPathfinderPosition] = useState({ x: 700, y: 100 });
+    const [pathfinderPosition, setPathfinderPosition] = useState({ x: -800, y: 700 });
     const [{ pathfinderX, pathfinderY }, pathfinderApi] = useSpring(() => ({ pathfinderX: pathfinderPosition.x, pathfinderY: pathfinderPosition.y }));
 
     // Add more project functions here
 
     const projects = [
+        {
+            name: 'pathfinder',
+            initialPosition: { x: 100, y: 700 },
+            position: pathfinderPosition,
+            setPosition: setPathfinderPosition,
+            page: pathfinderPage,
+            pageApi: pathfinderPageApi,
+            x: pathfinderX,
+            y: pathfinderY,
+            api: pathfinderApi
+        },
+        {
+            name: 'constellation',
+            initialPosition: { x: 100, y: 500 },
+            position: constellationPosition,
+            setPosition: setConstellationPosition,
+            page: constellationPage,
+            pageApi: constellationPageApi,
+            x: constellationX,
+            y: constellationY,
+            api: constellationApi
+        },
+        {
+            name: 'blog',
+            initialPosition: { x: 100, y: 300 },
+            position: blogPosition,
+            setPosition: setBlogPosition,
+            page: blogPage,
+            pageApi: blogPageApi,
+            x: blogX,
+            y: blogY,
+            api: blogApi
+        },
         {
             name: 'map',
             initialPosition: { x: 100, y: 100 },
@@ -50,39 +83,6 @@ const Projects = () => {
             y: mapY,
             api: mapApi
         },
-        {
-            name: 'blog',
-            initialPosition: { x: 300, y: 100 },
-            position: blogPosition,
-            setPosition: setBlogPosition,
-            page: blogPage,
-            pageApi: blogPageApi,
-            x: blogX,
-            y: blogY,
-            api: blogApi
-        },
-        {
-            name: 'constellation',
-            initialPosition: { x: 500, y: 100 },
-            position: constellationPosition,
-            setPosition: setConstellationPosition,
-            page: constellationPage,
-            pageApi: constellationPageApi,
-            x: constellationX,
-            y: constellationY,
-            api: constellationApi
-        },
-        {
-            name: 'pathfinder',
-            initialPosition: { x: 700, y: 100 },
-            position: pathfinderPosition,
-            setPosition: setPathfinderPosition,
-            page: pathfinderPage,
-            pageApi: pathfinderPageApi,
-            x: pathfinderX,
-            y: pathfinderY,
-            api: pathfinderApi
-        }
         // Add more projects here
     ]
 
@@ -120,6 +120,15 @@ const Projects = () => {
 
         snapBackgroundApi.start({ backgroundColor: '#111111' });
     };
+
+    const shuffleCards = () => {
+        projects.forEach(project => {
+            const x = Math.floor(Math.random() * window.innerWidth);
+            const y = Math.floor(Math.random() * window.innerHeight);
+            project.setPosition({ x, y });
+            project.api.start({ [`${project.name}X`]: x, [`${project.name}Y`]: y });
+        });
+    }
 
     const goBack = () => {
         projects.forEach(project => {

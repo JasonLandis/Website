@@ -1,10 +1,86 @@
-.about {
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px 0 rgb(184, 255, 174);
-    background-color: #31c055;
+.deck-container {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deck {
+    position: absolute;
+}
+  
+.card {
+    background-color: rgb(27, 27, 27);
+    width: 800px;
+    height: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px 0 rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 30px;
+    color: white;
+}
+
+.card h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0;
+}
+
+.card h2 {
+    font-size: 1.8em;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.card p {
+    font-size: 1.3em;
+    text-align: center;    
+}
+
+.card img {
+    display: block;
+    margin: 0 auto;
+}
+
+.education, .work {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    float: left;
+    margin-left: 130px;
+}
+
+.work {
+    margin-top: 150px;
+}
+
+.education img, .work img {
+    margin-right: 50px;
+}
+
+.education-info p, .work-info p{
+    text-align: left;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.handles {
+    position: absolute;
+    top: 870px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.handles a {
+    margin: 0 20px;
 }

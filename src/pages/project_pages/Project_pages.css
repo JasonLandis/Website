@@ -99,7 +99,6 @@
   align-items: center;  
 }
 
-.visit-container img {
+.visit-container a {
   margin-inline: 20px;
-  cursor: pointer;
 }

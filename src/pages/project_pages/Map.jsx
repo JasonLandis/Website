@@ -5,6 +5,7 @@ import react from '../../assets/logos/react.png';
 import drf from '../../assets/logos/drf.png';
 import gcp from '../../assets/logos/gcp.png';
 import mapbox from '../../assets/logos/mapbox.png';
+import firebase from '../../assets/logos/firebase.png';
 
 
 const Map = () => {
@@ -40,6 +41,7 @@ const Map = () => {
                 <div className='skills-container'>
                     <img src={react} width="100px" title='React' />
                     <img src={drf} width="100px" title='Django Rest Framework' />
+                    <img src={firebase} width="80px" title='Firebase' />
                     <img src={gcp} width="100px" title='Google Cloud Platform' />
                     <img src={mapbox} width="100px" title='Mapbox' />
                 </div>

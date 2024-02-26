@@ -10,7 +10,7 @@ import About from '../pages/About'
 
 // Handles link elements and page transitions.
 const Links = () => {
-    const { page, setPage, setProjectPage } = useContext(PageContext)
+    const { page, setPage, setProjectPage, setSlide } = useContext(PageContext)
     const { count } = useContext(CountContext)
 
     const [homePage, homePageApi] = useSpring(() => ({ from: { opacity: 1 } }))
@@ -67,6 +67,7 @@ const Links = () => {
             }
             setPage(nextPage)
             setProjectPage('')
+            setSlide(0)
         }, 150)
     }
 

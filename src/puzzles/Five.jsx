@@ -5,19 +5,17 @@ import { PageContext } from '../context/PageContext'
 import './Puzzles.css'
 
 
-// Appear: 20
-// Input: 71 - 80
-const One = () => {
+const Five = () => {
     const { count, codes } = useContext(CountContext);
     const { page } = useContext(PageContext);
 
     const [puzzleDisplay, puzzleDisplayApi] = useSpring(() => ({ from: { right: '-200px' } }));
-    const [puzzle, setPuzzle] = useState({ inputNum: -2, code: '' });
+    const [puzzle, setPuzzle] = useState({ inputNum: -2, randomNum: -2, code: '' });
     
-    const appearNum = 20;
+    const appearNum = 60;
 
     useEffect(() => {
-        setPuzzle(codes[1]);
+        setPuzzle(codes[5]);
     }, [codes]);
 
     useEffect(() => {
@@ -36,11 +34,11 @@ const One = () => {
         <>
             {puzzle && (count === appearNum || count === appearNum + 1) && (
                 <animated.div className="puzzle-container" style={{ ...puzzleDisplay }}>
-                    {puzzle.inputNum} - {puzzle.code}
+                    {puzzle.inputNum} - {"[" + puzzle.randomNum + "]"}
                 </animated.div>
             )}
         </>
     );
 };
 
-export default One;
+export default Five;

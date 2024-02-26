@@ -7,7 +7,6 @@ import './Puzzles.css'
 
 // Appear: 10
 // Input: 11 - 15
-// Code: Random 8 character string
 const Zero = () => {
     const { count, codes } = useContext(CountContext);
     const { page } = useContext(PageContext);

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { useGesture } from '@use-gesture/react'
+import { PageContext } from '../context/PageContext';
 
 import './styles/About.css'
 import logo from '../assets/logos/logo.png'
@@ -110,6 +111,10 @@ const trans = (r, s) => `rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) s
 
 // Deck component
 const Deck = () => {
+    const { slide, setSlide } = useContext(PageContext);
+
+    setSlide(1)
+
     const [gone] = useState(() => new Set());
     const [props, api] = useSprings(cards.length, (i) => ({
         ...to(i),
@@ -119,6 +124,7 @@ const Deck = () => {
     const bind = useGesture({
         onClick: ({ args: [index] }) => {
             gone.add(index)
+            setSlide(slide => slide + 1)
             api.start((i) => {
                 if (index !== i) return
                 return {
@@ -132,6 +138,7 @@ const Deck = () => {
             if (gone.size === cards.length) {
                 setTimeout(() => {
                     gone.clear()
+                    setSlide(1)
                     api.start((i) => to(i))
                 }, 600)
             }                

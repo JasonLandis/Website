@@ -7,9 +7,10 @@ export const PageContext = createContext()
 export const PageProvider = ({ children }) => {
     const [page, setPage] = useState('home')
     const [projectPage, setProjectPage] = useState('')
+    const [slide, setSlide] = useState(0)
 
     return (
-        <PageContext.Provider value={{ page, setPage, projectPage, setProjectPage }}>
+        <PageContext.Provider value={{ page, setPage, projectPage, setProjectPage, slide, setSlide }}>
             {children}
         </PageContext.Provider>
     )

@@ -10,7 +10,6 @@ export const CountProvider = ({ children }) => {
     const [codes, setCodes] = useState({})
     const [answers, setAnswers] = useState({})
     const [inputValue, setInputValue] = useState('')
-    const [, setTempCodes] = useState({})
 
     function puzzleZero() {
         let inputNum = Math.floor(Math.random() * (16 - 11) + 11)
@@ -81,6 +80,7 @@ export const CountProvider = ({ children }) => {
         let randomIndex = Math.random();
         let clueOnePage = randomIndex < 0.25 ? "[map]" : randomIndex < 0.5 ? "[blog]" : randomIndex < 0.75 ? "[constellation]" : "[pathfinder]";
         let clueOneNum = Math.floor(Math.random() * (76 - 71)) + 71
+        let clueTwoPage = randomIndex < 0.25 ? "[about[1]]" : randomIndex < 0.5 ? "[about[2]]" : randomIndex < 0.75 ? "[about[2]]" : "[about[3]]";
         let clueTwoNum = Math.floor(Math.random() * (86 - 81)) + 81
         let inputNum = Math.floor(Math.random() * (95 - 93)) + 93
         let code = ''
@@ -88,7 +88,28 @@ export const CountProvider = ({ children }) => {
         for (let i = 0; i < 8; i++) {
             code += characters.charAt(Math.floor(Math.random() * characters.length))
         }
-        return [inputNum, code, clueOnePage, clueOneNum, clueTwoNum]
+        return [inputNum, code, clueOnePage, clueOneNum, clueTwoPage, clueTwoNum]
+    }
+
+    function puzzleSeven() {
+        let randomIndex = Math.random();
+        let clueOnePage = randomIndex < 0.25 ? "[about[1]]" : randomIndex < 0.5 ? "[about[2]]" : randomIndex < 0.75 ? "[about[2]]" : "[about[3]]";
+        let clueOneNum = Math.floor(Math.random() * (86 - 81)) + 81
+        let clueTwoPage = randomIndex < 0.25 ? "[map]" : randomIndex < 0.5 ? "[blog]" : randomIndex < 0.75 ? "[constellation]" : "[pathfinder]";
+        let clueTwoNum = Math.floor(Math.random() * (91 - 86)) + 86
+        let randomNum = Math.floor(Math.random() * 7) * 10 + 10
+        let inputNum = Math.floor(Math.random() * (93 - 91)) + 91
+        return [inputNum, randomNum, clueOnePage, clueOneNum, clueTwoPage, clueTwoNum]
+    }
+
+    function puzzleEight() {
+        let inputNum = Math.floor(Math.random() * (99 - 95)) + 95
+        let code = ''
+        let characters = 'abcdefghijklmnopqrstuvwxyz123456789'
+        for (let i = 0; i < 8; i++) {
+            code += characters.charAt(Math.floor(Math.random() * characters.length))
+        }
+        return [inputNum, code]
     }
 
     function generateCodes() {
@@ -176,9 +197,96 @@ export const CountProvider = ({ children }) => {
             code: puzzleSixData[1],
             clueOnePage: puzzleSixData[2],
             clueOneNum: puzzleSixData[3],
-            clueTwoNum: puzzleSixData[4]
+            clueTwoPage: puzzleSixData[4],
+            clueTwoNum: puzzleSixData[5]
         }
         tempAnswers[puzzleSixData[0]] = puzzleSixData[1]
+
+        let puzzleSevenData = puzzleSeven()
+        if (puzzleSevenData[1] === 10) {
+            tempCodes[7] = {
+                inputNum: puzzleSevenData[0],
+                randomNum: puzzleSevenData[1],
+                clueOnePage: puzzleSevenData[2],
+                clueOneNum: puzzleSevenData[3],
+                clueTwoPage: puzzleSevenData[4],
+                clueTwoNum: puzzleSevenData[5],
+            }
+            tempAnswers[puzzleSevenData[0]] = tempCodes[0].code
+        }
+        else if (puzzleSevenData[1] === 20) {
+            tempCodes[7] = {
+                inputNum: puzzleSevenData[0],
+                randomNum: puzzleSevenData[1],
+                clueOnePage: puzzleSevenData[2],
+                clueOneNum: puzzleSevenData[3],
+                clueTwoPage: puzzleSevenData[4],
+                clueTwoNum: puzzleSevenData[5],
+            }
+            tempAnswers[puzzleSevenData[0]] = tempCodes[1].code
+        }
+        else if (puzzleSevenData[1] === 30) {
+            tempCodes[7] = {
+                inputNum: puzzleSevenData[0],
+                randomNum: puzzleSevenData[1],
+                clueOnePage: puzzleSevenData[2],
+                clueOneNum: puzzleSevenData[3],
+                clueTwoPage: puzzleSevenData[4],
+                clueTwoNum: puzzleSevenData[5],
+            }
+            tempAnswers[puzzleSevenData[0]] = tempCodes[2].code
+        }
+        else if (puzzleSevenData[1] === 40) {
+            tempCodes[7] = {
+                inputNum: puzzleSevenData[0],
+                randomNum: puzzleSevenData[1],
+                clueOnePage: puzzleSevenData[2],
+                clueOneNum: puzzleSevenData[3],
+                clueTwoPage: puzzleSevenData[4],
+                clueTwoNum: puzzleSevenData[5],
+            }
+            tempAnswers[puzzleSevenData[0]] = tempCodes[3].code
+        }
+        else if (puzzleSevenData[1] === 50) {
+            tempCodes[7] = {
+                inputNum: puzzleSevenData[0],
+                randomNum: puzzleSevenData[1],
+                clueOnePage: puzzleSevenData[2],
+                clueOneNum: puzzleSevenData[3],
+                clueTwoPage: puzzleSevenData[4],
+                clueTwoNum: puzzleSevenData[5],
+            }
+            tempAnswers[puzzleSevenData[0]] = tempCodes[4].code
+        }
+        else if (puzzleSevenData[1] === 60) {
+            tempCodes[7] = {
+                inputNum: puzzleSevenData[0],
+                randomNum: puzzleSevenData[1],
+                clueOnePage: puzzleSevenData[2],
+                clueOneNum: puzzleSevenData[3],
+                clueTwoPage: puzzleSevenData[4],
+                clueTwoNum: puzzleSevenData[5],
+            }
+            tempAnswers[puzzleSevenData[0]] = tempCodes[5].code
+        }
+        else if (puzzleSevenData[1] === 70) {
+            tempCodes[7] = {
+                inputNum: puzzleSevenData[0],
+                randomNum: puzzleSevenData[1],
+                clueOnePage: puzzleSevenData[2],
+                clueOneNum: puzzleSevenData[3],
+                clueTwoPage: puzzleSevenData[4],
+                clueTwoNum: puzzleSevenData[5],
+            }
+            tempAnswers[puzzleSevenData[0]] = tempCodes[6].code
+        }
+
+        let puzzleEightData = puzzleEight()
+        tempCodes[8] = {
+            inputNum: puzzleEightData[0],
+            code: puzzleEightData[1]
+        }
+        tempAnswers[puzzleEightData[0]] = puzzleEightData[1]
 
         // More puzzles here
 

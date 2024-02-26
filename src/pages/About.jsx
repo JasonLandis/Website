@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { useGesture } from '@use-gesture/react'
 import { PageContext } from '../context/PageContext';
@@ -111,9 +111,11 @@ const trans = (r, s) => `rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) s
 
 // Deck component
 const Deck = () => {
-    const { slide, setSlide } = useContext(PageContext);
-
-    setSlide(1)
+    const { setSlide } = useContext(PageContext);
+    
+    useEffect(() => {
+        setSlide(1)
+    }, [])
 
     const [gone] = useState(() => new Set());
     const [props, api] = useSprings(cards.length, (i) => ({

@@ -5,19 +5,19 @@ import { PageContext } from '../context/PageContext'
 import './Puzzles.css'
 
 
-const Six = () => {
+const Seven = () => {
     const { count, codes } = useContext(CountContext);
     const { page, projectPage, slide } = useContext(PageContext);
 
     const [clueTwoDisplay, clueTwoDisplayApi] = useSpring(() => ({ from: { right: '-200px' } }));
     const [clueOneDisplay, clueOneDisplayApi] = useSpring(() => ({ from: { right: '-200px' } }));
     const [puzzleDisplay, puzzleDisplayApi] = useSpring(() => ({ from: { right: '-200px' } }));
-    const [puzzle, setPuzzle] = useState({ inputNum: -2, code: '', clueOnePage: '', clueOneNum: -2, clueTwoPage: '', clueTwoNum: -2 });
+    const [puzzle, setPuzzle] = useState({ inputNum: -2, randomNum: -2, clueOnePage: '', clueOneNum: -2, clueTwoPage: '', clueTwoNum: -2, clueThreePage: '', clueThreeNum: -2 });
     
-    const appearNum = 70;
+    const appearNum = 80;
 
     useEffect(() => {
-        setPuzzle(codes[6]);
+        setPuzzle(codes[7]);
     }, [codes]);
 
     useEffect(() => {
@@ -32,27 +32,27 @@ const Six = () => {
         }
 
         if (count === puzzle.clueOneNum) {
-            if (puzzle.clueOnePage === '[map]') {
+            if (puzzle.clueOnePage === '[about[1]]') {
                 clueTwoDisplayApi.start({ right: '-10px' });
-                if (projectPage !== 'map') {
+                if (slide !== 1) {
                     clueTwoDisplayApi.start({ right: '-200px' });
                 }
             }
-            else if (puzzle.clueOnePage === '[blog]') {
+            else if (puzzle.clueOnePage === '[about[2]]') {
                 clueTwoDisplayApi.start({ right: '-10px' });
-                if (projectPage !== 'blog') {
+                if (slide !== 2) {
                     clueTwoDisplayApi.start({ right: '-200px' });
                 }
             }
-            else if (puzzle.clueOnePage === '[constellation]') {
+            else if (puzzle.clueOnePage === '[about[3]]') {
                 clueTwoDisplayApi.start({ right: '-10px' });
-                if (projectPage !== 'constellation') {
+                if (slide !== 3) {
                     clueTwoDisplayApi.start({ right: '-200px' });
                 }
             }
-            else if (puzzle.clueOnePage === '[pathfinder]') {
+            else if (puzzle.clueOnePage === '[about[4]]') {
                 clueTwoDisplayApi.start({ right: '-10px' });
-                if (projectPage !== 'pathfinder') {
+                if (slide !== 4) {
                     clueTwoDisplayApi.start({ right: '-200px' });
                 }
             }
@@ -62,27 +62,27 @@ const Six = () => {
         }
 
         if (count === puzzle.clueTwoNum) {
-            if (puzzle.clueTwoPage === '[about[1]]') {
+            if (puzzle.clueTwoPage === '[map]') {
                 puzzleDisplayApi.start({ right: '-10px' });
-                if (slide !== 1) {
+                if (projectPage !== 'map') {
                     puzzleDisplayApi.start({ right: '-200px' });
                 }
             }
-            else if (puzzle.clueTwoPage === '[about[2]]') {
+            else if (puzzle.clueTwoPage === '[blog]') {
                 puzzleDisplayApi.start({ right: '-10px' });
-                if (slide !== 2) {
+                if (projectPage !== 'blog') {
                     puzzleDisplayApi.start({ right: '-200px' });
                 }
             }
-            else if (puzzle.clueTwoPage === '[about[3]]') {
+            else if (puzzle.clueTwoPage === '[constellation]') {
                 puzzleDisplayApi.start({ right: '-10px' });
-                if (slide !== 3) {
+                if (projectPage !== 'constellation') {
                     puzzleDisplayApi.start({ right: '-200px' });
                 }
             }
-            else if (puzzle.clueTwoPage === '[about[4]]') {
+            else if (puzzle.clueTwoPage === '[pathfinder]') {
                 puzzleDisplayApi.start({ right: '-10px' });
-                if (slide !== 4) {
+                if (projectPage !== 'pathfinder') {
                     puzzleDisplayApi.start({ right: '-200px' });
                 }
             }
@@ -107,11 +107,11 @@ const Six = () => {
             )}
             {puzzle && (count === puzzle.clueTwoNum || count === puzzle.clueTwoNum + 1) && (
                 <animated.div className="puzzle-container" style={{ ...puzzleDisplay }}>
-                    {puzzle.inputNum} - {puzzle.code}
+                    {puzzle.inputNum} - {"[" + puzzle.randomNum + "]"}
                 </animated.div>
             )}
         </>
     );
 };
 
-export default Six;
+export default Seven;

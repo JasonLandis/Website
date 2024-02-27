@@ -5,6 +5,7 @@ import { PageContext } from '../context/PageContext'
 import './Puzzles.css'
 
 
+// Appear 90, Input 95 - 98 (Reverse code and input number)
 const Eight = () => {
     const { count, codes } = useContext(CountContext);
     const { page } = useContext(PageContext);

@@ -15,6 +15,8 @@ import Six from './puzzles/Six'
 import Seven from './puzzles/Seven'
 import Eight from './puzzles/Eight'
 
+import Thanks from './puzzles/Thanks'
+
 
 function App() {
 
@@ -34,6 +36,8 @@ function App() {
             <Six />
             <Seven />
             <Eight />
+
+            <Thanks />
         </>
     )
 }
@@ -42,13 +46,15 @@ export default App
 
 /*
 
-11 - h38jnxfu
-80 - gh9ms4nv
-38 - hdva4dl5
-84 - a6eyx5yv
-67 - f1cn8ni6
-94 - 5qkf44yw
-69 - 1lsirr1y
+13 - q2oumcmj
+72 - 2qeczg5i
+36 - uqwd6xjk
+85 - 2p5ohdvl
+13 - q2oumcmj
+70 - 5pbzokly
+93 - s6229161
+89 - m12l5dyk
 
+91 - [20]
 
 */

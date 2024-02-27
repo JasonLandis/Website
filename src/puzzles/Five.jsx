@@ -5,6 +5,7 @@ import { PageContext } from '../context/PageContext'
 import './Puzzles.css'
 
 
+// Appear 60, Input 61 - 65 (use code from puzzle 0 - 4)
 const Five = () => {
     const { count, codes } = useContext(CountContext);
     const { page } = useContext(PageContext);

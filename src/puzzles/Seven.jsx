@@ -5,11 +5,12 @@ import { PageContext } from '../context/PageContext'
 import './Puzzles.css'
 
 
+// Appear 80, Go to slide in about 81 - 85, Go to project in projects 86 - 90, Input 91 - 92 (use code from puzzle 0 - 7)
 const Seven = () => {
     const { count, codes } = useContext(CountContext);
     const { page, projectPage, slide } = useContext(PageContext);
 
-    const [clueTwoDisplay, clueTwoDisplayApi] = useSpring(() => ({ from: { right: '-200px' } }));
+    const [clueTwoDisplay, clueTwoDisplayApi] = useSpring(() => ({ from: { right: '-250px' } }));
     const [clueOneDisplay, clueOneDisplayApi] = useSpring(() => ({ from: { right: '-200px' } }));
     const [puzzleDisplay, puzzleDisplayApi] = useSpring(() => ({ from: { right: '-200px' } }));
     const [puzzle, setPuzzle] = useState({ inputNum: -2, randomNum: -2, clueOnePage: '', clueOneNum: -2, clueTwoPage: '', clueTwoNum: -2, clueThreePage: '', clueThreeNum: -2 });
@@ -35,30 +36,30 @@ const Seven = () => {
             if (puzzle.clueOnePage === '[about[1]]') {
                 clueTwoDisplayApi.start({ right: '-10px' });
                 if (slide !== 1) {
-                    clueTwoDisplayApi.start({ right: '-200px' });
+                    clueTwoDisplayApi.start({ right: '-250px' });
                 }
             }
             else if (puzzle.clueOnePage === '[about[2]]') {
                 clueTwoDisplayApi.start({ right: '-10px' });
                 if (slide !== 2) {
-                    clueTwoDisplayApi.start({ right: '-200px' });
+                    clueTwoDisplayApi.start({ right: '-250px' });
                 }
             }
             else if (puzzle.clueOnePage === '[about[3]]') {
                 clueTwoDisplayApi.start({ right: '-10px' });
                 if (slide !== 3) {
-                    clueTwoDisplayApi.start({ right: '-200px' });
+                    clueTwoDisplayApi.start({ right: '-250px' });
                 }
             }
             else if (puzzle.clueOnePage === '[about[4]]') {
                 clueTwoDisplayApi.start({ right: '-10px' });
                 if (slide !== 4) {
-                    clueTwoDisplayApi.start({ right: '-200px' });
+                    clueTwoDisplayApi.start({ right: '-250px' });
                 }
             }
         }
         else if (count === puzzle.clueOneNum + 1) {
-            clueTwoDisplayApi.start({ right: '-200px' });
+            clueTwoDisplayApi.start({ right: '-250px' });
         }
 
         if (count === puzzle.clueTwoNum) {

@@ -5,12 +5,13 @@ import { PageContext } from '../context/PageContext'
 import './Puzzles.css'
 
 
+// Appear 40, Go to project in projects 50 - 60, Input 81 - 85
 const Three = () => {
     const { count, codes } = useContext(CountContext);
     const { page, projectPage } = useContext(PageContext);
 
     const [puzzleDisplay, puzzleDisplayApi] = useSpring(() => ({ from: { right: '-200px' } }));
-    const [clueDisplay, clueDisplayApi] = useSpring(() => ({ from: { right: '-200px' } }));
+    const [clueDisplay, clueDisplayApi] = useSpring(() => ({ from: { right: '-250px' } }));
     const [puzzle, setPuzzle] = useState({ inputNum: -2, code: '', cluePage: '', clueNum: -2});
     
     const appearNum = 40;
@@ -23,11 +24,11 @@ const Three = () => {
         if (count === appearNum) {
             clueDisplayApi.start({ right: '-10px' });
         } else if (count === appearNum + 1) {
-            clueDisplayApi.start({ right: '-200px' });
+            clueDisplayApi.start({ right: '-250px' });
         }
 
         if (page !== 'home') {
-            clueDisplayApi.start({ right: '-200px' });
+            clueDisplayApi.start({ right: '-250px' });
         }
 
         if (count === puzzle.clueNum) {

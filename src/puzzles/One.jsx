@@ -5,8 +5,7 @@ import { PageContext } from '../context/PageContext'
 import './Puzzles.css'
 
 
-// Appear: 20
-// Input: 71 - 80
+// Appear 20, Input 71 - 80
 const One = () => {
     const { count, codes } = useContext(CountContext);
     const { page } = useContext(PageContext);

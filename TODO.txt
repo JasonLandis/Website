@@ -1,5 +1,4 @@
-puzzle box left side visible when long word
-optimize stuff
-thank you at 99
+figure out background animation
 something cool at 100
+sanitize input
 responsive

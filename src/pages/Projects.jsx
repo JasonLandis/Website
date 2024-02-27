@@ -121,15 +121,6 @@ const Projects = () => {
         snapBackgroundApi.start({ backgroundColor: '#111111' });
     };
 
-    const shuffleCards = () => {
-        projects.forEach(project => {
-            const x = Math.floor(Math.random() * window.innerWidth);
-            const y = Math.floor(Math.random() * window.innerHeight);
-            project.setPosition({ x, y });
-            project.api.start({ [`${project.name}X`]: x, [`${project.name}Y`]: y });
-        });
-    }
-
     const goBack = () => {
         projects.forEach(project => {
             project.pageApi.start({ opacity: 0, config: { duration: 250 } });

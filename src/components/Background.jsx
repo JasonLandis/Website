@@ -24,7 +24,12 @@ const HomeBackground = () => {
     }, [correct])
 
     return (
-        <animated.div className="background" style={{...background}}></animated.div>
+        <>
+            <animated.div className="background" style={{...background}}></animated.div>
+            <div className="blob"></div>
+            <div className="blob2"></div>
+            <div className="bg"></div>
+        </>
     )
 }
 

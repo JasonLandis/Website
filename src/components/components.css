@@ -57,16 +57,6 @@
 }
 
 .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #111111;
-    z-index: -9999;
-}
-  
-.bg {
     position: fixed;
     top: -50%;
     left: -50%;
@@ -74,40 +64,133 @@
     bottom: -50%;
     width: 200%;
     height: 200vh;
-    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;  
+    background-color: #111111;  
     background-repeat: repeat;
-    animation: bg-animation 50s infinite;
-    opacity: .9;
     visibility: visible;
-    z-index: -9998;
-}
-
-.blob {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background-color: #ffa9a9;
-    filter: blur(50px);
-    background-size: cover;
     z-index: -9999;
-    animation: blob-animation 50s infinite;
 }
 
-@keyframes blob-animation {
-    0% {
-        transform: translate(0, 0);
+.tiles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -9999;
+}
+
+.tiles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    bottom: -150px;
+    transition: all 0.7s;
+}
+
+.tiles li:nth-child(1){
+    left: 20%;
+    width: 80px;
+    height: 80px;
+    animation: animate-up 25s linear infinite;
+    animation-delay: 0s;
+}
+
+
+.tiles li:nth-child(2){
+    left: 10%;
+    width: 110px;
+    height: 110px;
+    animation: animate-down 25s linear infinite;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.tiles li:nth-child(3){
+    left: 70%;
+    width: 90px;
+    height: 90px;
+    animation: animate-up 25s linear infinite;
+    animation-delay: 4s;
+}
+
+.tiles li:nth-child(4){
+    left: 40%;
+    width: 80px;
+    height: 80px;
+    animation: animate-down 25s linear infinite;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.tiles li:nth-child(5){
+    left: 60%;
+    width: 120px;
+    height: 120px;
+    animation: animate-up 25s linear infinite;
+    animation-delay: 0s;
+}
+
+.tiles li:nth-child(6){
+    left: 80%;
+    width: 110px;
+    height: 110px;
+    animation: animate-down 25s linear infinite;
+    animation-delay: 3s;
+}
+
+.tiles li:nth-child(7){
+    left: 30%;
+    width: 150px;
+    height: 150px;
+    animation: animate-up 25s linear infinite;
+    animation-delay: 7s;
+}
+
+.tiles li:nth-child(8){
+    left: 50%;
+    width: 75px;
+    height: 75px;
+    animation: animate-down 25s linear infinite;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.tiles li:nth-child(9){
+    left: 90%;
+    width: 95px;
+    height: 95px;
+    animation: animate-up 25s linear infinite;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+@keyframes animate-up {
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.5;
+        border-radius: 0;
     }
-    25% {
-        transform: translate(calc(100vw - 500px), 0);
+
+    100%{
+        transform: translateY(-120vh) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
     }
-    50% {
-        transform: translate(calc(100vw - 500px), calc(100vh - 500px));
+}
+
+@keyframes animate-down {
+    0%{
+        transform: translateY(-120vh) rotate(0deg);
+        opacity: 0.5;
+        border-radius: 50%;
     }
-    75% {
-        transform: translate(0, calc(100vh - 500px));
-    }
-    100% {
-        transform: translate(0, 0);
+
+    100%{
+        transform: translateY(0) rotate(720deg);
+        opacity: 0;
+        border-radius: 0;
     }
 }

@@ -41,17 +41,19 @@ const Input = () => {
         else if (page != 'home') {
             inputDisplayApi.start({ bottom: '-100px' })
         }
-    }, [page])
+    }, [page]);
 
     return (
-        <animated.div className="input-container" style={{ ...inputDisplay }}>
-            <input
-                type="text"
-                spellCheck={false}
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-            />
-        </animated.div>
+        count >= 1 && (
+            <animated.div className="input-container" style={{ ...inputDisplay }}>
+                <input
+                    type="text"
+                    spellCheck={false}
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                />
+            </animated.div>
+        )
     )
 }
 

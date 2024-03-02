@@ -46,15 +46,6 @@ export default App
 
 /*
 
-13 - q2oumcmj
-72 - 2qeczg5i
-36 - uqwd6xjk
-85 - 2p5ohdvl
-13 - q2oumcmj
-70 - 5pbzokly
-93 - s6229161
-89 - m12l5dyk
 
-91 - [20]
 
 */

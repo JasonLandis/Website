@@ -6,65 +6,111 @@ import { PageContext } from '../context/PageContext'
 const HomeBackground = () => {
     const { correct, setCorrect, count } = useContext(CountContext)
     const { page } = useContext(PageContext)
-    const [hoveredTile, setHoveredTile] = useState(null)
+    const [numCorrect, setNumCorrect] = useState(0)
 
-    const handleMouseEnter = (color) => {
-        setHoveredTile(color)
-    }
-
-    const handleMouseLeave = () => {
-        setHoveredTile(null)
-    }
-
-    const [tile1, tile1Api] = useSpring(() => ({ from: { backgroundColor: '#13FF00' } }))
-    const [tile2, tile2Api] = useSpring(() => ({ from: { backgroundColor: '#FF0000' } }))
-    const [tile3, tile3Api] = useSpring(() => ({ from: { backgroundColor: '#AE00FF' } }))
-    const [tile4, tile4Api] = useSpring(() => ({ from: { backgroundColor: '#FF00FF' } }))
-    const [tile5, tile5Api] = useSpring(() => ({ from: { backgroundColor: '#FFF300' } }))
-    const [tile6, tile6Api] = useSpring(() => ({ from: { backgroundColor: '#FF8700' } }))
-    const [tile7, tile7Api] = useSpring(() => ({ from: { backgroundColor: '#0036FF' } }))
-    const [tile8, tile8Api] = useSpring(() => ({ from: { backgroundColor: '#FF007C' } }))
-    const [tile9, tile9Api] = useSpring(() => ({ from: { backgroundColor: '#00FFF7' } }))
+    const [tile1, tile1Api] = useSpring(() => ({ from: { backgroundColor: '#333333', borderRadius: "0" } }))
+    const [tile2, tile2Api] = useSpring(() => ({ from: { backgroundColor: '#333333', borderRadius: "0" } }))
+    const [tile3, tile3Api] = useSpring(() => ({ from: { backgroundColor: '#333333', borderRadius: "0" } }))
+    const [tile4, tile4Api] = useSpring(() => ({ from: { backgroundColor: '#333333', borderRadius: "0" } }))
+    const [tile5, tile5Api] = useSpring(() => ({ from: { backgroundColor: '#333333', borderRadius: "0" } }))
+    const [tile6, tile6Api] = useSpring(() => ({ from: { backgroundColor: '#333333', borderRadius: "0" } }))
+    const [tile7, tile7Api] = useSpring(() => ({ from: { backgroundColor: '#333333', borderRadius: "0" } }))
+    const [tile8, tile8Api] = useSpring(() => ({ from: { backgroundColor: '#333333', borderRadius: "0" } }))
+    const [tile9, tile9Api] = useSpring(() => ({ from: { backgroundColor: '#333333', borderRadius: "0" } }))
 
     const tiles = [
-        { tile: tile1, api: tile1Api, color: '#13FF00' },
-        { tile: tile2, api: tile2Api, color: '#FF0000' },
-        { tile: tile3, api: tile3Api, color: '#AE00FF' },
-        { tile: tile4, api: tile4Api, color: '#FF00FF' },
-        { tile: tile5, api: tile5Api, color: '#FFF300' },
-        { tile: tile6, api: tile6Api, color: '#FF8700' },
-        { tile: tile7, api: tile7Api, color: '#0036FF' },
-        { tile: tile8, api: tile8Api, color: '#FF007C' },
-        { tile: tile9, api: tile9Api, color: '#00FFF7' }
+        { tile: tile1, api: tile1Api },
+        { tile: tile2, api: tile2Api },
+        { tile: tile3, api: tile3Api},
+        { tile: tile4, api: tile4Api },
+        { tile: tile5, api: tile5Api },
+        { tile: tile6, api: tile6Api },
+        { tile: tile7, api: tile7Api },
+        { tile: tile8, api: tile8Api },
+        { tile: tile9, api: tile9Api }
     ]
 
     useEffect(() => {
-        if (correct === 'incorrect') {
+        if (correct === 'incorrect') { 
+            setNumCorrect(0)           
             tiles.forEach(({ api }) => {
                 api.start({ backgroundColor: '#FF0000', config: { duration: 250 } })
-                api.start({ backgroundColor: '#13FF00', config: { duration: 250 }, delay: 250 })
+                api.start({ backgroundColor: '#333333', config: { duration: 250 }, delay: 250 })
             })
             setCorrect('')
         } else if (correct === 'correct') {
-            tiles.forEach(({ api }) => {
-                api.start({ backgroundColor: '#13FF00', config: { duration: 250 } })
-                api.start({ backgroundColor: '#FF0000', config: { duration: 250 }, delay: 250 })
-            })
+            setNumCorrect(numCorrect + 1)
             setCorrect('')
         }
     }, [correct, tiles, setCorrect])
+
+    useEffect(() => {
+        if (page === 'home') {
+            tiles.forEach(({ api }) => {
+                api.start({ borderRadius: "0%", config: { duration: 250 } })
+            })
+        } else if (page === 'projects') {
+            tiles.forEach(({ api }) => {
+                api.start({ borderRadius: "32%", config: { duration: 250 } })
+            })
+        } else if (page === 'about') {
+            tiles.forEach(({ api }) => {
+                api.start({ borderRadius: "50%", config: { duration: 250 } })
+            })
+        }
+    }, [page])
+
+    useEffect(() => {
+        if (numCorrect >= 1) {
+            tile1Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
+        }
+        if (numCorrect >= 2) {
+            tile2Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
+        }
+        if (numCorrect >= 3) {
+            tile3Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
+        }
+        if (numCorrect >= 4) {
+            tile4Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
+        }
+        if (numCorrect >= 5) {
+            tile5Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
+        }
+        if (numCorrect >= 6) {
+            tile6Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
+        }
+        if (numCorrect >= 7) {
+            tile7Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
+        }
+        if (numCorrect >= 8) {
+            tile8Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
+        }
+        if (numCorrect >= 9) {
+            tile9Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
+        }
+    }, [numCorrect])
+
+    useEffect(() => {
+        if (count >= 100) {
+            const interval = setInterval(() => {
+                tiles.forEach(({ api }) => {
+                    api.start({ backgroundColor: `#${Math.floor(Math.random()*16777215).toString(16)}` })
+                })
+            }, 500)
+            return () => clearInterval(interval)
+        }
+    }, [count, tiles])
+    
 
     return (
         <>
             <div className="background"></div>
             {count >= 1 &&
                 <ul className="tiles">
-                    {tiles.map(({ tile, api, color }, index) => (
+                    {tiles.map(({ tile }, index) => (
                         <animated.li
                             key={index}
-                            style={{ ...tile, backgroundColor: page === "projects" ? '#333333' : (hoveredTile === null ? color : hoveredTile) }}
-                            onMouseEnter={() => handleMouseEnter(color)}
-                            onMouseLeave={handleMouseLeave}
+                            style={{ ...tile }}
                         ></animated.li>
                     ))}
                 </ul>

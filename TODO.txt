@@ -1,4 +1,1 @@
-figure out background animation
-something cool at 100
-sanitize input
 responsive

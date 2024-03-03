@@ -12,7 +12,7 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 20px 0 rgb(0, 0, 0);
+    box-shadow: 0 0 20px 10px rgb(0, 0, 0);
 }
 
 .input-container input {
@@ -88,82 +88,75 @@
     height: 20px;
     bottom: -150px;
     filter: blur(5px);
+    animation: animate-up 15s linear infinite;
     box-shadow: 0 0 20px 10px rgb(0, 0, 0);
 }
 
 .tiles li:nth-child(1){
-    left: 20%;
+    left: 16%;
+    transform: translate(-50%, 0);
     width: 80px;
     height: 80px;
-    animation: animate-up 15s linear infinite;
     animation-delay: 0s;
 }
 
 
 .tiles li:nth-child(2){
-    left: 10%;
+    left: 6%;
     width: 110px;
     height: 110px;
-    animation: animate-up 15s linear infinite;
     animation-delay: 2s;
     animation-duration: 12s;
 }
 
 .tiles li:nth-child(3){
-    left: 70%;
+    left: 66%;
     width: 90px;
     height: 90px;
-    animation: animate-up 15s linear infinite;
     animation-delay: 4s;
 }
 
 .tiles li:nth-child(4){
-    left: 40%;
+    left: 36%;
     width: 80px;
     height: 80px;
-    animation: animate-up 15s linear infinite;
     animation-delay: 0s;
     animation-duration: 18s;
 }
 
 .tiles li:nth-child(5){
-    left: 60%;
+    left: 56%;
     width: 120px;
     height: 120px;
-    animation: animate-up 15s linear infinite;
     animation-delay: 0s;
 }
 
 .tiles li:nth-child(6){
-    left: 80%;
+    left: 76%;
     width: 110px;
     height: 110px;
-    animation: animate-up 15s linear infinite;
     animation-delay: 3s;
 }
 
 .tiles li:nth-child(7){
-    left: 30%;
+    left: 26%;
     width: 115px;
     height: 115px;
-    animation: animate-up 15s linear infinite;
     animation-delay: 7s;
 }
 
 .tiles li:nth-child(8){
-    left: 50%;
+    left: 46%;
     width: 75px;
     height: 75px;
-    animation: animate-up 15s linear infinite;
     animation-delay: 15s;
     animation-duration: 45s;
 }
 
 .tiles li:nth-child(9){
-    left: 90%;
+    left: 86%;
     width: 95px;
     height: 95px;
-    animation: animate-up 15s linear infinite;
     animation-delay: 2s;
     animation-duration: 35s;
 }
@@ -176,18 +169,6 @@
 
     100%{
         transform: translateY(-120vh) rotate(720deg);
-        opacity: 0;
-    }
-}
-
-@keyframes animate-down {
-    0%{
-        transform: translateY(-120vh) rotate(0deg);
-        opacity: 1;
-    }
-
-    100%{
-        transform: translateY(0) rotate(720deg);
         opacity: 0;
     }
 }

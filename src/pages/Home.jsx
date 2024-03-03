@@ -31,7 +31,9 @@ const Home = () => {
                         logoApi.start({ transform: 'scale(1.05)' })
                     }}
                     onClick={() => {
-                        setCount(count + 1)
+                        if (count < 100) {
+                            setCount(count + 1)
+                        }
                     }}
                     style={{...logoButton}}
                 >

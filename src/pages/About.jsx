@@ -84,8 +84,7 @@ const cards = [
         </p>
         <p>
             I am constantly working on projects, whether it be a mobile game or a complex web application. 
-            Currently, I am working on my gamedev blog application, which you can learn more about in the projects
-            section. I have also started a smaller project involving AI to increase my knowledge in the field.
+            Currently, I am working on optimizing this portfolio website for mobile devices.
         </p>
         <p>
             Try clicking my logo in the center of the home screen a few times...

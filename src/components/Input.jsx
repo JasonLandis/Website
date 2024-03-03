@@ -43,6 +43,12 @@ const Input = () => {
         }
     }, [page]);
 
+    const handleInputChange = (e) => {
+        const value = e.target.value;
+        const sanitizedValue = value.replace(/[^a-zA-Z0-9]/g, ''); // Only allow numbers and characters
+        setInputValue(sanitizedValue.slice(0, 8)); // Limit the maximum length to 8 characters
+    };
+
     return (
         count >= 1 && (
             <animated.div className="input-container" style={{ ...inputDisplay }}>
@@ -50,7 +56,8 @@ const Input = () => {
                     type="text"
                     spellCheck={false}
                     value={inputValue}
-                    onChange={(e) => setInputValue(e.target.value)}
+                    onChange={handleInputChange}
+                    maxLength={8}
                 />
             </animated.div>
         )

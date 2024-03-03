@@ -3,6 +3,8 @@ import { animated, useSpring } from '@react-spring/web'
 import { CountContext } from '../context/CountContext'
 import { PageContext } from '../context/PageContext'
 
+
+// Background animations
 const HomeBackground = () => {
     const { correct, setCorrect, count } = useContext(CountContext)
     const { page } = useContext(PageContext)
@@ -34,7 +36,7 @@ const HomeBackground = () => {
         if (correct === 'incorrect') { 
             setNumCorrect(0)           
             tiles.forEach(({ api }) => {
-                api.start({ backgroundColor: '#FF0000', config: { duration: 250 } })
+                api.start({ backgroundColor: '#660000', config: { duration: 250 } })
                 api.start({ backgroundColor: '#333333', config: { duration: 250 }, delay: 250 })
             })
             setCorrect('')
@@ -61,31 +63,31 @@ const HomeBackground = () => {
     }, [page])
 
     useEffect(() => {
-        if (numCorrect >= 1) {
+        if (numCorrect == 1) {
             tile1Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
         }
-        if (numCorrect >= 2) {
+        if (numCorrect == 2) {
             tile2Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
         }
-        if (numCorrect >= 3) {
+        if (numCorrect == 3) {
             tile3Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
         }
-        if (numCorrect >= 4) {
+        if (numCorrect == 4) {
             tile4Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
         }
-        if (numCorrect >= 5) {
+        if (numCorrect == 5) {
             tile5Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
         }
-        if (numCorrect >= 6) {
+        if (numCorrect == 6) {
             tile6Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
         }
-        if (numCorrect >= 7) {
+        if (numCorrect == 7) {
             tile7Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
         }
-        if (numCorrect >= 8) {
+        if (numCorrect == 8) {
             tile8Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
         }
-        if (numCorrect >= 9) {
+        if (numCorrect == 9) {
             tile9Api.start({ backgroundColor: '#003300', config: { duration: 250 } })
         }
     }, [numCorrect])
@@ -94,12 +96,13 @@ const HomeBackground = () => {
         if (count >= 100) {
             const interval = setInterval(() => {
                 tiles.forEach(({ api }) => {
-                    api.start({ backgroundColor: `#${Math.floor(Math.random()*16777215).toString(16)}` })
+                    const randomColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+                    api.start({ backgroundColor: randomColor });
                 })
-            }, 500)
+            }, 1000)
             return () => clearInterval(interval)
         }
-    }, [count, tiles])
+    }, [count])
     
 
     return (

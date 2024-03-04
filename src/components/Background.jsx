@@ -104,10 +104,38 @@ const HomeBackground = () => {
         }
     }, [count])
 
+    useEffect(() => {
+        const isMobile = () => {
+            return window.innerWidth < 600;
+        };
+    
+        const lockPortraitMode = () => {
+            if (isMobile()) {
+                window.screen.orientation.lock('portrait');
+                document.documentElement.style.touchAction = 'manipulation';
+            }
+        };
+        lockPortraitMode();
+    
+        return () => {
+            window.removeEventListener('orientationchange', lockPortraitMode);
+        };
+    }, []);
+
 
     return (
         <>
             <div className="background"></div>
+            {count >= 1 &&
+                <ul className="tiles">
+                    {tiles.map(({ tile }, index) => (
+                        <animated.li
+                            key={index}
+                            style={{ ...tile }}
+                        ></animated.li>
+                    ))}
+                </ul>
+            }
         </>
     )
 }

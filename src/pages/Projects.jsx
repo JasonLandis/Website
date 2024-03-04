@@ -19,21 +19,25 @@ const Projects = () => {
     // Map project
     const [mapPage, mapPageApi] = useSpring(() => ({ from: { opacity: 0 } }))
     const [mapPosition, setMapPosition] = useState({ x: -200, y: 100 });
+    const [mapInitialPosition, setMapInitialPosition] = useState({ x: 100, y: 100 });
     const [{ mapX, mapY }, mapApi] = useSpring(() => ({ mapX: mapPosition.x, mapY: mapPosition.y }));
 
     // Blog project
     const [blogPage, blogPageApi] = useSpring(() => ({ from: { opacity: 0 } }))
     const [blogPosition, setBlogPosition] = useState({ x: -400, y: 300 });
+    const [blogInitialPosition, setBlogInitialPosition] = useState({ x: 100, y: 300 });
     const [{ blogX, blogY }, blogApi] = useSpring(() => ({ blogX: blogPosition.x, blogY: blogPosition.y }));
 
     // Constellation project
     const [constellationPage, constellationPageApi] = useSpring(() => ({ from: { opacity: 0 } }))
     const [constellationPosition, setConstellationPosition] = useState({ x: -600, y: 500 });
+    const [constellationInitialPosition, setConstellationInitialPosition] = useState({ x: 100, y: 500 });
     const [{ constellationX, constellationY }, constellationApi] = useSpring(() => ({ constellationX: constellationPosition.x, constellationY: constellationPosition.y }));
 
     // Pathfinder project
     const [pathfinderPage, pathfinderPageApi] = useSpring(() => ({ from: { opacity: 0 } }))
     const [pathfinderPosition, setPathfinderPosition] = useState({ x: -800, y: 700 });
+    const [pathfinderInitialPosition, setPathfinderInitialPosition] = useState({ x: 100, y: 700 });
     const [{ pathfinderX, pathfinderY }, pathfinderApi] = useSpring(() => ({ pathfinderX: pathfinderPosition.x, pathfinderY: pathfinderPosition.y }));
 
     // Add more project functions here
@@ -41,7 +45,7 @@ const Projects = () => {
     const projects = [
         {
             name: 'pathfinder',
-            initialPosition: { x: 100, y: 700 },
+            initialPosition: pathfinderInitialPosition,
             position: pathfinderPosition,
             setPosition: setPathfinderPosition,
             page: pathfinderPage,
@@ -52,7 +56,7 @@ const Projects = () => {
         },
         {
             name: 'constellation',
-            initialPosition: { x: 100, y: 500 },
+            initialPosition: constellationInitialPosition,
             position: constellationPosition,
             setPosition: setConstellationPosition,
             page: constellationPage,
@@ -63,7 +67,7 @@ const Projects = () => {
         },
         {
             name: 'blog',
-            initialPosition: { x: 100, y: 300 },
+            initialPosition: blogInitialPosition,
             position: blogPosition,
             setPosition: setBlogPosition,
             page: blogPage,
@@ -74,7 +78,7 @@ const Projects = () => {
         },
         {
             name: 'map',
-            initialPosition: { x: 100, y: 100 },
+            initialPosition: mapInitialPosition,
             position: mapPosition,
             setPosition: setMapPosition,
             page: mapPage,
@@ -88,15 +92,41 @@ const Projects = () => {
 
     const [center, setCenter] = useState({ x: 0, y: 0 });
     const [snapBackground, snapBackgroundApi] = useSpring(() => ({ from: { backgroundColor: '#111111' } }));
-    const [tileContainer, tileContainerApi] = useSpring(() => ({ opacity: 1 }))
+    const [cardContainer, cardContainerApi] = useSpring(() => ({ opacity: 1 }))
     const [backButton, backButtonApi] = useSpring(() => ({ opacity: 0 }))
     const [snapped, setSnapped] = useState(false);
 
     useEffect(() => {
         const handleWindowResize = () => {
             const { innerWidth, innerHeight } = window;
-            setCenter({ x: innerWidth / 2 - 72.5, y: innerHeight / 2 - 72.5 });
-            resetCards();
+            if (window.innerWidth < 400) {
+                setMapInitialPosition({ x: 25, y: 100 });
+                setBlogInitialPosition({ x: 25, y: 190 });
+                setConstellationInitialPosition({ x: 25, y: 280 });
+                setPathfinderInitialPosition({ x: 25, y: 370 });
+                setCenter({ x: innerWidth / 2 - 31, y: innerHeight / 2 - 31 });
+            }
+            else if (window.innerWidth < 700) {
+                setMapInitialPosition({ x: 50, y: 100 });
+                setBlogInitialPosition({ x: 50, y: 210 });
+                setConstellationInitialPosition({ x: 50, y: 320 });
+                setPathfinderInitialPosition({ x: 50, y: 430 });
+                setCenter({ x: innerWidth / 2 - 41.5, y: innerHeight / 2 - 41.5 });
+            }
+            else if (window.innerWidth < 1000) {
+                setMapInitialPosition({ x: 75, y: 100 });
+                setBlogInitialPosition({ x: 75, y: 250 });
+                setConstellationInitialPosition({ x: 75, y: 400 });
+                setPathfinderInitialPosition({ x: 75, y: 550 });
+                setCenter({ x: innerWidth / 2 - 52.5, y: innerHeight / 2 - 52.5 });
+            }            
+            else {
+                setMapInitialPosition({ x: 100, y: 100 });
+                setBlogInitialPosition({ x: 100, y: 300 });
+                setConstellationInitialPosition({ x: 100, y: 500 });
+                setPathfinderInitialPosition({ x: 100, y: 700 });
+                setCenter({ x: innerWidth / 2 - 62.5, y: innerHeight / 2 - 62.5 });
+            }
         };
 
         handleWindowResize();
@@ -107,19 +137,18 @@ const Projects = () => {
 
     useEffect(() => {
         if (projectPage === '') {
-            tileContainerApi.start({ opacity: 1 });
+            cardContainerApi.start({ opacity: 1 });
         }
     }, [projectPage]);
 
-    const resetCards = () => {
-
+    useEffect (() => {
         projects.forEach(project => {
             project.setPosition(project.initialPosition);
             project.api.start({ [`${project.name}X`]: project.initialPosition.x, [`${project.name}Y`]: project.initialPosition.y });
         });
 
         snapBackgroundApi.start({ backgroundColor: '#111111' });
-    };
+    }, [blogInitialPosition]);
 
     const goBack = () => {
         projects.forEach(project => {
@@ -150,7 +179,7 @@ const Projects = () => {
                     setSnapped(true);
                     project.setPosition({ x: center.x, y: center.y });
                     setTimeout(() => {
-                        tileContainerApi.start({ opacity: 0, config: { duration: 250 } });
+                        cardContainerApi.start({ opacity: 0, config: { duration: 250 } });
                         setTimeout(() => {
                             project.setPosition(project.initialPosition)
                             project.api.start({ [`${project.name}X`]: project.initialPosition.x, [`${project.name}Y`]: project.initialPosition.y, immediate: true });
@@ -176,9 +205,9 @@ const Projects = () => {
     return (
         <>
             {projectPage === '' ? (
-                <animated.div className="tile-container" style={{ ...tileContainer }}>
+                <animated.div className="card-container" style={{ ...cardContainer }}>
                     {projects.map((project, index) => (
-                        <animated.div key={index} className={project.name} {...projectBinds[index]()} style={{ x: project.x, y: project.y }} />
+                        <animated.div key={index} className={project.name + " draggable"} {...projectBinds[index]()} style={{ x: project.x, y: project.y }} />
                     ))}
                     <div className="select-container" style={{ left: center.x, top: center.y }}><animated.div className="select" style={{ ...snapBackground }}></animated.div></div>
                 </animated.div>

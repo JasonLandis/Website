@@ -84,8 +84,8 @@
     position: absolute;
     display: block;
     list-style: none;
-    width: 20px;
-    height: 20px;
+    width: 100px;
+    height: 100px;
     bottom: -150px;
     filter: blur(5px);
     animation: animate-up 15s linear infinite;
@@ -95,68 +95,50 @@
 .tiles li:nth-child(1){
     left: 16%;
     transform: translate(-50%, 0);
-    width: 80px;
-    height: 80px;
     animation-delay: 0s;
 }
 
 
 .tiles li:nth-child(2){
     left: 6%;
-    width: 110px;
-    height: 110px;
     animation-delay: 2s;
     animation-duration: 12s;
 }
 
 .tiles li:nth-child(3){
     left: 66%;
-    width: 90px;
-    height: 90px;
     animation-delay: 4s;
 }
 
 .tiles li:nth-child(4){
     left: 36%;
-    width: 80px;
-    height: 80px;
     animation-delay: 0s;
     animation-duration: 18s;
 }
 
 .tiles li:nth-child(5){
     left: 56%;
-    width: 120px;
-    height: 120px;
     animation-delay: 0s;
 }
 
 .tiles li:nth-child(6){
     left: 76%;
-    width: 110px;
-    height: 110px;
     animation-delay: 3s;
 }
 
 .tiles li:nth-child(7){
     left: 26%;
-    width: 115px;
-    height: 115px;
     animation-delay: 7s;
 }
 
 .tiles li:nth-child(8){
     left: 46%;
-    width: 75px;
-    height: 75px;
     animation-delay: 15s;
     animation-duration: 45s;
 }
 
 .tiles li:nth-child(9){
     left: 86%;
-    width: 95px;
-    height: 95px;
     animation-delay: 2s;
     animation-duration: 35s;
 }
@@ -171,4 +153,58 @@
         transform: translateY(-120vh) rotate(720deg);
         opacity: 0;
     }
+}
+
+@media screen and (max-width: 900px) {
+    .tiles li {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .tiles li {
+        width: 60px;
+        height: 60px;
+    }
+
+    .links div {
+        padding: 20px 15px 10px 10px;
+        width: 80px;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .count-container {
+        top: 70px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .tiles li {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .links div {
+        padding: 20px 5px 10px 5px;
+        font-size: 1rem;
+        margin: 0 5px;
+    }
+
+    .count-container {
+        top: 60px;
+        padding: 10px 15px 10px 20px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .tiles li {
+        width: 30px;
+        height: 30px;
+    }    
 }

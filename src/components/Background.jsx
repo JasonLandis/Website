@@ -36,8 +36,8 @@ const HomeBackground = () => {
         if (correct === 'incorrect') { 
             setNumCorrect(0)           
             tiles.forEach(({ api }) => {
-                api.start({ backgroundColor: '#660000', config: { duration: 250 } })
-                api.start({ backgroundColor: '#333333', config: { duration: 250 }, delay: 250 })
+                api.start({ backgroundColor: '#770000', config: { duration: 400 } })
+                api.start({ backgroundColor: '#333333', config: { duration: 400 }, delay: 400 })
             })
             setCorrect('')
         } else if (correct === 'correct') {
@@ -103,21 +103,11 @@ const HomeBackground = () => {
             return () => clearInterval(interval)
         }
     }, [count])
-    
+
 
     return (
         <>
             <div className="background"></div>
-            {count >= 1 &&
-                <ul className="tiles">
-                    {tiles.map(({ tile }, index) => (
-                        <animated.li
-                            key={index}
-                            style={{ ...tile }}
-                        ></animated.li>
-                    ))}
-                </ul>
-            }
         </>
     )
 }

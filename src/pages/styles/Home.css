@@ -31,3 +31,24 @@
     transform: translate(-50%, -50%);
     filter: blur(30px);
 }
+
+@media (max-width: 500px) {
+    .logo {
+        width: 200px;
+    }
+    .logo-shadow {
+        height: 250px;
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .logo {
+        width: 150px;
+    }
+    .logo-shadow {
+        height: 200px;
+        width: 200px;
+    }
+    
+}

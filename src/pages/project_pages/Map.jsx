@@ -18,8 +18,8 @@ const Map = () => {
     });
     
     return (
-        <div className="container" onClick={() => setFlipped(state => !state)}>            
-            <animated.div className="text" style={{ opacity: opacity.to(o => 1 - o), transform }}>
+        <div className="project-information" onClick={() => setFlipped(state => !state)}>            
+            <animated.div className="project-description" style={{ opacity: opacity.to(o => 1 - o), transform }}>
                 <h1>The PK Deficiency Foundation Map</h1>
                 <h3>November 2023 - January 2024</h3>
                 <p>
@@ -38,15 +38,15 @@ const Map = () => {
                     worked with third party APIs, and implemented countless security measures.
                 </p>
                 <h2>Stack</h2>
-                <div className='skills-container'>
-                    <img src={react} width="100px" title='React' />
-                    <img src={drf} width="100px" title='Django Rest Framework' />
-                    <img src={firebase} width="80px" title='Firebase' />
-                    <img src={gcp} width="100px" title='Google Cloud Platform' />
-                    <img src={mapbox} width="100px" title='Mapbox' />
+                <div className='stack'>
+                    <img src={react} title='React' />
+                    <img src={drf} title='Django Rest Framework' />
+                    <img src={firebase} title='Firebase' />
+                    <img src={gcp} title='Google Cloud Platform' />
+                    <img src={mapbox} title='Mapbox' />
                 </div>
             </animated.div>
-            <animated.div className="map_image" style={{ opacity, transform, rotateX: '180deg' }}></animated.div>
+            <animated.div className="map-picture project-picture" style={{ opacity, transform, rotateX: '180deg' }}></animated.div>
         </div>
     );
 };

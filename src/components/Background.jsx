@@ -40,7 +40,7 @@ const HomeBackground = () => {
             } else {
                 setIsLandscape(false)
             }
-        };
+        }
 
         handleWindowResize();
 
@@ -52,7 +52,7 @@ const HomeBackground = () => {
         if (correct === 'incorrect') { 
             setNumCorrect(0)           
             tiles.forEach(({ api }) => {
-                api.start({ backgroundColor: '#770000', config: { duration: 400 } })
+                api.start({ backgroundColor: '#440000', config: { duration: 400 } })
                 api.start({ backgroundColor: '#333333', config: { duration: 400 }, delay: 400 })
             })
             setCorrect('')
@@ -69,7 +69,7 @@ const HomeBackground = () => {
             })
         } else if (page === 'projects') {
             tiles.forEach(({ api }) => {
-                api.start({ borderRadius: "32%", config: { duration: 250 } })
+                api.start({ borderRadius: "30%", config: { duration: 250 } })
             })
         } else if (page === 'about') {
             tiles.forEach(({ api }) => {
@@ -125,14 +125,14 @@ const HomeBackground = () => {
         <>
             <div className="background"></div>
             {count >= 1 &&
-                <ul className="tiles">
+                <div className="tiles">
                     {tiles.map(({ tile }, index) => (
-                        <animated.li
+                        <animated.div
                             key={index}
                             style={{ ...tile }}
-                        ></animated.li>
+                        ></animated.div>
                     ))}
-                </ul>
+                </div>
             }
             {isMobile && isLandscape && <div className="landscape-warning">
                 <p>Please rotate your device to portrait mode</p>

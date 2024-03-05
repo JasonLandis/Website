@@ -24,7 +24,7 @@
     position: absolute;
     height: 300px;
     width: 300px;
-    background-color: rgba(143, 143, 143, 0.301);
+    background-color: rgba(143, 143, 143, 0.3);
     left: 50%;
     top: 50%;
     border-radius: 50%;
@@ -32,7 +32,7 @@
     filter: blur(30px);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
     .logo {
         width: 200px;
     }
@@ -42,13 +42,12 @@
     }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 400px) {
     .logo {
         width: 150px;
     }
     .logo-shadow {
         height: 200px;
         width: 200px;
-    }
-    
+    }    
 }

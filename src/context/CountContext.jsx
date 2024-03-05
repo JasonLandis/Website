@@ -243,7 +243,7 @@ export const CountProvider = ({ children }) => {
 
     useEffect(() => {
         generateCodes();
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 500) {
             setIsMobile(true)
         }
     }, []);

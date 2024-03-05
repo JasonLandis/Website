@@ -16,8 +16,8 @@ const Blog = () => {
     });
     
     return (
-        <div className="container" onClick={() => setFlipped(state => !state)}>            
-            <animated.div className="text" style={{ opacity: opacity.to(o => 1 - o), transform }}>
+        <div className="project-information" onClick={() => setFlipped(state => !state)}>            
+            <animated.div className="project-description" style={{ opacity: opacity.to(o => 1 - o), transform }}>
                 <h1>Gamedev Blog</h1>
                 <h3>September 2023 - Present (on/off)</h3>
                 <p>
@@ -37,13 +37,13 @@ const Blog = () => {
                     Moving forward, I plan to implement a front-end framework such as React to improve the user experience.
                 </p>
                 <h2>Stack</h2>
-                <div className='skills-container'>
-                    <img src={drf} width="100px" title='Django' />
-                    <img src={bootstrap} width="100px" title='Bootstrap' />
-                    <img src={js} width="100px" title='JavaScript' />
+                <div className='stack'>
+                    <img src={drf} title='Django' />
+                    <img src={bootstrap} title='Bootstrap' />
+                    <img src={js} title='JavaScript' />
                 </div>
             </animated.div>
-            <animated.div className="blog_image" style={{ opacity, transform, rotateX: '180deg' }}></animated.div>
+            <animated.div className="blog-picture project-picture" style={{ opacity, transform, rotateX: '180deg' }}></animated.div>
         </div>
     );
 };

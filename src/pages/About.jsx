@@ -31,28 +31,28 @@ const cards = [
         <div className="work">
             <img src={logo} />
             <div>
-                <h3>Portfolio - Personal Project</h3>
+                <h2>Portfolio - Personal Project</h2>
                 <p>February 2024 - March 2024</p>
             </div>
         </div>
         <div className="work">
             <img src={map} />
             <div>
-                <h3>Freelance Full-stack Developer - PK Deficiency Foundation</h3>
+                <h2>Freelance Full-stack Developer - PK Deficiency Foundation</h2>
                 <p>November 2023 - January 2024</p>
             </div>
         </div>
         <div className="work">
             <img src={blog} />
             <div>
-                <h3>Gamedev Blog Application - Personal Project</h3>
+                <h2>Gamedev Blog Application - Personal Project</h2>
                 <p>September 2023 - Present (on/off)</p>
             </div>
         </div>
         <div className="work">
             <img src={constellation} />
             <div>
-                <h3>Constellation - Personal Project</h3>
+                <h2>Constellation - Personal Project</h2>
                 <p>April 2023 - August 2023</p>
             </div>
         </div>        
@@ -89,7 +89,7 @@ const cards = [
         <p>
             Try clicking my logo in the center of the home screen a few times...
         </p>
-        <img src={logo} width="200px" height="220px" />
+        <img src={logo} />
     </div>,
 ]
 

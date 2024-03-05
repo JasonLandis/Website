@@ -113,13 +113,13 @@ const Projects = () => {
                 setPathfinderInitialPosition({ x: 50, y: 430 });
                 setCenter({ x: innerWidth / 2 - 41.5, y: innerHeight / 2 - 41.5 });
             }
-            else if (window.innerWidth < 1000) {
+            else if (window.innerWidth < 900) {
                 setMapInitialPosition({ x: 75, y: 100 });
                 setBlogInitialPosition({ x: 75, y: 250 });
                 setConstellationInitialPosition({ x: 75, y: 400 });
                 setPathfinderInitialPosition({ x: 75, y: 550 });
                 setCenter({ x: innerWidth / 2 - 52.5, y: innerHeight / 2 - 52.5 });
-            }            
+            }
             else {
                 setMapInitialPosition({ x: 100, y: 100 });
                 setBlogInitialPosition({ x: 100, y: 300 });
@@ -127,6 +127,7 @@ const Projects = () => {
                 setPathfinderInitialPosition({ x: 100, y: 700 });
                 setCenter({ x: innerWidth / 2 - 62.5, y: innerHeight / 2 - 62.5 });
             }
+            // set more initial positions here
         };
 
         handleWindowResize();
@@ -205,15 +206,17 @@ const Projects = () => {
     return (
         <>
             {projectPage === '' ? (
-                <animated.div className="card-container" style={{ ...cardContainer }}>
+                <animated.div style={{ ...cardContainer }}>
                     {projects.map((project, index) => (
                         <animated.div key={index} className={project.name + " draggable"} {...projectBinds[index]()} style={{ x: project.x, y: project.y }} />
                     ))}
-                    <div className="select-container" style={{ left: center.x, top: center.y }}><animated.div className="select" style={{ ...snapBackground }}></animated.div></div>
+                    <div className="select-container" style={{ left: center.x, top: center.y }}>
+                        <animated.div className="select" style={{ ...snapBackground }}></animated.div>
+                    </div>
                 </animated.div>
             ) : (
                 <animated.div className="back-button" style={{ ...backButton }} onClick={goBack}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
                     </svg>
                 </animated.div>

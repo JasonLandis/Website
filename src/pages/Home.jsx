@@ -9,7 +9,7 @@ import './styles/Home.css'
 // Places the logo on the page. Increments the count on click.
 const Home = () => {
 
-    const { count, setCount } = useContext(CountContext)
+    const { count, setCount, isMobile } = useContext(CountContext)
 
     const [logoButton, logoApi] = useSpring(() => ({ from: { transform: 'scale(1)' } }))
 
@@ -17,28 +17,32 @@ const Home = () => {
         <>
             <div className="logo-shadow"></div>
             <div className="logo-container">
-                <animated.div
-                    onMouseEnter={() => {
-                        logoApi.start({ transform: 'scale(1.05)' })
-                    }}
-                    onMouseLeave={() => {
-                        logoApi.start({ transform: 'scale(1)' })
-                    }}
-                    onMouseDown={() => {
-                        logoApi.start({ transform: 'scale(1.02)' })
-                    }}
-                    onMouseUp={() => {
-                        logoApi.start({ transform: 'scale(1.05)' })
-                    }}
-                    onClick={() => {
-                        if (count < 100) {
-                            setCount(count + 1)
-                        }
-                    }}
-                    style={{...logoButton}}
-                >
+                {isMobile ? (
                     <img className="logo" src={logo} />
-                </animated.div>
+                ) : (
+                    <animated.div
+                        onMouseEnter={() => {
+                            logoApi.start({ transform: 'scale(1.05)' })
+                        }}
+                        onMouseLeave={() => {
+                            logoApi.start({ transform: 'scale(1)' })
+                        }}
+                        onMouseDown={() => {
+                            logoApi.start({ transform: 'scale(1.02)' })
+                        }}
+                        onMouseUp={() => {
+                            logoApi.start({ transform: 'scale(1.05)' })
+                        }}
+                        onClick={() => {
+                            if (count < 100) {
+                                setCount(count + 1)
+                            }
+                        }}
+                        style={{...logoButton}}
+                    >
+                        <img className="logo" src={logo} />
+                    </animated.div>
+                )}
             </div>
         </>
     )

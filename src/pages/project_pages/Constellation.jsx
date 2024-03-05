@@ -19,8 +19,8 @@ const Constellation = () => {
     
     return (
         <>
-            <div className="container" onClick={() => setFlipped(state => !state)}>            
-                <animated.div className="text" style={{ opacity: opacity.to(o => 1 - o), transform }}>
+            <div className="project-information" onClick={() => setFlipped(state => !state)}>            
+                <animated.div className="project-description" style={{ opacity: opacity.to(o => 1 - o), transform }}>
                     <h1>Constellation</h1>
                     <h3>April 2023 - August 2023</h3>
                     <p>
@@ -41,15 +41,15 @@ const Constellation = () => {
                         and I hope to release a PC or console game in the future.
                     </p>
                     <h2>Stack</h2>
-                    <div className='skills-container'>
-                        <img src={unity} width="100px" title='Unity' />
-                        <img src={csharp} width="100px" title='C#' />
-                        <img src={android} width="100px" title='Android' />
+                    <div className='stack'>
+                        <img src={unity} title='Unity' />
+                        <img src={csharp} title='C#' />
+                        <img src={android} title='Android' />
                     </div>
                 </animated.div>
-                <animated.div className="constellation_image" style={{ opacity, transform, rotateX: '180deg' }}></animated.div>
+                <animated.div className="constellation-picture project-picture" style={{ opacity, transform, rotateX: '180deg' }}></animated.div>
             </div>
-            <div className="visit-container">
+            <div className="visit">
                 <a href="https://play.google.com/store/apps/details?id=com.JasonLandis.Constellation" target='_blank'>
                     <img src={playstore} width="40px" />
                 </a>

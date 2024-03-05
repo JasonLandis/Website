@@ -51,7 +51,7 @@ const Input = () => {
 
     return (
         count >= 1 && (
-            <animated.div className="input-container" style={{ ...inputDisplay }}>
+            <animated.div className="input" style={{ ...inputDisplay }}>
                 <input
                     type="text"
                     spellCheck={false}

@@ -30,7 +30,7 @@ const Thanks = () => {
         <>
             {(count === appearNum || count === appearNum + 1) && (
                 <animated.div className="puzzle-container" style={{ ...puzzleDisplay }}>
-                    Thanks for playing!
+                    Thanks for playing :)
                 </animated.div>
             )}
         </>

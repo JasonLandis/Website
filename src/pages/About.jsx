@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { useGesture } from '@use-gesture/react'
 import { PageContext } from '../context/PageContext';
+import { CountContext } from '../context/CountContext';
 
 import './styles/About.css'
 import logo from '../assets/logos/logo.png'
@@ -14,7 +15,6 @@ import mail from '../assets/logos/mail.png'
 import map from '../assets/icons/map_icon.png'
 import blog from '../assets/icons/blog_icon.png'
 import constellation from '../assets/icons/constellation_icon.png'
-
 
 const cards = [
     <div className="card skills">
@@ -31,28 +31,28 @@ const cards = [
         <div className="work">
             <img src={logo} />
             <div>
-                <h3>Portfolio - Personal Project</h3>
+                <h2>Portfolio - Personal Project</h2>
                 <p>February 2024 - March 2024</p>
             </div>
         </div>
         <div className="work">
             <img src={map} />
             <div>
-                <h3>Freelance Full-stack Developer - PK Deficiency Foundation</h3>
+                <h2>Freelance Full-stack Developer - PK Deficiency Foundation</h2>
                 <p>November 2023 - January 2024</p>
             </div>
         </div>
         <div className="work">
             <img src={blog} />
             <div>
-                <h3>Gamedev Blog Application - Personal Project</h3>
+                <h2>Gamedev Blog Application - Personal Project</h2>
                 <p>September 2023 - Present (on/off)</p>
             </div>
         </div>
         <div className="work">
             <img src={constellation} />
             <div>
-                <h3>Constellation - Personal Project</h3>
+                <h2>Constellation - Personal Project</h2>
                 <p>April 2023 - August 2023</p>
             </div>
         </div>        
@@ -89,7 +89,7 @@ const cards = [
         <p>
             Try clicking my logo in the center of the home screen a few times...
         </p>
-        <img src={logo} width="200px" height="220px" />
+        <img src={logo} />
     </div>,
 ]
 
@@ -111,6 +111,27 @@ const trans = (r, s) => `rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) s
 // Deck component
 const Deck = () => {
     const { setSlide } = useContext(PageContext);
+    const { isMobile } = useContext(CountContext);
+
+    useEffect(() => {
+        if (isMobile) {
+            cards[3] = <div className="card about">
+                <h1>About me</h1>
+                <p>
+                    I'm Jason, a computer science graduate. I specialize in full-stack software 
+                    development with a hobby in game development.
+                </p>
+                <p>
+                    I am constantly working on projects, whether it be a mobile game or a complex web application. 
+                    Currently, I am working on optimizing this portfolio website for mobile devices.
+                </p>
+                <p>
+                    Visit this site on a desktop to for a better experience.
+                </p>
+                <img src={logo} width="200px" height="220px" />
+            </div>
+        }
+    }, [isMobile])
     
     useEffect(() => {
         setSlide(1)

@@ -1,4 +1,4 @@
-.count-container {
+.count {
     position: absolute;
     top: 15px;
     padding: 10px 20px 10px 30px;
@@ -8,23 +8,23 @@
     box-shadow: 0 0 20px 0 rgb(0, 0, 0);
 }
 
-.input-container {
+.input {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 0 0 20px 5px rgb(0, 0, 0);
+    border-radius: 5px;
 }
 
-.input-container input {
+.input input {
     box-sizing: border-box;
-    width: calc(100% - 2.5px);
     padding: 5px;
     font-size: 1.2rem;
     text-align: center;
     background-color: rgb(34, 34, 34);
     border: none;
     border-radius: 5px;
-    color: #ffffff;
+    color: #fff;
     outline: none;
     font-family: 'Trebuchet MS', sans-serif;
 }
@@ -33,18 +33,14 @@
     position: absolute;
     font-size: 20px;
     display: flex;
-    justify-content: center;
-    left: 50%;    
-    top: 0px;
+    left: 50%;
     transform: translate(-50%, 0);
-    z-index: 2;
+    z-index: 5;
 }
 
 .links div {
     position: relative;
-    display: block;
     text-align: center;
-    text-decoration: none;
     color: #fff;
     margin: 0 10px;
     background-color: rgb(27, 27, 27);
@@ -52,7 +48,6 @@
     border-radius: 5px;
     width: 100px;
     cursor: pointer;
-    font-family: 'Trebuchet MS', sans-serif;
     box-shadow: 0 0 20px 0 rgb(0, 0, 0);
 }
 
@@ -64,15 +59,12 @@
     bottom: -50%;
     width: 200%;
     height: 200vh;
-    background: transparent url('../assets/noise.png') repeat 0 0;  
-    background-color: #111111;
-    background-repeat: repeat;
-    visibility: visible;
-    z-index: -2;
+    background: transparent url('../assets/noise.png');
+    z-index: -1;
 }
 
-.tiles{
-    position: absolute;
+.tiles {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -80,67 +72,87 @@
     z-index: -2;
 }
 
-.tiles li{
+.tiles div {
     position: absolute;
-    display: block;
-    list-style: none;
     width: 100px;
     height: 100px;
+    margin-left: -50px;
     bottom: -150px;
-    filter: blur(5px);
     animation: animate-up 15s linear infinite;
     box-shadow: 0 0 20px 10px rgb(0, 0, 0);
 }
 
-.tiles li:nth-child(1){
-    left: 16%;
-    transform: translate(-50%, 0);
+.tiles div:nth-child(1) {
+    left: 20%;
     animation-delay: 0s;
 }
 
-
-.tiles li:nth-child(2){
-    left: 6%;
+.tiles div:nth-child(2) {
+    left: 10%;
     animation-delay: 2s;
     animation-duration: 12s;
 }
 
-.tiles li:nth-child(3){
-    left: 66%;
+.tiles div:nth-child(3) {
+    left: 70%;
     animation-delay: 4s;
 }
 
-.tiles li:nth-child(4){
-    left: 36%;
+.tiles div:nth-child(4) {
+    left: 40%;
     animation-delay: 0s;
     animation-duration: 18s;
 }
 
-.tiles li:nth-child(5){
-    left: 56%;
+.tiles div:nth-child(5) {
+    left: 60%;
     animation-delay: 0s;
 }
 
-.tiles li:nth-child(6){
-    left: 76%;
+.tiles div:nth-child(6) {
+    left: 80%;
     animation-delay: 3s;
 }
 
-.tiles li:nth-child(7){
-    left: 26%;
+.tiles div:nth-child(7) {
+    left: 30%;
     animation-delay: 7s;
 }
 
-.tiles li:nth-child(8){
-    left: 46%;
+.tiles div:nth-child(8) {
+    left: 50%;
     animation-delay: 15s;
     animation-duration: 45s;
 }
 
-.tiles li:nth-child(9){
-    left: 86%;
+.tiles div:nth-child(9) {
+    left: 90%;
     animation-delay: 2s;
     animation-duration: 35s;
+}
+
+.landscape-warning {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('../assets/noise.png');
+    background-color: #111111;
+    font-size: 30px;
+    text-align: center;
+    z-index: 99;
+}
+
+.landscape-warning p {
+    position: absolute;
+    margin: 0;
+    padding: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @keyframes animate-up {
@@ -156,29 +168,29 @@
 }
 
 @media screen and (max-width: 900px) {
-    .tiles li {
+    .tiles div {
         width: 80px;
         height: 80px;
     }
 }
 
 @media screen and (max-width: 700px) {
-    .tiles li {
+    .tiles div {
         width: 60px;
         height: 60px;
     }
     .links div {
-        padding: 20px 15px 10px 10px;
+        padding: 22px 15px 10px 10px;
         width: 80px;
         font-size: 1.1rem;
     }
 }
 
 @media screen and (max-width: 550px) {
-    .count-container {
+    .count {
         top: 70px;
     }
-    .tiles li {
+    .tiles div {
         width: 40px;
         height: 40px;
     }
@@ -190,7 +202,7 @@
         font-size: 1rem;
         margin: 0 5px;
     }
-    .count-container {
+    .count {
         top: 60px;
         padding: 10px 15px 10px 20px;
         font-size: 20px;

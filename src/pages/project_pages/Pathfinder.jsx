@@ -17,8 +17,8 @@ const Pathfinder = () => {
     
     return (
         <>
-            <div className="container" onClick={() => setFlipped(state => !state)}>            
-                <animated.div className="text" style={{ opacity: opacity.to(o => 1 - o), transform }}>
+            <div className="project-information" onClick={() => setFlipped(state => !state)}>            
+                <animated.div className="project-description" style={{ opacity: opacity.to(o => 1 - o), transform }}>
                     <h1>Pathfinder</h1>
                     <h3>January 2023 - February 2023</h3>
                     <p>
@@ -34,14 +34,14 @@ const Pathfinder = () => {
                         blockades, and having multiple blocks and endpoints at once.
                     </p>
                     <h2>Stack</h2>
-                    <div className='skills-container'>
-                        <img src={unity} width="100px" title='Unity' />
-                        <img src={csharp} width="100px" title='C#' />
+                    <div className='stack'>
+                        <img src={unity} title='Unity' />
+                        <img src={csharp} title='C#' />
                     </div>
                 </animated.div>
-                <animated.div className="pathfinder_image" style={{ opacity, transform, rotateX: '180deg' }}></animated.div>
+                <animated.div className="pathfinder-picture project-picture" style={{ opacity, transform, rotateX: '180deg' }}></animated.div>
             </div>
-            <div className="visit-container">
+            <div className="visit">
                 <a href="https://github.com/JasonLandis/Pathfinder" target='_blank'>
                     <img src={github} width="40px" />
                 </a>

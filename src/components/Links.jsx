@@ -11,7 +11,7 @@ import About from '../pages/About'
 // Handles link elements and page transitions.
 const Links = () => {
     const { page, setPage, setProjectPage, setSlide } = useContext(PageContext)
-    const { count } = useContext(CountContext)
+    const { count, isMobile } = useContext(CountContext)
 
     const [homePage, homePageApi] = useSpring(() => ({ from: { opacity: 1 } }))
     const [projectsPage, projectsPageApi] = useSpring(() => ({ from: { opacity: 0 } }))
@@ -22,7 +22,15 @@ const Links = () => {
     const [about, aboutApi] = useSpring(() => ({ from: { top: '-100px' } }))
 
     useEffect(() => {
-        if (count === 1) {
+        if (isMobile) {
+            homeApi.start({ top: '-5px' })
+            projectsApi.start({ top: '-15px', delay: 60 })
+            aboutApi.start({ top: '-15px', delay: 120 })
+        }
+    }, [isMobile])
+
+    useEffect(() => {
+        if (count === 1 ) {
             homeApi.start({ top: '-5px' })
             projectsApi.start({ top: '-15px', delay: 60 })
             aboutApi.start({ top: '-15px', delay: 120 })

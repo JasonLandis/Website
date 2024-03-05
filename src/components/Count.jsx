@@ -24,7 +24,7 @@ const Count = () => {
     }, [count, page])
 
     return (
-        <animated.div className="count-container" style={{...countDisplay}}>{count}</animated.div>
+        <animated.div className="count" style={{...countDisplay}}>{count}</animated.div>
     )
 }
 

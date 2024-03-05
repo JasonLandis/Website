@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { CountContext } from './context/CountContext'
 
 import Count from './components/Count'
 import Input from './components/Input'
@@ -20,24 +21,26 @@ import Thanks from './puzzles/Thanks'
 
 function App() {
 
+    const { isMobile } = useContext(CountContext)
+
     return (
         <>
-            <Count />
-            <Input />
+            {!isMobile && <Count />}
+            {!isMobile && <Input />}
             <Links />
             <Background />
 
-            <Zero />
-            <One />
-            <Two />
-            <Three />
-            <Four />
-            <Five />
-            <Six />
-            <Seven />
-            <Eight />
+            {!isMobile && <Zero />}
+            {!isMobile && <One />}
+            {!isMobile && <Two />}
+            {!isMobile && <Three />}
+            {!isMobile && <Four />}
+            {!isMobile && <Five />}
+            {!isMobile && <Six />}
+            {!isMobile && <Seven />}
+            {!isMobile && <Eight />}
 
-            <Thanks />
+            {!isMobile && <Thanks />}
         </>
     )
 }

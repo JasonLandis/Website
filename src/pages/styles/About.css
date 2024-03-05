@@ -28,6 +28,7 @@
     font-size: 2.5em;
     text-align: center;
     margin: 0;
+    padding: 0;
 }
 
 .card h2 {
@@ -185,38 +186,46 @@
 
 @media (max-width: 550px) {
     .card {
-        width: 260px;
-        height: 500px;
+        width: 250px;
+        height: 400px;
     }
     .card h1 {
-        font-size: 1.2em;
+        font-size: 1.1em;
+        margin-bottom: 15px;
     }
     .card h2 {
         font-size: 1em;
     }
     .card p {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
     .about img {
-        width: 120px;
-        height: 130px;
+        width: 100px;
+        height: 110px;
+    }
+    .education {
+        padding-top: 40px;
     }
     .education img {
         width: 50px;
-        height: 60px;
-        margin-right: 20px;
+        height: 55px;
+        margin-right: 10px;
     }
     .work {
         padding-top: 10px;
     }
     .work img {
-        width: 40px;
-        height: 55px;
+        width: 35px;
+        height: 40px;
+        margin-right: 10px;
     }
     .work h3 {
-        font-size: 1em;
+        font-size: 0.8em;
     }
     .work p {
-        font-size: 0.9em;
+        font-size: 0.7em;
+    }
+    .skills h2 {
+        margin-top: 25px;
     }
 }

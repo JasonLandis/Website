@@ -119,7 +119,7 @@ const Projects = () => {
                 setConstellationInitialPosition({ x: 75, y: 400 });
                 setPathfinderInitialPosition({ x: 75, y: 550 });
                 setCenter({ x: innerWidth / 2 - 52.5, y: innerHeight / 2 - 52.5 });
-            }            
+            }
             else {
                 setMapInitialPosition({ x: 100, y: 100 });
                 setBlogInitialPosition({ x: 100, y: 300 });
@@ -127,6 +127,7 @@ const Projects = () => {
                 setPathfinderInitialPosition({ x: 100, y: 700 });
                 setCenter({ x: innerWidth / 2 - 62.5, y: innerHeight / 2 - 62.5 });
             }
+            // set more initial positions here
         };
 
         handleWindowResize();

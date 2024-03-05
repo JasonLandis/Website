@@ -10,6 +10,7 @@ export const CountProvider = ({ children }) => {
     const [codes, setCodes] = useState({})
     const [answers, setAnswers] = useState({})
     const [inputValue, setInputValue] = useState('')
+    const [isMobile, setIsMobile] = useState(false)
 
     // Generate 8 character code
     function generateCode() {
@@ -242,10 +243,13 @@ export const CountProvider = ({ children }) => {
 
     useEffect(() => {
         generateCodes();
+        if (window.innerWidth < 768) {
+            setIsMobile(true)
+        }
     }, []);
 
     return (
-        <CountContext.Provider value={{ count, setCount, correct, setCorrect, codes, generateCodes, answers, inputValue, setInputValue }}>
+        <CountContext.Provider value={{ count, setCount, correct, setCorrect, codes, generateCodes, answers, inputValue, setInputValue, isMobile }}>
             {children}
         </CountContext.Provider>
     );

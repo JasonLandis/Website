@@ -199,7 +199,7 @@
 }
 
 @media screen and (max-width: 580px) {
-  .text, 
+  .text,
   .map_image, 
   .blog_image, 
   .constellation_image, 
@@ -209,7 +209,7 @@
   }
   .text h1 {
     font-size: 1em;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
   }
   .text h2 {
@@ -220,7 +220,7 @@
     font-size: 0.8em;
   }
   .text p {
-    font-size: 0.7em;
+    font-size: 0.6em;
     margin-top: 13px;
   }
 

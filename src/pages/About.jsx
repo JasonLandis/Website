@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { useGesture } from '@use-gesture/react'
 import { PageContext } from '../context/PageContext';
+import { CountContext } from '../context/CountContext';
 
 import './styles/About.css'
 import logo from '../assets/logos/logo.png'
@@ -14,7 +15,6 @@ import mail from '../assets/logos/mail.png'
 import map from '../assets/icons/map_icon.png'
 import blog from '../assets/icons/blog_icon.png'
 import constellation from '../assets/icons/constellation_icon.png'
-
 
 const cards = [
     <div className="card skills">
@@ -111,6 +111,27 @@ const trans = (r, s) => `rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) s
 // Deck component
 const Deck = () => {
     const { setSlide } = useContext(PageContext);
+    const { isMobile } = useContext(CountContext);
+
+    useEffect(() => {
+        if (isMobile) {
+            cards[3] = <div className="card about">
+                <h1>About me</h1>
+                <p>
+                    I'm Jason, a computer science graduate. I specialize in full-stack software 
+                    development with a hobby in game development.
+                </p>
+                <p>
+                    I am constantly working on projects, whether it be a mobile game or a complex web application. 
+                    Currently, I am working on optimizing this portfolio website for mobile devices.
+                </p>
+                <p>
+                    Visit this site on a desktop to for a better experience.
+                </p>
+                <img src={logo} width="200px" height="220px" />
+            </div>
+        }
+    }, [isMobile])
     
     useEffect(() => {
         setSlide(1)

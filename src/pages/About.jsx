@@ -83,8 +83,8 @@ const cards = [
             development with a hobby in game development.
         </p>
         <p>
-            I am constantly working on projects, whether it be a mobile game or a complex web application. 
-            Currently, I am working on optimizing this portfolio website for mobile devices.
+            I am constantly working on projects, whether it be a mobile game or a complex web application.
+            Many projects of mine are featured on this site, so feel free to check them out.
         </p>
         <p>
             Try clicking my logo in the center of the home screen a few times...

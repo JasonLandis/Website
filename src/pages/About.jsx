@@ -20,11 +20,11 @@ const cards = [
     <div className="card skills">
         <h1>Skills</h1>
         <h2>Languages</h2>
-        <p>HTML, CSS, JavaScript, PHP, C, C#, Python, JAVA, SQL</p>
+        <p>Python, C#, C, HTML, CSS, JavaScript, PHP, SQL</p>
         <h2>Frameworks</h2>
-        <p>React, Django, ASP.NET, Bootstrap</p>
+        <p>React, Django/DRF, ASP.NET, Bootstrap</p>
         <h2>Tools</h2>
-        <p>Git, Docker, Unity, Firebase, GCP, MySQL, SQL Server</p>
+        <p>Google Cloud Platform, Firebase, Docker, Git, MySQL, SQL Server</p>
     </div>,
     <div className="card">
         <h1>Timeline (post-graduation)</h1>

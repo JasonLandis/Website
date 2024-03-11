@@ -11,56 +11,45 @@ import About from '../pages/About'
 // Handles link elements and page transitions.
 const Links = () => {
     const { page, setPage, setProjectPage, setSlide } = useContext(PageContext)
-    const { count, isMobile } = useContext(CountContext)
 
     const [homePage, homePageApi] = useSpring(() => ({ from: { opacity: 1 } }))
     const [projectsPage, projectsPageApi] = useSpring(() => ({ from: { opacity: 0 } }))
     const [aboutPage, aboutPageApi] = useSpring(() => ({ from: { opacity: 0 } }))
     
-    const [home, homeApi] = useSpring(() => ({ from: { top: '-100px' } }))
-    const [projects, projectsApi] = useSpring(() => ({ from: { top: '-100px' } }))
-    const [about, aboutApi] = useSpring(() => ({ from: { top: '-100px' } }))
+    const [home, homeApi] = useSpring(() => ({ from: { top: '-100px', backgroundColor: '#1b1b1b' } }))
+    const [projects, projectsApi] = useSpring(() => ({ from: { top: '-100px', backgroundColor: '#1b1b1b' } }))
+    const [about, aboutApi] = useSpring(() => ({ from: { top: '-100px', backgroundColor: '#1b1b1b' } }))
 
     useEffect(() => {
-        if (isMobile) {
-            homeApi.start({ top: '-5px' })
-            projectsApi.start({ top: '-15px', delay: 60 })
-            aboutApi.start({ top: '-15px', delay: 120 })
-        }
-    }, [isMobile])
-
-    useEffect(() => {
-        if (count === 1 ) {
-            homeApi.start({ top: '-5px' })
-            projectsApi.start({ top: '-15px', delay: 60 })
-            aboutApi.start({ top: '-15px', delay: 120 })
-        }
-    }, [count])
+        homeApi.start({ top: '-5px', backgroundColor: '#3f1c1c' })
+        projectsApi.start({ top: '-15px', delay: 60 })
+        aboutApi.start({ top: '-15px', delay: 120 })
+    }, [])
     
     const transition = (currentPage, nextPage) => {
         if (currentPage === nextPage) return
         
         if (currentPage === 'home') {
-            homeApi.start({ top: '-15px', config: { duration: 150 }})
+            homeApi.start({ top: '-15px', backgroundColor: '#1b1b1b', config: { duration: 150 }})
             homePageApi.start({ opacity: 0, config: { duration: 150 }})
         }
         else if (currentPage === 'projects') {
-            projectsApi.start({ top: '-15px', config: { duration: 150 }})
+            projectsApi.start({ top: '-15px', backgroundColor: '#1b1b1b', config: { duration: 150 }})
             projectsPageApi.start({ opacity: 0, config: { duration: 150 }})
         }
         else if (currentPage === 'about') {
-            aboutApi.start({ top: '-15px', config: { duration: 150 }})
+            aboutApi.start({ top: '-15px', backgroundColor: '#1b1b1b', config: { duration: 150 }})
             aboutPageApi.start({ opacity: 0, config: { duration: 150 }})
         }
 
         if (nextPage === 'home') {
-            homeApi.start({ top: '-5px', config: { duration: 150 }})
+            homeApi.start({ top: '-5px', backgroundColor: '#3f1c1c', config: { duration: 150 }})
         }
         else if (nextPage === 'projects') {
-            projectsApi.start({ top: '-5px', config: { duration: 150 }})
+            projectsApi.start({ top: '-5px', backgroundColor: '#22254e', config: { duration: 150 }})
         }
         else if (nextPage === 'about') {
-            aboutApi.start({ top: '-5px', config: { duration: 150 }})
+            aboutApi.start({ top: '-5px', backgroundColor: '#1a3d20', config: { duration: 150 }})
         }
 
         setTimeout(() => {

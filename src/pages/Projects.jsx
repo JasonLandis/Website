@@ -91,7 +91,7 @@ const Projects = () => {
     ]
 
     const [center, setCenter] = useState({ x: 0, y: 0 });
-    const [snapBackground, snapBackgroundApi] = useSpring(() => ({ from: { backgroundColor: '#111111' } }));
+    const [snapBackground, snapBackgroundApi] = useSpring(() => ({ from: { backgroundColor: '#1b1b1b' } }));
     const [cardContainer, cardContainerApi] = useSpring(() => ({ opacity: 1 }))
     const [backButton, backButtonApi] = useSpring(() => ({ opacity: 0 }))
     const [snapped, setSnapped] = useState(false);
@@ -148,7 +148,7 @@ const Projects = () => {
             project.api.start({ [`${project.name}X`]: project.initialPosition.x, [`${project.name}Y`]: project.initialPosition.y });
         });
 
-        snapBackgroundApi.start({ backgroundColor: '#111111' });
+        snapBackgroundApi.start({ backgroundColor: '#1b1b1b' });
     }, [blogInitialPosition]);
 
     const goBack = () => {
@@ -170,9 +170,9 @@ const Projects = () => {
             const snap = Math.abs(project.position.x + mx - center.x) < snapDistance && Math.abs(project.position.y + my - center.y) < snapDistance;
     
             if (snap) {
-                snapBackgroundApi.start({ backgroundColor: '#202020' });
+                snapBackgroundApi.start({ backgroundColor: '#303030' });
             } else {
-                snapBackgroundApi.start({ backgroundColor: '#111111' });
+                snapBackgroundApi.start({ backgroundColor: '#1b1b1b' });
             }
     
             if (!down) {
@@ -184,7 +184,7 @@ const Projects = () => {
                         setTimeout(() => {
                             project.setPosition(project.initialPosition)
                             project.api.start({ [`${project.name}X`]: project.initialPosition.x, [`${project.name}Y`]: project.initialPosition.y, immediate: true });
-                            snapBackgroundApi.start({ backgroundColor: '#111111' });
+                            snapBackgroundApi.start({ backgroundColor: '#1b1b1b' });
                             setProjectPage(project.name);
                             project.pageApi.start({ opacity: 1, config: { duration: 250 } });
                             backButtonApi.start({ opacity: 1, config: { duration: 250 } });

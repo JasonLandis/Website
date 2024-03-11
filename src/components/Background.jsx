@@ -124,7 +124,7 @@ const HomeBackground = () => {
     return (
         <>
             <div className="background"></div>
-            {count >= 1 &&
+            {!isMobile >= 1 &&
                 <div className="tiles">
                     {tiles.map(({ tile }, index) => (
                         <animated.div

@@ -103,6 +103,7 @@ const to = (i) => ({
     scale: 1,
     rot: -3 + Math.random() * 6, // Random rotation
     delay: i * 100, // Staggered delay
+    config: { friction: 50, tension: 200 }
 })
 
 // Transform function

@@ -45,8 +45,8 @@
 }
 
 .project-description {
-    background-color: rgb(27, 27, 27);
-    box-shadow: 0 0 30px rgb(0, 0, 0);
+    background-color: rgb(39, 39, 39);
+    box-shadow: 0 0 30px 10px rgb(14, 14, 14);
     color: #fff;
 }
 

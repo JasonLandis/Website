@@ -10,13 +10,13 @@
 .card-container {
     position: absolute;
 }
-  
+
 .card {
-    background-color: rgb(27, 27, 27);
+    background-color: rgb(39, 39, 39);
     width: 800px;
     height: 600px;
     border-radius: 10px;
-    box-shadow: 0 0 30px 0 rgb(0, 0, 0);
+    box-shadow: 0 0 30px 0 rgb(14, 14, 14);
     cursor: pointer;
     padding: 30px;
     color: #fff;
@@ -64,7 +64,7 @@
 
 .work {
     display: flex;
-    padding-top: 40px;
+    padding-top: 60px;
     margin-left: 50px;
 }
 

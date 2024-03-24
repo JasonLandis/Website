@@ -2,17 +2,17 @@
     position: absolute;
     top: 15px;
     padding: 10px 20px 10px 30px;
-    background-color: rgb(27, 27, 27);
+    background-color: rgb(39, 39, 39);
     border-radius: 5px;
     font-size: 30px;
-    box-shadow: 0 0 20px 0 rgb(0, 0, 0);
+    box-shadow: 0 0 30px 5px rgb(0, 0, 0);
 }
 
 .input {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 20px 5px rgb(0, 0, 0);
+    box-shadow: 0 0 30px 5px rgb(0, 0, 0);
     border-radius: 5px;
 }
 
@@ -21,7 +21,7 @@
     padding: 5px;
     font-size: 1.2rem;
     text-align: center;
-    background-color: rgb(34, 34, 34);
+    background-color: rgb(54, 54, 54);
     border: none;
     border-radius: 5px;
     color: #fff;
@@ -47,7 +47,7 @@
     border-radius: 5px;
     width: 100px;
     cursor: pointer;
-    box-shadow: 0 0 20px 0 rgb(0, 0, 0);
+    box-shadow: 0 0 30px 5px rgb(0, 0, 0);
 }
 
 .background {
@@ -63,71 +63,89 @@
 }
 
 .tiles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
     z-index: -2;
 }
 
 .tiles div {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    margin-left: -50px;
-    bottom: -150px;
-    animation: animate-up 15s linear infinite;
+    transform: translate(-50%, -50%);
     box-shadow: 0 0 20px 10px rgb(0, 0, 0);
+    opacity: 0.4;
 }
 
 .tiles div:nth-child(1) {
-    left: 20%;
-    animation-delay: 0s;
+    width: 1950px;
+    height: 1950px;
+    margin-left: -975px;
+    margin-top: -975px;
+    animation: rotate 200s linear infinite;
 }
 
 .tiles div:nth-child(2) {
-    left: 10%;
-    animation-delay: 2s;
-    animation-duration: 12s;
+    width: 1750px;
+    height: 1750px;
+    margin-left: -875px;
+    margin-top: -875px;
+    animation: rotate 180s linear infinite;
 }
 
 .tiles div:nth-child(3) {
-    left: 70%;
-    animation-delay: 4s;
+    width: 1550px;
+    height: 1550px;
+    margin-left: -775px;
+    margin-top: -775px;
+    animation: rotate 160s linear infinite;
 }
 
 .tiles div:nth-child(4) {
-    left: 40%;
-    animation-delay: 0s;
-    animation-duration: 18s;
+    width: 1350px;
+    height: 1350px;
+    margin-left: -675px;
+    margin-top: -675px;
+    animation: rotate 140s linear infinite;
 }
 
 .tiles div:nth-child(5) {
-    left: 60%;
-    animation-delay: 0s;
+    width: 1150px;
+    height: 1150px;
+    margin-left: -575px;
+    margin-top: -575px;
+    animation: rotate 120s linear infinite;
 }
 
 .tiles div:nth-child(6) {
-    left: 80%;
-    animation-delay: 3s;
+    width: 950px;
+    height: 950px;
+    margin-left: -475px;
+    margin-top: -475px;
+    animation: rotate 100s linear infinite;
 }
 
 .tiles div:nth-child(7) {
-    left: 30%;
-    animation-delay: 7s;
+    width: 750px;
+    height: 750px;
+    margin-left: -375px;
+    margin-top: -375px;
+    animation: rotate 80s linear infinite;
 }
 
 .tiles div:nth-child(8) {
-    left: 50%;
-    animation-delay: 15s;
-    animation-duration: 45s;
+    width: 550px;
+    height: 550px;
+    margin-left: -275px;
+    margin-top: -275px;
+    animation: rotate 60s linear infinite;
 }
 
 .tiles div:nth-child(9) {
-    left: 90%;
-    animation-delay: 2s;
-    animation-duration: 35s;
+    width: 350px;
+    height: 350px;
+    margin-left: -175px;
+    margin-top: -175px;
+    animation: rotate 40s linear infinite;
 }
 
 .landscape-warning {
@@ -153,30 +171,16 @@
     transform: translate(-50%, -50%);
 }
 
-@keyframes animate-up {
-    0%{
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
     }
-
-    100%{
-        transform: translateY(-120vh) rotate(720deg);
-        opacity: 0;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .tiles div {
-        width: 80px;
-        height: 80px;
+    100% {
+        transform: rotate(360deg);
     }
 }
 
 @media screen and (max-width: 700px) {
-    .tiles div {
-        width: 60px;
-        height: 60px;
-    }
     .links div {
         padding: 22px 15px 10px 10px;
         width: 80px;
@@ -187,10 +191,6 @@
 @media screen and (max-width: 550px) {
     .count {
         top: 70px;
-    }
-    .tiles div {
-        width: 40px;
-        height: 40px;
     }
 }
 

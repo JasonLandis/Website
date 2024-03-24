@@ -21,7 +21,7 @@ const Links = () => {
     const [about, aboutApi] = useSpring(() => ({ from: { top: '-100px', backgroundColor: '#222222' } }))
 
     useEffect(() => {
-        homeApi.start({ top: '-5px', backgroundColor: '#2c2c2c' })
+        homeApi.start({ top: '-5px', backgroundColor: '#333333' })
         projectsApi.start({ top: '-15px', delay: 60 })
         aboutApi.start({ top: '-15px', delay: 120 })
     }, [])
@@ -43,13 +43,13 @@ const Links = () => {
         }
 
         if (nextPage === 'home') {
-            homeApi.start({ top: '-5px', backgroundColor: '#2c2c2c', config: { duration: 150 }})
+            homeApi.start({ top: '-5px', backgroundColor: '#333333', config: { duration: 150 }})
         }
         else if (nextPage === 'projects') {
-            projectsApi.start({ top: '-5px', backgroundColor: '#2c2c2c', config: { duration: 150 }})
+            projectsApi.start({ top: '-5px', backgroundColor: '#333333', config: { duration: 150 }})
         }
         else if (nextPage === 'about') {
-            aboutApi.start({ top: '-5px', backgroundColor: '#2c2c2c', config: { duration: 150 }})
+            aboutApi.start({ top: '-5px', backgroundColor: '#333333', config: { duration: 150 }})
         }
 
         setTimeout(() => {

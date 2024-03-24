@@ -13,8 +13,7 @@ import linkedin from '../assets/logos/linkedin.png'
 import mail from '../assets/logos/mail.png'
 
 import map from '../assets/icons/map_icon.png'
-import blog from '../assets/icons/blog_icon.png'
-import constellation from '../assets/icons/constellation_icon.png'
+import AMI from '../assets/logos/AMI.png'
 
 const cards = [
     <div className="card skills">
@@ -27,12 +26,12 @@ const cards = [
         <p>Google Cloud Platform, Firebase, Docker, Git, MySQL, SQL Server</p>
     </div>,
     <div className="card">
-        <h1>Timeline (post-graduation)</h1>
+        <h1>Work history</h1>
         <div className="work">
-            <img src={logo} />
+            <img src={AMI} />
             <div>
-                <h2>Portfolio - Personal Project</h2>
-                <p>February 2024 - March 2024</p>
+                <h2>Junior Web Developer - Automated Media Incorporated</h2>
+                <p>April 2024 - Present</p>
             </div>
         </div>
         <div className="work">
@@ -42,20 +41,6 @@ const cards = [
                 <p>November 2023 - January 2024</p>
             </div>
         </div>
-        <div className="work">
-            <img src={blog} />
-            <div>
-                <h2>Gamedev Blog Application - Personal Project</h2>
-                <p>September 2023 - Present (on/off)</p>
-            </div>
-        </div>
-        <div className="work">
-            <img src={constellation} />
-            <div>
-                <h2>Constellation - Personal Project</h2>
-                <p>April 2023 - August 2023</p>
-            </div>
-        </div>        
     </div>,
     <div className="card">
         <h1>Education</h1>
@@ -74,12 +59,12 @@ const cards = [
                 <p>General Studies</p>
                 <p>August 2019 - April 2020</p>
             </div>
-        </div>    
+        </div>
     </div>,
     <div className="card about">
         <h1>About me</h1>
         <p>
-            I'm Jason, a computer science graduate. I specialize in full-stack software 
+            I'm Jason, a junior software developer. I specialize in full-stack software 
             development with a hobby in game development.
         </p>
         <p>
@@ -87,7 +72,7 @@ const cards = [
             Many projects of mine are featured on this site, so feel free to check them out.
         </p>
         <p>
-            Try clicking my logo in the center of the home screen a few times...
+            Try clicking my logo in the center of the home screen 10 times...
         </p>
         <img src={logo} />
     </div>,
@@ -119,7 +104,7 @@ const Deck = () => {
             cards[3] = <div className="card about">
                 <h1>About me</h1>
                 <p>
-                    I'm Jason, a computer science graduate. I specialize in full-stack software 
+                    I'm Jason, a junior software developer. I specialize in full-stack software 
                     development with a hobby in game development.
                 </p>
                 <p>

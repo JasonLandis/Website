@@ -72,7 +72,8 @@ const cards = [
             Many projects of mine are featured on this site, so feel free to check them out.
         </p>
         <p>
-            Try clicking my logo in the center of the home screen 10 times...
+            Refresh the page for a new look. And if you enjoy puzzles, try clicking my logo in the center
+            of the home page a few times...
         </p>
         <img src={logo} />
     </div>,

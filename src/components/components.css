@@ -5,14 +5,14 @@
     background-color: rgb(39, 39, 39);
     border-radius: 5px;
     font-size: 30px;
-    box-shadow: 0 0 30px 0 rgb(14, 14, 14);
+    box-shadow: 0 0 30px 5px rgb(0, 0, 0);
 }
 
 .input {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px 5px rgb(14, 14, 14);
+    box-shadow: 0 0 30px 5px rgb(0, 0, 0);
     border-radius: 5px;
 }
 
@@ -47,7 +47,7 @@
     border-radius: 5px;
     width: 100px;
     cursor: pointer;
-    box-shadow: 0 0 10px 5px rgb(14, 14, 14);
+    box-shadow: 0 0 30px 5px rgb(0, 0, 0);
 }
 
 .background {
@@ -180,18 +180,7 @@
     }
 }
 
-@media screen and (max-width: 900px) {
-    .tiles div {
-        width: 80px;
-        height: 80px;
-    }
-}
-
 @media screen and (max-width: 700px) {
-    .tiles div {
-        width: 60px;
-        height: 60px;
-    }
     .links div {
         padding: 22px 15px 10px 10px;
         width: 80px;
@@ -202,10 +191,6 @@
 @media screen and (max-width: 550px) {
     .count {
         top: 70px;
-    }
-    .tiles div {
-        width: 40px;
-        height: 40px;
     }
 }
 

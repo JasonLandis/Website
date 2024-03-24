@@ -10,7 +10,7 @@
 .card-container {
     position: absolute;
 }
-  
+
 .card {
     background-color: rgb(39, 39, 39);
     width: 800px;
@@ -64,7 +64,7 @@
 
 .work {
     display: flex;
-    padding-top: 40px;
+    padding-top: 60px;
     margin-left: 50px;
 }
 

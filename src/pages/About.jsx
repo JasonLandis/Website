@@ -30,7 +30,7 @@ const cards = [
         <div className="work">
             <img src={AMI} />
             <div>
-                <h2>Junior Web Developer - Automated Media Incorporated</h2>
+                <h2>Junior Web Developer - Automated Media Inc.</h2>
                 <p>April 2024 - Present</p>
             </div>
         </div>

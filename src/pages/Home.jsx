@@ -18,7 +18,7 @@ const Home = () => {
             <div className="logo-shadow"></div>
             <div className="logo-container">
                 {isMobile ? (
-                    <img className="logo" src={logo} />
+                    <img className="logo" rel="preload" src={logo} />
                 ) : (
                     <animated.div
                         onMouseEnter={() => {
@@ -40,7 +40,7 @@ const Home = () => {
                         }}
                         style={{...logoButton}}
                     >
-                        <img className="logo" src={logo} />
+                        <img className="logo" rel="preload" src={logo} />
                     </animated.div>
                 )}
             </div>

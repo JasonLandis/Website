@@ -21,9 +21,9 @@ const cards = [
         <h2>Languages</h2>
         <p>Python, C#, C, HTML, CSS, JavaScript, PHP, SQL</p>
         <h2>Frameworks</h2>
-        <p>React, Django/DRF, ASP.NET, Bootstrap</p>
+        <p>React, Angular, Django/DRF, ASP.NET, Bootstrap</p>
         <h2>Tools</h2>
-        <p>Google Cloud Platform, Firebase, Docker, Git, MySQL, SQL Server</p>
+        <p>GCP, Azure, Firebase, Docker, Git, MySQL, SQL Server, MongoDB, Postman</p>
     </div>,
     <div className="card">
         <h1>Work history</h1>

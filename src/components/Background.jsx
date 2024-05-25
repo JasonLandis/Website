@@ -36,7 +36,7 @@ const HomeBackground = () => {
         const shades = [];
         const r = parseInt(color.slice(1, 3), 16);
         const g = parseInt(color.slice(3, 5), 16);
-        const b = parseInt(color.slice(5, 7), 16); 
+        const b = parseInt(color.slice(5, 7), 16);
     
         const increment = 1 / (numOfShades + 1);
     
@@ -50,18 +50,23 @@ const HomeBackground = () => {
     
         return shades;
     }
-
+    
     useEffect(() => {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
+        const generatePastelColor = () => {
+            const base = 200;
+            const maxAddition = 55;
+            const r = base + Math.floor(Math.random() * maxAddition);
+            const g = base + Math.floor(Math.random() * maxAddition);
+            const b = base + Math.floor(Math.random() * maxAddition);
+            return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+        };
+    
+        const color = generatePastelColor();
         const shades = generateShadesOfColor(color, 9);
         tiles.forEach(({ api }, index) => {
             api.start({ backgroundColor: shades[shades.length - index - 1] });
         });
-    }, [])
+    }, []);    
 
     useEffect(() => {
         const handleWindowResize = () => {

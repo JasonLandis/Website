@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { CountContext } from './context/CountContext'
 
 import Count from './components/Count'

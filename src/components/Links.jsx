@@ -1,6 +1,5 @@
-import React, { useEffect, useContext } from 'react'
+import { useEffect, useContext } from 'react'
 import { animated, useSpring } from '@react-spring/web'
-import { CountContext } from '../context/CountContext'
 import { PageContext } from '../context/PageContext'
 
 import Home from '../pages/Home'

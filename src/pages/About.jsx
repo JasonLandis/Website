@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { useGesture } from '@use-gesture/react'
 import { PageContext } from '../context/PageContext';
@@ -68,7 +68,7 @@ const cards = [
             development with a hobby in game development.
         </p>
         <p>
-            I am constantly working on projects, whether it be a mobile game or a complex web application.
+            I am constantly working on projects, whether it be a video game or a web application.
             Many projects of mine are featured on this site, so feel free to check them out.
         </p>
         <p>
@@ -89,7 +89,7 @@ const to = (i) => ({
     scale: 1,
     rot: -3 + Math.random() * 6, // Random rotation
     delay: i * 100, // Staggered delay
-    config: { friction: 50, tension: 200 }
+    config: { friction: 100, tension: 200 }
 })
 
 // Transform function
@@ -109,7 +109,7 @@ const Deck = () => {
                     development with a hobby in game development.
                 </p>
                 <p>
-                    I am constantly working on projects, whether it be a mobile game or a complex web application.
+                    I am constantly working on projects, whether it be a video game or a web application.
                     Many projects of mine are featured on this site, so feel free to check them out.
                 </p>
                 <p>
@@ -141,7 +141,7 @@ const Deck = () => {
                     rot: 0,
                     scale: 1,
                     delay: undefined,
-                    config: { friction: 50, tension: 200 },
+                    config: { friction: 80, tension: 200 },
                 }
             })
             if (gone.size === cards.length) {

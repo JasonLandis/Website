@@ -12,7 +12,7 @@
 }
 
 .card {
-    background-color: rgb(39, 39, 39);
+    background-color: rgba(39, 39, 39, 0.95);
     width: 800px;
     height: 600px;
     border-radius: 10px;

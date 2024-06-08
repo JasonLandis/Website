@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 
 import react from '../../assets/logos/react.png';
@@ -14,7 +14,7 @@ const Map = () => {
     const { transform, opacity } = useSpring({
         opacity: flipped ? 1 : 0,
         transform: `perspective(2000px) rotateX(${flipped ? 180 : 0}deg)`,
-        config: { mass: 2, tension: 500, friction: 100 },
+        config: { mass: 2, tension: 400, friction: 100 },
     });
     
     return (

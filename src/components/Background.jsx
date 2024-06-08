@@ -1,7 +1,8 @@
-import React, { useEffect, useContext, useState } from 'react'
+import { useEffect, useContext, useState } from 'react'
 import { animated, useSpring } from '@react-spring/web'
 import { CountContext } from '../context/CountContext'
 import { PageContext } from '../context/PageContext'
+import { easings } from '@react-spring/web'
 
 
 // Background animations
@@ -66,7 +67,7 @@ const HomeBackground = () => {
         tiles.forEach(({ api }, index) => {
             api.start({ backgroundColor: shades[shades.length - index - 1] });
         });
-    }, []);    
+    }, []);
 
     useEffect(() => {
         const handleWindowResize = () => {
@@ -86,15 +87,15 @@ const HomeBackground = () => {
     useEffect(() => {
         if (page === 'home') {
             tiles.forEach(({ api }) => {
-                api.start({ borderRadius: "5%", config: { duration: 250 } })
+                api.start({ borderRadius: "5%", config: { duration: 600, easing: easings.easeInOutCubic } })
             })
         } else if (page === 'projects') {
             tiles.forEach(({ api }) => {
-                api.start({ borderRadius: "25%", config: { duration: 250 } })
+                api.start({ borderRadius: "25%", config: { duration: 600, easing: easings.easeInOutCubic } })
             })
         } else if (page === 'about') {
             tiles.forEach(({ api }) => {
-                api.start({ borderRadius: "40%", config: { duration: 250 } })
+                api.start({ borderRadius: "40%", config: { duration: 600, easing: easings.easeInOutCubic } })
             })
         }
     }, [page])

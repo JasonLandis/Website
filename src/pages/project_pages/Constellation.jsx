@@ -30,14 +30,14 @@ const Constellation = () => {
                         different stars and upgrades to unlock as you break your records.
                     </p>
                     <p>
-                        Although it is a fairly small mobile game, I learned many valuable 
-                        lessons including developing software tailored for diverse screen 
+                        Although it is a fairly small mobile game, I learned a bunch
+                        including developing software tailored for diverse screen 
                         sizes, implementing various Android SDK's, and successfully porting 
                         a project originally designed for PC onto a mobile platform.
                     </p>
                     <p>
                         This project was created using the Unity game engine and C#. Moving forward, 
-                        I plan to continue making games, potentially using Unreal Engine, 
+                        I plan to continue making games, preferably using Unreal Engine, 
                         and I hope to release a PC or console game in the future.
                     </p>
                     <h2>Stack</h2>
@@ -50,10 +50,10 @@ const Constellation = () => {
                 <animated.div className="constellation-picture project-picture" style={{ opacity, transform, rotateX: '180deg' }}></animated.div>
             </div>
             <div className="visit">
-                <a href="https://play.google.com/store/apps/details?id=com.JasonLandis.Constellation" target='_blank'>
+                <a href="https://play.google.com/store/apps/details?id=com.JasonLandis.Constellation" target='_blank' rel="noreferrer">
                     <img src={playstore} width="40px" />
                 </a>
-                <a href="https://github.com/JasonLandis/Constellation" target='_blank'>
+                <a href="https://github.com/JasonLandis/Constellation" target='_blank' rel="noreferrer">
                     <img src={github} width="40px" />
                 </a>
             </div>

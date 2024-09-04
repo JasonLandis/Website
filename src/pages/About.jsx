@@ -19,18 +19,18 @@ const cards = [
     <div className="card skills">
         <h1>Skills</h1>
         <h2>Languages</h2>
-        <p>Python, C#, C, HTML, CSS, JavaScript, PHP, SQL</p>
+        <p>Python, C#, C++, C, HTML, CSS, JavaScript, TypeScript, SQL</p>
         <h2>Frameworks</h2>
-        <p>React, Angular, Django/DRF, ASP.NET, Bootstrap</p>
+        <p>React, Angular, Django/DRF, ASP.NET Core, Bootstrap</p>
         <h2>Tools</h2>
-        <p>GCP, Azure, Firebase, Docker, Git, MySQL, SQL Server, MongoDB, Postman</p>
+        <p>GCP, Azure, Firebase, Docker, SQL Server, MongoDB, Git, Postman</p>
     </div>,
     <div className="card">
         <h1>Work history</h1>
         <div className="work">
             <img src={AMI} />
             <div>
-                <h2>Junior Web Developer - Automated Media Inc.</h2>
+                <h2>Junior Software Developer - Automated Media Inc.</h2>
                 <p>April 2024 - Present</p>
             </div>
         </div>
@@ -80,7 +80,7 @@ const cards = [
 ]
 
 // Inital deck state
-const from = (_i) => ({ rot: 0, scale: 1, x: (window.innerWidth) * -1 })
+const from = () => ({ rot: 0, scale: 1, x: (window.innerWidth) * -1 })
 
 // Animation from initial deck state
 const to = (i) => ({
@@ -179,13 +179,13 @@ export default function About() {
                 <Deck />
             </div>
             <div className="handles">
-                <a href="https://www.linkedin.com/in/jason-landis-557110275/" target='_blank'>
+                <a href="https://www.linkedin.com/in/jason-landis-557110275/" target='_blank' rel="noreferrer">
                     <img src={linkedin} width="40px" />
                 </a>
-                <a href="https://github.com/JasonLandis" target='_blank'>
+                <a href="https://github.com/JasonLandis" target='_blank' rel="noreferrer">
                     <img src={github} width="40px" />
                 </a>
-                <a href="mailto: jasonelandis@gmail.com" target='_blank'>
+                <a href="mailto: jasonelandis@gmail.com" target='_blank' rel="noreferrer">
                     <img src={mail} width="40px" />
                 </a>
             </div>

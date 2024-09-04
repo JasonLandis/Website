@@ -23,18 +23,18 @@ const Blog = () => {
                 <p>
                     I am building a web-based community platform exclusively for game developers. 
                     This application will allow game developers to showcase their 
-                    ongoing game projects and build a dedicated following. 
+                    ongoing game development projects and build a dedicated following. 
                 </p>
                 <p>
                     Developers will be able to make posts, polls, and open discussions about their game, 
                     allowing them to gain insight from their community and determine which 
-                    features may be a good idea to implement. There are also systems that allow users
-                    to follow developers and like/dislike posts and comments.
+                    features may be a good idea to implement.
                 </p>
                 <p>
-                    This is my first major project involving full-stack software development.
+                    This is my first major solo project involving full-stack software development.
                     Currently it is built entirely with Django along with a bit of JavaScript. 
-                    Moving forward, I plan to implement a front-end framework such as React to improve the user experience.
+                    Moving forward, I plan to restructure the project using ASP.NET Core and Angular
+                    to aid with project scaling problems.
                 </p>
                 <h2>Stack</h2>
                 <div className='stack'>

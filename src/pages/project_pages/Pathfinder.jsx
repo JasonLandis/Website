@@ -42,7 +42,7 @@ const Pathfinder = () => {
                 <animated.div className="pathfinder-picture project-picture" style={{ opacity, transform, rotateX: '180deg' }}></animated.div>
             </div>
             <div className="visit">
-                <a href="https://github.com/JasonLandis/Pathfinder" target='_blank'>
+                <a href="https://github.com/JasonLandis/Pathfinder" target='_blank' rel="noreferrer">
                     <img src={github} width="40px" />
                 </a>
             </div>
